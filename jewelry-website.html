@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="月華 LUNÉA — 香港手作天然水晶飾品。逐顆過眼，逐串編成。水晶原石、手串，全部現貨。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="月華 LUNÉA">
+<meta property="og:title" content="月華 LUNÉA · 手作天然水晶飾品">
+<meta property="og:description" content="逐顆過眼，逐串編成。水晶原石、手串，全部現貨。">
+<!-- ⚠️ 上線後改成你真實網址，OG圖要係完整http網址，唔可以用相對路徑 -->
+<meta property="og:url" content="https://YOUR-SITE-URL/">
+<meta property="og:image" content="https://YOUR-SITE-URL/lunea-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_HK">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="月華 LUNÉA · 手作天然水晶飾品">
+<meta name="twitter:image" content="https://YOUR-SITE-URL/lunea-og.jpg">
+<meta name="theme-color" content="#F7F2E9">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='97' fill='%23FFFFFF' stroke='%23C6863C' stroke-width='5'/><path d='M72,56 L112,56 L112,63 L99,63 L99,131 L133,131 L139,116 L146,116 L143,144 L72,144 L72,137 L85,137 L85,63 L72,63 Z' fill='%23241A0F'/><circle cx='131' cy='72' r='15' fill='%238F5FDC'/></svg>">
+<title>月華 LUNÉA · 手作珠寶</title>
+<!-- ============================================================
+     Google Analytics（GA4）— 想開就將下面 G-XXXXXXXXXX 換成你自己
+     嘅Measurement ID（Google Analytics網站開個property就有），
+     唔想要就成段刪走。
+     ⚠️ google-analytics.com／googletagmanager.com喺內地都可能連唔到，
+     所以呢個追蹤唔到大陸訪客好正常，純粹幫你睇香港/海外流量，
+     用async載入，就算連唔到都唔會拖累個網站或者整壞版面。
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<!-- 字體全部自家host喺 fonts/ 資料夾，唔靠Google Fonts／jsdelivr——
+     內地大陸連唔到呢兩個CDN，自家host先保證載入穩定。
+     淨係keep住頁面實際用到嘅字（LXGW WenKai TC light+regular／Cormorant Garamond全weight），
+     加新內容有新字未涵蓋，要重新跑一次subset script（問返Claude點做）。 -->
+<link href="fonts/local-fonts.css" rel="stylesheet">
+<style>
+/* ============================================================
+   月華 LUNÉA — 設計token（改色/字淨係改呢度）
+   ============================================================ */
+:root{
+  color-scheme: light;
+  --white:   #FFFFFF;
+  --banner:  #F2EADD;   /* 淺caramel：頂banner／相磚底 */
+  --banner-2:#E8DDCB;   /* 深少少caramel */
+  --ink:     #241A0F;   /* 文字墨啡 */
+  --grey:    #3D3527;   /* 次文字（加深，白底易睇） */
+  --caramel: #C6863C;   /* 金線 */
+  --caramel-d:#8E5F22;  /* 深金：pill按鈕 */
+  --v-100:#F0EAFB; --v-200:#DACDF5; --v-300:#B899E9;
+  --v-400:#8F5FDC; --v-500:#6C29CE; --v-600:#52199F; --v-700:#3A0F77;
+  --line:  rgba(142,95,34,0.24);
+  --hair:  rgba(36,26,15,0.2);
+
+  --display:'Cormorant Garamond',Georgia,'Times New Roman','Songti SC','SimSun',serif;
+  --han:'LXGW WenKai TC','Songti SC','STSong','SimSun',serif;
+  --body:'PingFang SC','Microsoft YaHei','Heiti SC',sans-serif;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; background:var(--white); }
+body{ background:var(--white); color:var(--ink); font-family:var(--body); line-height:1.75;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--v-600); outline-offset:3px; }
+.wrap{ max-width:1240px; margin:0 auto; padding:0 40px; }
+@media (max-width:720px){ .wrap{ padding:0 22px; } }
+
+/* 磨砂顆粒 */
+body::after{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:90; opacity:.035;
+  mix-blend-mode:luminosity;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+
+/* ============================================================
+   反 forced dark mode
+   手機瀏覽器嘅「強制深色」會無視 color-scheme:light。
+   主動聲明一個 dark theme（內容照樣淺色），瀏覽器就唔會再插手。
+   ============================================================ */
+@media (prefers-color-scheme: dark){
+  :root{
+    --white:#FFFFFF; --banner:#F2EADD; --banner-2:#E8DDCB;
+    --ink:#241A0F; --grey:#3D3527;
+    --caramel:#C6863C; --caramel-d:#8E5F22;
+    --line:rgba(142,95,34,0.24); --hair:rgba(36,26,15,0.2);
+  }
+  html,body{ background:#FFFFFF !important; color:#241A0F !important; }
+}
+/* 每個容器都要有實色底，唔好留位畀瀏覽器自己填 */
+.products-head, .tiles, .tile, .tile-body, .about, .order{ background:var(--white); }
+.tile-body{ background:var(--white); }
+.service, .service .wrap, .svc-grid{ background:var(--banner); }
+footer, footer .wrap{ background:var(--banner); }
+.verse{ background:linear-gradient(150deg, var(--white), var(--banner)); }
+
+/* ---------- 共用元件 ---------- */
+.micro{ font-size:13px; letter-spacing:0.26em; text-transform:uppercase; color:var(--grey); font-weight:500; }
+.pill{
+  display:inline-flex; align-items:center; gap:12px;
+  background:var(--caramel-d); color:var(--white);
+  font-size:13px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600;
+  padding:16px 30px; border-radius:100px; transition:background .3s, transform .3s;
+}
+.pill:hover{ background:#734b17; transform:translateY(-2px); }
+.rule{ height:1px; background:var(--hair); width:100%; }
+
+/* 巨型 ghost 標題 */
+.ghost{
+  font-family:var(--display); font-weight:700; text-transform:uppercase;
+  font-size:clamp(38px,9.4vw,132px); line-height:0.98; letter-spacing:0.04em;
+  color:#A8977A; overflow-wrap:break-word;
+}
+
+/* 印章 */
+.mark{ width:42px; height:42px; flex-shrink:0; display:block; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{ background:var(--white); position:relative; overflow:hidden; padding-bottom:56px; }
+
+/* ---------- 水晶質感層 ---------- */
+.hero-crystal{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+.hero-crystal svg{ width:100%; height:100%; display:block; }
+/* 焦散光池：光線穿過水晶落喺白面上 */
+.hero::before{
+  content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(44% 36% at 20% 24%, rgba(143,95,220,0.09), transparent 74%),
+    radial-gradient(50% 40% at 82% 66%, rgba(184,153,233,0.08), transparent 76%),
+    radial-gradient(38% 30% at 58% 90%, rgba(207,192,240,0.10), transparent 74%);
+  filter:blur(2px);
+}
+/* 底部收光，接落白色section */
+.hero::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:130px; z-index:2;
+  background:linear-gradient(180deg, transparent, var(--white)); pointer-events:none;
+}
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; row-gap:12px;
+  padding:22px 40px; position:relative; z-index:5;
+}
+.topbar-left{ display:flex; align-items:center; gap:24px; }
+.topbar-logo{ display:inline-flex; transition:opacity .25s; }
+.topbar-logo:hover{ opacity:.75; }
+.topbar-logo .mark{ width:34px; height:34px; }
+.topbar .links{ display:flex; flex-wrap:wrap; gap:26px; align-items:center; row-gap:10px; }
+.topbar .links a, .topbar .links button{ white-space:nowrap; }
+.topbar .ig{ display:inline-flex; }
+.topbar .ig svg{ width:16px; height:16px; display:block; }
+.lang-btn{
+  font-family:var(--body); font-size:12px; letter-spacing:.1em; color:var(--grey);
+  background:transparent; border:1px solid var(--line); border-radius:100px;
+  padding:6px 13px; cursor:pointer; transition:border-color .25s, color .25s;
+}
+.lang-btn:hover{ border-color:var(--caramel); color:var(--caramel-d); }
+.ig-link{ color:var(--caramel-d); border-bottom:1px solid var(--line); }
+@media (max-width:720px){
+  .topbar{ padding:18px 22px; }
+  .topbar .links{ gap:14px; }
+  .topbar-left{ gap:16px; }
+  .topbar-logo .mark{ width:28px; height:28px; }
+}
+@media (max-width:400px){
+  .topbar .micro{ font-size:11.5px; letter-spacing:0.14em; }
+  .topbar .links{ gap:10px; }
+  .topbar-left{ gap:12px; }
+}
+
+.wordmark{
+  position:relative; z-index:5; text-align:center; padding:8px 24px 0;
+  font-family:var(--display); font-weight:700; text-transform:uppercase;
+  font-size:clamp(40px,11.6vw,168px); line-height:1; letter-spacing:0.03em;
+  color:var(--ink); white-space:nowrap;
+}
+.wordmark-sub{
+  position:relative; z-index:5; text-align:center; margin-top:11px;
+  font-size:11.5px; letter-spacing:0.36em; text-indent:0.36em;
+  text-transform:uppercase; color:var(--grey);
+}
+.wordmark-han{
+  position:relative; z-index:5; text-align:center; margin-top:0;
+  font-family:var(--han); font-weight:500;
+  font-size:clamp(14px,2.6vw,22px); letter-spacing:0.58em; text-indent:0.62em;
+  color:var(--grey);
+}
+.wordmark-rule{ margin:16px 40px 14px; height:1px; background:var(--hair); position:relative; z-index:5; }
+@media (max-width:720px){ .wordmark-rule{ margin:13px 22px 12px; }
+  .wordmark-sub{ font-size:8.5px; letter-spacing:0.34em; text-indent:0.34em; } }
+
+.hero-body{
+  position:relative; z-index:5; display:grid; grid-template-columns:1fr 1.15fr 1fr;
+  gap:36px; align-items:start; padding:44px 40px 0;
+}
+@media (max-width:900px){
+  .hero-body{ grid-template-columns:1fr; gap:28px; padding:32px 22px 0; }
+}
+.hero-left h2{ font-family:var(--han); font-weight:500; font-size:24px; letter-spacing:0.24em; color:var(--ink); margin:12px 0 14px; }
+.hero-left p{ font-size:17px; line-height:1.9; color:var(--grey); max-width:260px; margin-bottom:24px; }
+
+.hero-art{ position:relative; min-height:clamp(340px,46vw,520px); }
+.hero-art svg{ position:absolute; inset:0; width:100%; height:100%; }
+@media (max-width:900px){ .hero-art{ min-height:360px; order:-1; } }
+
+.hero-right .tagline{
+  font-family:var(--display); font-size:19px; letter-spacing:0.16em; text-transform:uppercase;
+  text-align:right; color:var(--grey); line-height:1.6; margin-bottom:26px;
+}
+@media (max-width:900px){ .hero-right .tagline{ text-align:left; } }
+.catlist a{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:15px 0 13px; border-bottom:1px solid var(--hair);
+  font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:var(--grey);
+  transition:color .3s, padding-left .3s;
+}
+.catlist a:hover{ color:var(--v-600); padding-left:6px; }
+.catlist .han{ font-family:var(--han); font-size:17px; letter-spacing:0.14em; margin-right:auto; padding-left:14px; }
+
+/* ============================================================
+   ABOUT（白）
+   ============================================================ */
+.about{ background:var(--white); padding:46px 0 54px; }
+.about-head{ text-align:center; max-width:620px; margin:0 auto; }
+.about-head p{ font-size:18px; line-height:1.72; color:var(--grey); margin-top:16px; }
+.about-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:36px; align-items:start; margin-top:50px; }
+.about-card p{ font-size:16.5px; line-height:1.72; color:var(--grey); margin-bottom:9px; }
+.about-card p.lede{
+  font-family:var(--han); font-weight:500; font-size:15px; letter-spacing:0.34em;
+  color:var(--ink); margin:0 0 12px; text-indent:0.42em;
+}
+.about-card p.lede::before{
+  content:''; display:inline-block; width:16px; height:1px; vertical-align:middle;
+  background:var(--caramel); margin-right:12px; text-indent:0;
+}
+@media (max-width:900px){
+  .about-row{ grid-template-columns:1fr; gap:30px; }
+  .figure{ width:100%; max-width:420px; margin:0 auto; }
+}
+.figure{
+  border-radius:16px; overflow:hidden;
+  border:1px solid var(--line); aspect-ratio:1/1; position:relative;
+}
+.figure img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity 1.2s ease;
+}
+.figure img.show{ opacity:1; }
+
+/* ============================================================
+   作品
+   ============================================================ */
+.products-head{ background:var(--white); padding:8px 22px 34px; text-align:center; }
+.filters{
+  display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:22px;
+}
+.filters button{
+  font-family:var(--body); font-size:14px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink); font-weight:500; background:transparent; border:1px solid var(--line);
+  padding:9px 18px; border-radius:100px; cursor:pointer;
+  transition:background .25s, color .25s, border-color .25s;
+}
+.filters button:hover{ border-color:var(--caramel); color:var(--caramel-d); }
+.filters button[aria-pressed="true"]{
+  background:var(--caramel-d); border-color:var(--caramel-d); color:var(--white);
+}
+.empty{ text-align:center; color:var(--grey); font-size:16.5px; padding:50px 0 20px; }
+
+.tiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:34px 24px; padding:44px 0 10px; }
+@media (max-width:900px){ .tiles{ grid-template-columns:repeat(2,1fr); gap:26px 16px; } }
+@media (max-width:420px){ .tiles{ grid-template-columns:1fr; } }
+
+.tile{ position:relative; }
+.tile-media{
+  position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--banner);
+  border:1px solid var(--line); border-radius:2px;
+  display:flex; align-items:center; justify-content:center;
+}
+.tile-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2; transition:opacity .5s ease; }
+.tile-media img.tile-img-2{ opacity:0; }
+.tile:hover .tile-media img.tile-img-2{ opacity:1; }
+.tile-stage{
+  width:46%; aspect-ratio:2.4/1; border-radius:50%; position:relative; z-index:2;
+  background:linear-gradient(160deg, rgba(255,255,255,.9), rgba(218,205,245,.4));
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 12px 24px -8px rgba(82,25,159,.22), inset 0 1px 0 rgba(255,255,255,.95);
+  display:flex; align-items:center; justify-content:center;
+}
+.tile-stage svg{ width:26px; height:26px; stroke:var(--caramel); fill:none; stroke-width:1.1; }
+.tile-media::after{
+  content:''; position:absolute; top:0; left:-60%; width:44%; height:100%; z-index:3;
+  background:linear-gradient(115deg, transparent, rgba(255,255,255,.85) 34%,
+    rgba(143,95,220,.32) 46%, rgba(198,134,60,.32) 54%, rgba(255,255,255,.6) 64%, transparent);
+  transform:skewX(-20deg); transition:left .9s ease;
+}
+.tile:hover .tile-media::after{ left:130%; }
+.tile-body{ padding:14px 2px 0; }
+.tile-cat{
+  font-family:var(--display); font-weight:700; font-size:13.5px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--grey);
+}
+.tile-name{ font-family:var(--han); font-weight:600; font-size:25px; letter-spacing:.05em; margin:8px 0 6px; line-height:1.4; }
+.tile-spec{ font-size:15.5px; color:var(--grey); line-height:1.75; letter-spacing:.01em; }
+.tile-spec .sep{ color:var(--caramel); margin:0 .38em; }
+.tile-price{
+  font-family:var(--display); font-weight:700; font-size:27px; letter-spacing:.03em;
+  color:var(--caramel-d); margin-top:12px; display:block;
+}
+.tile-actions{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+.add-cart-btn{
+  font-family:var(--body); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--caramel-d); background:transparent; border:1px solid var(--line); border-radius:100px;
+  padding:9px 18px; cursor:pointer; transition:background .25s, border-color .25s, color .25s;
+}
+.add-cart-btn:hover{ border-color:var(--caramel); background:var(--banner); }
+.add-cart-btn.added{ background:var(--caramel-d); border-color:var(--caramel-d); color:var(--white); }
+.tile-pay-btn{
+  font-family:var(--body); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--white); background:var(--caramel-d); border:1px solid var(--caramel-d); border-radius:100px;
+  padding:9px 18px; cursor:pointer; transition:background .25s, transform .25s;
+}
+.tile-pay-btn:hover{ background:#734b17; transform:translateY(-1px); }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.chip{
+  display:inline-flex; align-items:center; gap:4px;
+  background:var(--banner); border:1px solid var(--line); border-radius:100px;
+  padding:9px 6px 9px 16px; font-size:14.5px; color:var(--ink);
+}
+.chip-x{
+  background:transparent; border:none; cursor:pointer; color:var(--caramel-d);
+  font-size:16px; line-height:1; padding:4px 8px;
+}
+
+/* ============================================================
+   產品大圖 Lightbox
+   ============================================================ */
+.tile-media{ cursor:zoom-in; }
+.lightbox{
+  position:fixed; inset:0; z-index:200; background:rgba(36,26,15,.94);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:60px 20px; backdrop-filter:blur(6px);
+}
+.lightbox[hidden]{ display:none; }
+.lb-stage{ max-width:min(88vw,720px); display:flex; align-items:center; justify-content:center; }
+.lb-stage img{ max-width:100%; max-height:70vh; object-fit:contain; border-radius:4px; box-shadow:0 30px 70px -20px rgba(0,0,0,.5); }
+.lb-close{
+  position:absolute; top:18px; right:22px; background:transparent; border:none; color:var(--white);
+  font-size:38px; line-height:1; cursor:pointer; font-family:var(--display); opacity:.85; transition:opacity .2s;
+}
+.lb-close:hover{ opacity:1; }
+.lb-nav{
+  position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
+  color:var(--white); width:46px; height:46px; border-radius:100px; cursor:pointer; font-size:20px;
+  display:flex; align-items:center; justify-content:center; transition:background .25s;
+}
+.lb-nav:hover{ background:rgba(255,255,255,.24); }
+.lb-prev{ left:16px; }
+.lb-next{ right:16px; }
+@media (max-width:720px){ .lb-nav{ width:38px; height:38px; } .lb-prev{ left:8px; } .lb-next{ right:8px; } }
+.lb-caption{ display:flex; flex-direction:column; align-items:center; gap:10px; margin-top:22px; }
+.lb-caption #lbName{ font-family:var(--han); font-size:16px; letter-spacing:.08em; color:var(--white); opacity:.9; }
+.lb-dots{ display:flex; gap:8px; justify-content:center; }
+.lb-dot{ width:8px; height:8px; border-radius:100%; background:rgba(255,255,255,.35); cursor:pointer; border:none; padding:0; }
+.lb-dot.active{ background:var(--white); }
+
+/* ============================================================
+   題辭
+   ============================================================ */
+.verse{
+  background:linear-gradient(150deg, var(--white), var(--banner));
+  border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
+  text-align:center; padding:96px 24px; position:relative; overflow:hidden;
+}
+.verse h2{ font-family:var(--han); font-weight:400; font-size:clamp(26px,4.6vw,44px);
+  letter-spacing:0.3em; color:var(--v-700); margin:16px 0 14px; }
+.verse p{ color:var(--grey); font-size:16px; max-width:400px; margin:0 auto; }
+.verse .rosette{ position:absolute; width:340px; height:340px; color:var(--caramel); opacity:.13; }
+.verse .rosette.a{ top:-110px; right:-80px; }
+.verse .rosette.b{ bottom:-120px; left:-90px; opacity:.09; }
+@media (max-width:720px){ .verse .rosette{ display:none; } }
+
+/* ============================================================
+   訂造
+   ============================================================ */
+.order{ background:var(--white); padding:90px 0; }
+.crystal{
+  position:relative; isolation:isolate; max-width:560px; margin:44px auto 0; padding:44px 36px;
+  border-radius:4px;
+  background:linear-gradient(150deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.6) 42%,
+    rgba(240,234,251,.6) 68%, rgba(255,255,255,.9) 100%);
+  backdrop-filter:blur(18px) saturate(1.2); -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.95) inset, 0 -1px 0 rgba(198,134,60,.18) inset,
+    1px 0 0 rgba(255,255,255,.8) inset, -1px 0 0 rgba(143,95,220,.12) inset,
+    0 22px 50px -22px rgba(82,25,159,.26);
+  border:1px solid rgba(198,134,60,.18);
+}
+.crystal::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:1; border-radius:4px;
+  background:linear-gradient(128deg, transparent 42%, rgba(143,95,220,.12) 49%,
+    rgba(198,134,60,.12) 53%, transparent 60%),
+    radial-gradient(60% 40% at 20% 8%, rgba(255,255,255,.9), transparent 70%);
+}
+.crystal > *{ position:relative; z-index:2; }
+.field{ margin-bottom:18px; }
+.field label{ display:block; font-size:13px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink); margin-bottom:10px; font-weight:500; }
+.field input, .field select, .field textarea{
+  width:100%; background:var(--white); border:1px solid var(--line); color:var(--ink);
+  font-family:var(--body); font-size:17px; padding:15px 15px; border-radius:2px;
+}
+.field textarea{ resize:vertical; min-height:78px; }
+.field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--caramel); }
+.submit-btn{
+  width:100%; background:var(--caramel-d); color:var(--white); border:none; cursor:pointer;
+  font-family:var(--body); font-size:13px; letter-spacing:0.2em; text-transform:uppercase;
+  padding:17px; border-radius:100px; transition:background .3s;
+}
+.submit-btn:hover{ background:#734b17; }
+.note{ font-size:14px; color:var(--grey); text-align:center; margin-top:14px; }
+
+
+/* ---------- 服務資訊 ---------- */
+.service{ background:var(--banner); padding:74px 0; }
+.svc-title{
+  font-family:var(--display); font-weight:700; text-transform:uppercase;
+  font-size:clamp(26px,5vw,42px); letter-spacing:.06em; text-align:center;
+  color:var(--ink); margin:8px 0 40px;
+}
+.svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); }
+@media (max-width:820px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px){ .svc-grid{ grid-template-columns:1fr; } }
+.svc-item{ background:var(--banner); padding:26px 24px 28px; }
+.svc-item h3{
+  font-family:var(--han); font-weight:500; font-size:16.5px; letter-spacing:.18em;
+  color:var(--ink); margin-bottom:12px; text-indent:.22em;
+}
+.svc-item h3::before{
+  content:''; display:inline-block; width:14px; height:1px; vertical-align:middle;
+  background:var(--caramel); margin-right:11px; text-indent:0;
+}
+.svc-item p{ font-size:16px; color:var(--grey); line-height:1.85; }
+.svc-item .svc-note{ color:var(--caramel-d); font-size:14.5px; }
+.pay-card{
+  background:var(--white); border:1px solid var(--line); border-radius:4px;
+  margin-top:54px; padding:48px 40px; text-align:center;
+}
+.pay-card-title{
+  font-family:var(--display); font-weight:700; text-transform:uppercase;
+  font-size:clamp(24px,3.6vw,34px); letter-spacing:.05em; color:var(--ink); margin:8px 0 38px;
+}
+.pay-card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:38px; text-align:center; }
+@media (max-width:820px){ .pay-card-grid{ grid-template-columns:1fr; gap:36px; } }
+.pay-method p{ font-size:16px; color:var(--grey); line-height:1.8; }
+.pay-step{
+  font-family:var(--han); font-weight:600; font-size:18px; letter-spacing:.1em;
+  color:var(--v-700); margin-bottom:10px;
+}
+.pay-qr-wrap{ display:inline-block; margin-top:16px; }
+.pay-qr{ width:170px; height:170px; border:1px solid var(--line); border-radius:6px; background:var(--white); padding:8px; margin:0 auto; }
+.pay-qr-hint{
+  display:block; margin-top:10px; font-size:12.5px; letter-spacing:.14em;
+  color:var(--caramel-d); text-transform:uppercase;
+}
+.pay-confirm{ font-size:16px; color:var(--grey); line-height:1.9; }
+.pay-confirm .pill{ margin-top:18px; }
+#faqToggle{ margin-top:8px; }
+.faq-list{ max-width:640px; margin:32px auto 0; text-align:left; }
+.faq-item{ padding:6px 0; border-bottom:1px solid var(--hair); }
+.faq-item:last-child{ border-bottom:none; }
+.faq-q{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%;
+  background:transparent; border:none; cursor:pointer; text-align:left; padding:16px 0;
+  font-family:var(--han); font-weight:600; font-size:17px; letter-spacing:.04em; color:var(--ink);
+  transition:color .25s;
+}
+.faq-q:hover{ color:var(--v-600); }
+.faq-qmark{ color:var(--caramel-d); font-family:var(--display); font-weight:700; margin-right:6px; }
+.faq-icon{
+  flex-shrink:0; font-family:var(--display); font-size:22px; font-weight:400;
+  color:var(--caramel-d); transition:transform .3s; line-height:1;
+}
+.faq-q[aria-expanded="true"] .faq-icon{ transform:rotate(45deg); }
+.faq-a{ font-size:15.5px; color:var(--grey); line-height:1.8; padding:0 0 20px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{ background:var(--banner); padding:60px 0 28px; }
+.foot-grid{ display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:44px; }
+.foot-brand{ display:flex; align-items:center; gap:13px; }
+.foot-brand .nm{ font-family:var(--display); font-weight:700; font-size:20px; letter-spacing:0.22em; text-transform:uppercase; }
+.foot-grid p{ font-size:15.5px; color:var(--grey); max-width:250px; margin-top:14px; }
+.foot-col h4{ font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--caramel-d); margin-bottom:15px; }
+.foot-col a{ display:block; font-size:16px; color:var(--grey); margin-bottom:9px; }
+.foot-col a:hover{ color:var(--ink); }
+.foot-bottom{ margin-top:44px; padding-top:20px; border-top:1px solid var(--hair);
+  font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); text-align:center; }
+@media (max-width:700px){ .foot-grid{ grid-template-columns:1fr; gap:30px; } }
+
+@media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-crystal" aria-hidden="true">
+    <svg viewBox="0 0 1200 820" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <!-- 液態扭曲：用湍流位移，令邊緣似流動嘅玻璃 -->
+        <filter id="liq" x="-25%" y="-25%" width="150%" height="150%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.011" numOctaves="3" seed="7" result="t"/>
+          <feDisplacementMap in="SourceGraphic" in2="t" scale="120" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="14"/>
+        </filter>
+        <filter id="liq2" x="-25%" y="-25%" width="150%" height="150%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.009 0.005" numOctaves="2" seed="21" result="t2"/>
+          <feDisplacementMap in="SourceGraphic" in2="t2" scale="90" xChannelSelector="R" yChannelSelector="B"/>
+          <feGaussianBlur stdDeviation="20"/>
+        </filter>
+        <!-- 焦散細紋：液體表面折出嚟嘅光絲 -->
+        <filter id="caustic" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02 0.006" numOctaves="2" seed="3" result="c"/>
+          <feDisplacementMap in="SourceGraphic" in2="c" scale="46" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="2.2"/>
+        </filter>
+
+        <radialGradient id="bl1" cx="42%" cy="38%">
+          <stop offset="0%"  stop-color="#B899E9" stop-opacity=".30"/>
+          <stop offset="55%" stop-color="#CFC0F0" stop-opacity=".14"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="bl2" cx="55%" cy="55%">
+          <stop offset="0%"  stop-color="#8F5FDC" stop-opacity=".20"/>
+          <stop offset="60%" stop-color="#DACDF5" stop-opacity=".10"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="bl3" cx="50%" cy="45%">
+          <stop offset="0%"  stop-color="#E2D7F7" stop-opacity=".42"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- 流體團塊：形狀被湍流扭到冇直邊 -->
+      <g filter="url(#liq)">
+        <ellipse cx="250" cy="250" rx="330" ry="250" fill="url(#bl1)"/>
+        <ellipse cx="980" cy="560" rx="360" ry="270" fill="url(#bl2)"/>
+      </g>
+      <g filter="url(#liq2)">
+        <ellipse cx="700" cy="180" rx="300" ry="200" fill="url(#bl3)"/>
+        <ellipse cx="380" cy="700" rx="340" ry="210" fill="url(#bl1)"/>
+      </g>
+
+      <!-- 焦散光絲：似水面反出嚟嗰啲流動光紋 -->
+      <g filter="url(#caustic)" fill="none" stroke="#FFFFFF" stroke-width="3.2" opacity=".85">
+        <path d="M-40,300 C220,236 420,352 660,290 C880,232 1050,320 1250,268"/>
+        <path d="M-40,392 C200,330 440,438 680,378 C900,322 1060,404 1250,356"/>
+        <path d="M-40,486 C230,424 430,528 670,470 C890,416 1070,492 1250,448"/>
+      </g>
+      <g filter="url(#caustic)" fill="none" stroke="#9E86C9" stroke-width="2" opacity=".30">
+        <path d="M-40,342 C210,282 450,394 690,332 C910,276 1070,360 1250,312"/>
+        <path d="M-40,540 C240,478 420,580 660,524 C880,472 1080,544 1250,502"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="#" class="topbar-logo" aria-label="月華 LUNÉA"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="97" fill="#FFFFFF" stroke="#C6863C" stroke-width="3"/><circle cx="100" cy="100" r="85" fill="none" stroke="#C6863C" stroke-width="1.4" opacity=".45"/><text x="94" y="137" font-family="Cormorant Garamond, Georgia, serif" font-size="118" font-weight="500" fill="#241A0F" text-anchor="middle">L</text><circle cx="129" cy="71" r="13.5" fill="#8F5FDC"/></svg></a>
+      <div class="micro links"><a href="#collection">作品</a><a href="#service">購買須知</a></div>
+    </div>
+    <div class="micro links">
+      <a href="#contact" id="cartBadge" class="lang-btn">清單</a>
+      <button type="button" id="langToggle" class="lang-btn" aria-label="切換簡體/繁體">繁</button>
+      <a href="#about">關於</a><a href="#contact">查詢</a>
+      <a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener" class="ig" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div>
+  </div>
+
+  <h1 class="wordmark">Lunéa</h1>
+  <div class="wordmark-rule"></div>
+  <div class="wordmark-han">月　華</div>
+  <div class="wordmark-sub">Handcrafted Jewelry</div>
+
+  <div class="hero-body">
+    <div class="hero-left">
+      <p class="micro">Collection 2026</p>
+      <h2>月暈之光</h2>
+      <p>逐顆過眼，逐串編成。所戴非飾，是被留住的光。</p>
+      <a class="pill" href="#collection">賞作品 <span>→</span></a>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 560 700" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <!-- 花瓣：暖 -->
+          <linearGradient id="pf" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%"   stop-color="#FFFFFF" stop-opacity=".92"/>
+            <stop offset="62%"  stop-color="#FBF3E6" stop-opacity=".8"/>
+            <stop offset="100%" stop-color="#EFD9B3" stop-opacity=".62"/>
+          </linearGradient>
+          <linearGradient id="pd" x1="0" y1="0" x2="0.3" y2="1">
+            <stop offset="0%"   stop-color="#FDF8EF" stop-opacity=".8"/>
+            <stop offset="100%" stop-color="#E4C48D" stop-opacity=".45"/>
+          </linearGradient>
+          <!-- 月：冷 -->
+          <radialGradient id="mn" cx="50%" cy="50%">
+            <stop offset="0%"   stop-color="#FFFFFF" stop-opacity=".82"/>
+            <stop offset="40%"  stop-color="#F5F0FD" stop-opacity=".58"/>
+            <stop offset="68%"  stop-color="#E2D7F7" stop-opacity=".32"/>
+            <stop offset="86%"  stop-color="#CFC0F0" stop-opacity=".13"/>
+            <stop offset="100%" stop-color="#C4AEEE" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="term" x1="0.18" y1="0.14" x2="0.86" y2="0.9">
+            <stop offset="0%"   stop-color="#FFFFFF" stop-opacity=".5"/>
+            <stop offset="46%"  stop-color="#FFFFFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#A78FD4" stop-opacity=".22"/>
+          </linearGradient>
+          <radialGradient id="hl" cx="50%" cy="50%">
+            <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0"/>
+            <stop offset="58%"  stop-color="#CFC0F0" stop-opacity=".2"/>
+            <stop offset="82%"  stop-color="#B899E9" stop-opacity=".12"/>
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- ================= 天：月 ================= -->
+        <g transform="translate(286,196)"><g transform="scale(0.77)">
+          <circle r="182" fill="url(#hl)"/>
+          <path d="M172.0,0.0L168.4,-12.4L157.8,-23.0L141.0,-30.5L119.2,-33.4L93.9,-30.9L67.0,-22.6L40.3,-8.6L15.6,10.6L-5.5,33.7L-21.9,59.5L-32.7,86.1L-37.7,111.7L-37.0,134.6L-31.3,153.0L-21.8,165.6L-9.9,171.5L2.7,170.2L14.3,161.7L23.2,146.7L28.2,126.2L28.1,101.6L22.3,74.7L10.7,47.4L-6.2,21.3L-27.6,-1.7L-52.1,-20.4L-78.2,-33.7L-104.0,-41.1L-127.7,-42.7L-147.5,-38.9L-162.0,-30.8L-170.1,-19.7L-171.1,-7.2L-164.8,5.1L-151.8,15.4L-132.8,22.2L-109.1,24.3L-82.5,21.0L-54.7,12.0L-27.5,-2.6L-2.8,-22.0L18.0,-45.1L33.7,-70.3L43.6,-96.0L47.6,-120.3L45.9,-141.3L39.4,-157.5L29.3,-167.7L17.1,-171.0L4.4,-167.0L-7.0,-156.0L-15.5,-138.7L-19.7,-116.2L-18.9,-90.1L-12.4,-62.2L-0.2,-34.2L17.1,-8.0L38.5,14.8L62.7,32.8L87.9,45.2L112.5,51.6L134.5,52.1L152.2,47.4L164.4,38.6L169.9,26.9L168.2,14.1L159.4,1.9L144.0,-8.0L122.9,-14.3L97.6,-15.8L69.7,-11.8L41.2,-2.1L13.8,12.9L-10.8,32.4L-31.0,55.3L-45.8,79.9L-54.7,104.5L-57.6,127.1L-54.8,146.2L-47.4,160.2L-36.6,167.9L-24.0,168.5L-11.2,162.0L-0.0,148.6L8.1,129.1L11.8,104.8L10.3,77.3L3.2,48.4L-9.5,20.1L-27.0,-6.0L-48.3,-28.3L-71.9,-45.5L-96.3,-56.9L-119.4,-62.1L-139.6,-61.5L-155.2,-55.8L-164.9,-46.1L-167.8,-33.8L-163.6,-20.7L-152.3,-8.6L-134.6,1.1L-111.6,7.0L-84.8,7.9L-55.9,3.3L-26.8,-6.9L0.7,-22.2L24.8,-41.7L44.3,-64.2L58.1,-88.0L65.8,-111.3L67.4,-132.4L63.6,-149.4L55.2,-161.0L43.6,-166.2L30.5,-164.3L17.5,-155.2L6.4,-139.4L-1.3,-117.9L-4.5,-92.0L-2.5,-63.3L5.1,-33.8L18.1,-5.2L35.7,20.6L56.8,42.2L79.8,58.4L103.0,68.6L124.7,72.5L142.9,70.7L156.3,63.8L163.6,53.2L164.0,40.3L157.2,26.8L143.5,14.6L123.6,5.1L98.9,-0.3L70.7,-0.7L41.0,4.3L11.6,14.9L-15.7,30.4L-39.2,49.8L-57.7,71.7L-70.4,94.6L-76.7,116.6L-77.0,135.9L-71.9,150.8L-62.4,160.1L-50.0,162.7L-36.4,158.2L-23.2,146.7L-12.2,128.7L-4.7,105.3L-1.9,78.0L-4.4,48.3L-12.5,18.3L-25.7,-10.2L-43.3,-35.5L-63.9,-56.2L-86.2,-71.2L-108.2,-80.0L-128.2,-82.6L-144.5,-79.4L-155.7,-71.3L-160.5,-59.7L-158.3,-46.1L-149.1,-32.3L-133.1,-19.9L-111.3,-10.6L-84.9,-5.5L-55.7,-5.5L-25.4,-11.0L4.1,-21.8L31.0,-37.3L53.8,-56.5L71.1,-77.8L82.4,-99.7L87.3,-120.2L86.1,-137.6L79.7,-150.4L69.0,-157.3L55.8,-157.5L41.6,-150.5L28.2,-136.7L17.1,-116.7L9.9,-91.6L7.5,-62.9L10.4,-32.6L18.7,-2.3L32.1,25.9L49.5,50.5L69.7,70.1L91.0,83.8L111.8,91.1L130.1,92.2L144.4,87.5L153.3,78.1L155.6,65.4L151.0,51.1L139.4,36.9L121.3,24.4L97.7,15.1L70.0,10.3L39.8,10.7L9.1,16.5L-20.2,27.5L-46.5,43.0L-68.3,61.8L-84.3,82.4L-94.0,103.1L-97.3,122.1L-94.6,137.7L-86.7,148.3L-74.9,152.9L-60.7,150.6L-45.9,141.3L-32.2,125.3L-21.1,103.3L-14.1,76.7L-12.0,47.1L-15.2,16.2L-23.8,-14.1L-37.2,-41.8L-54.4,-65.5L-74.0,-83.8L-94.4,-96.0L-113.7,-101.6L-130.3,-101.0L-142.6,-94.8L-149.2,-84.0L-149.2,-70.3L-142.2,-55.2L-128.4,-40.5L-108.3,-27.9L-83.0,-18.7L-54.1,-14.1L-23.3,-14.8L7.5,-20.9L36.5,-32.0L62.0,-47.4L82.4,-65.7L97.0,-85.5L105.0,-105.0L106.6,-122.5L102.2,-136.1L92.8,-144.6L79.7,-146.8L64.6,-142.2L49.2,-130.6L35.2,-112.5L24.1,-88.9L17.2,-61.0L15.3,-30.5L18.8,0.6L27.6,30.6L41.0,57.7L57.9,80.2L76.8,97.0L96.1,107.5L114.1,111.4L129.0,109.0L139.2,101.1L143.5,89.0L141.2,74.1L132.0,58.2L116.0,43.1L94.1,30.2L67.5,21.1L37.7,16.8L6.4,17.7L-24.3,24.0L-52.7,35.2L-77.1,50.4L-96.2,68.2L-109.0,87.2L-115.2,105.4L-115.0,121.2L-108.8,132.9L-97.9,139.3L-83.5,139.2L-67.4,132.4L-51.4,118.7L-37.0,98.7L-25.9,73.6L-19.2,44.6L-17.5,13.6L-21.3,-17.6L-30.2,-47.1L-43.4,-73.2L-59.9,-94.4L-78.2,-109.6L-96.4,-118.2L-112.9,-120.2L-126.0,-115.9L-134.2,-106.3L-136.3,-92.8L-131.8,-76.8L-120.4,-60.1L-102.6,-44.4L-79.1,-31.5L-51.3,-22.4L-20.7,-18.3L10.7,-19.4L41.1,-25.9L68.6,-37.1L91.7,-52.0L109.2,-69.3L120.2,-87.3L124.5,-104.3L122.2,-118.4L114.3,-128.3L101.7,-132.5L86.1,-130.3L69.0,-121.3L52.4,-105.6L37.7,-84.0L26.5,-57.5L19.9,-27.8L18.5,3.6L22.5,34.6L31.4,63.4L44.6,88.2L60.7,107.9L78.1,121.2L95.3,127.9L110.3,127.8L121.6,121.6L127.8,110.3L127.9,95.3L121.2,78.1L107.9,60.7L88.2,44.6L63.4,31.4L34.6,22.5L3.6,18.5L-27.8,19.9L-57.5,26.5L-84.0,37.7L-105.6,52.4L-121.3,69.0L-130.3,86.1L-132.5,101.7L-128.3,114.3L-118.4,122.2L-104.3,124.5L-87.3,120.2L-69.3,109.2L-52.0,91.7L-37.1,68.6L-25.9,41.1L-19.4,10.7L-18.3,-20.7L-22.4,-51.3L-31.5,-79.1L-44.4,-102.6L-60.1,-120.4L-76.8,-131.8L-92.8,-136.3L-106.3,-134.2L-115.9,-126.0L-120.2,-112.9L-118.2,-96.4L-109.6,-78.2L-94.4,-59.9L-73.2,-43.4L-47.1,-30.2L-17.6,-21.3L13.6,-17.5L44.6,-19.2L73.6,-25.9L98.7,-37.0L118.7,-51.4L132.4,-67.4L139.2,-83.5L139.3,-97.9L132.9,-108.8L121.2,-115.0L105.4,-115.2L87.2,-109.0L68.2,-96.2L50.4,-77.1L35.2,-52.7L24.0,-24.3L17.7,6.4L16.8,37.7L21.1,67.5L30.2,94.1L43.1,116.0L58.2,132.0L74.1,141.2L89.0,143.5L101.1,139.2L109.0,129.0L111.4,114.1L107.5,96.1L97.0,76.8L80.2,57.9L57.7,41.0L30.6,27.6L0.6,18.8L-30.5,15.3L-61.0,17.2L-88.9,24.1L-112.5,35.2L-130.6,49.2L-142.2,64.6L-146.8,79.7L-144.6,92.8L-136.1,102.2L-122.5,106.6L-105.0,105.0L-85.5,97.0L-65.7,82.4L-47.4,62.0L-32.0,36.5L-20.9,7.5L-14.8,-23.3L-14.1,-54.1L-18.7,-83.0L-27.9,-108.3L-40.5,-128.4L-55.2,-142.2L-70.3,-149.2L-84.0,-149.2L-94.8,-142.6L-101.0,-130.3L-101.6,-113.7L-96.0,-94.4L-83.8,-74.0L-65.5,-54.4L-41.8,-37.2L-14.1,-23.8L16.2,-15.2L47.1,-12.0L76.7,-14.1L103.3,-21.1L125.3,-32.2L141.3,-45.9L150.6,-60.7L152.9,-74.9L148.3,-86.7L137.7,-94.6L122.1,-97.3L103.1,-94.0L82.4,-84.3L61.8,-68.3L43.0,-46.5L27.5,-20.2L16.5,9.1L10.7,39.8L10.3,70.0L15.1,97.7L24.4,121.3L36.9,139.4L51.1,151.0L65.4,155.6L78.1,153.3L87.5,144.4L92.2,130.1L91.1,111.8L83.8,91.0L70.1,69.7L50.5,49.5L25.9,32.1L-2.3,18.7L-32.6,10.4L-62.9,7.5L-91.6,9.9L-116.7,17.1L-136.7,28.2L-150.5,41.6L-157.5,55.8L-157.3,69.0L-150.4,79.7L-137.6,86.1L-120.2,87.3L-99.7,82.4L-77.8,71.1L-56.5,53.8L-37.3,31.0L-21.8,4.1L-11.0,-25.4L-5.5,-55.7L-5.5,-84.9L-10.6,-111.3L-19.9,-133.1L-32.3,-149.1L-46.1,-158.3L-59.7,-160.5L-71.3,-155.7L-79.4,-144.5L-82.6,-128.2L-80.0,-108.2L-71.2,-86.2L-56.2,-63.9L-35.5,-43.3L-10.2,-25.7L18.3,-12.5L48.3,-4.4L78.0,-1.9L105.3,-4.7L128.7,-12.2L146.7,-23.2L158.2,-36.4L162.7,-50.0L160.1,-62.4L150.8,-71.9L135.9,-77.0L116.6,-76.7L94.6,-70.4L71.7,-57.7L49.8,-39.2L30.4,-15.7L14.9,11.6L4.3,41.0L-0.7,70.7L-0.3,98.9L5.1,123.6L14.6,143.5L26.8,157.2L40.3,164.0L53.2,163.6L63.8,156.3L70.7,142.9L72.5,124.7L68.6,103.0L58.4,79.8L42.2,56.8L20.6,35.7L-5.2,18.1L-33.8,5.1L-63.3,-2.5L-92.0,-4.5L-117.9,-1.3L-139.4,6.4L-155.2,17.5L-164.3,30.5L-166.2,43.6L-161.0,55.2L-149.4,63.6L-132.4,67.4L-111.3,65.8L-88.0,58.1L-64.2,44.3L-41.7,24.8L-22.2,0.7L-6.9,-26.8L3.3,-55.9L7.9,-84.8L7.0,-111.6L1.1,-134.6L-8.6,-152.3L-20.7,-163.6L-33.8,-167.8L-46.1,-164.9L-55.8,-155.2L-61.5,-139.6L-62.1,-119.4L-56.9,-96.3L-45.5,-71.9L-28.3,-48.3L-6.0,-27.0L20.1,-9.5L48.4,3.2L77.3,10.3L104.8,11.8L129.1,8.1L148.6,-0.0L162.0,-11.2L168.5,-24.0L167.9,-36.6L160.2,-47.4L146.2,-54.8L127.1,-57.6L104.5,-54.7L79.9,-45.8L55.3,-31.0L32.4,-10.8L12.9,13.8L-2.1,41.2L-11.8,69.7L-15.8,97.6L-14.3,122.9L-8.0,144.0L1.9,159.4L14.1,168.2L26.9,169.9L38.6,164.4L47.4,152.2L52.1,134.5L51.6,112.5L45.2,87.9L32.8,62.7L14.8,38.5L-8.0,17.1L-34.2,-0.2L-62.2,-12.4L-90.1,-18.9L-116.2,-19.7L-138.7,-15.5L-156.0,-7.0L-167.0,4.4L-171.0,17.1L-167.7,29.3L-157.5,39.4L-141.3,45.9L-120.3,47.6L-96.0,43.6L-70.3,33.7L-45.1,18.0L-22.0,-2.8L-2.6,-27.5L12.0,-54.7L21.0,-82.5L24.3,-109.1L22.2,-132.8L15.4,-151.8L5.1,-164.8L-7.2,-171.1L-19.7,-170.1L-30.8,-162.0L-38.9,-147.5L-42.7,-127.7L-41.1,-104.0L-33.7,-78.2L-20.4,-52.1L-1.7,-27.6L21.3,-6.2L47.4,10.7L74.7,22.3L101.6,28.1L126.2,28.2L146.7,23.2L161.7,14.3L170.2,2.7L171.5,-9.9L165.6,-21.8L153.0,-31.3L134.6,-37.0L111.7,-37.7L86.1,-32.7L59.5,-21.9L33.7,-5.5L10.6,15.6L-8.6,40.3L-22.6,67.0L-30.9,93.9L-33.4,119.2L-30.5,141.0L-23.0,157.8L-12.4,168.4L-0.0,172.0L12.4,168.4L23.0,157.8L30.5,141.0L33.4,119.2L30.9,93.9L22.6,67.0L8.6,40.3L-10.6,15.6L-33.7,-5.5L-59.5,-21.9L-86.1,-32.7L-111.7,-37.7L-134.6,-37.0L-153.0,-31.3L-165.6,-21.8L-171.5,-9.9L-170.2,2.7L-161.7,14.3L-146.7,23.2L-126.2,28.2L-101.6,28.1L-74.7,22.3L-47.4,10.7L-21.3,-6.2L1.7,-27.6L20.4,-52.1L33.7,-78.2L41.1,-104.0L42.7,-127.7L38.9,-147.5L30.8,-162.0L19.7,-170.1L7.2,-171.1L-5.1,-164.8L-15.4,-151.8L-22.2,-132.8L-24.3,-109.1L-21.0,-82.5L-12.0,-54.7L2.6,-27.5L22.0,-2.8L45.1,18.0L70.3,33.7L96.0,43.6L120.3,47.6L141.3,45.9L157.5,39.4L167.7,29.3L171.0,17.1L167.0,4.4L156.0,-7.0L138.7,-15.5L116.2,-19.7L90.1,-18.9L62.2,-12.4L34.2,-0.2L8.0,17.1L-14.8,38.5L-32.8,62.7L-45.2,87.9L-51.6,112.5L-52.1,134.5L-47.4,152.2L-38.6,164.4L-26.9,169.9L-14.1,168.2L-1.9,159.4L8.0,144.0L14.3,122.9L15.8,97.6L11.8,69.7L2.1,41.2L-12.9,13.8L-32.4,-10.8L-55.3,-31.0L-79.9,-45.8L-104.5,-54.7L-127.1,-57.6L-146.2,-54.8L-160.2,-47.4L-167.9,-36.6L-168.5,-24.0L-162.0,-11.2L-148.6,-0.0L-129.1,8.1L-104.8,11.8L-77.3,10.3L-48.4,3.2L-20.1,-9.5L6.0,-27.0L28.3,-48.3L45.5,-71.9L56.9,-96.3L62.1,-119.4L61.5,-139.6L55.8,-155.2L46.1,-164.9L33.8,-167.8L20.7,-163.6L8.6,-152.3L-1.1,-134.6L-7.0,-111.6L-7.9,-84.8L-3.3,-55.9L6.9,-26.8L22.2,0.7L41.7,24.8L64.2,44.3L88.0,58.1L111.3,65.8L132.4,67.4L149.4,63.6L161.0,55.2L166.2,43.6L164.3,30.5L155.2,17.5L139.4,6.4L117.9,-1.3L92.0,-4.5L63.3,-2.5L33.8,5.1L5.2,18.1L-20.6,35.7L-42.2,56.8L-58.4,79.8L-68.6,103.0L-72.5,124.7L-70.7,142.9L-63.8,156.3L-53.2,163.6L-40.3,164.0L-26.8,157.2L-14.6,143.5L-5.1,123.6L0.3,98.9L0.7,70.7L-4.3,41.0L-14.9,11.6L-30.4,-15.7L-49.8,-39.2L-71.7,-57.7L-94.6,-70.4L-116.6,-76.7L-135.9,-77.0L-150.8,-71.9L-160.1,-62.4L-162.7,-50.0L-158.2,-36.4L-146.7,-23.2L-128.7,-12.2L-105.3,-4.7L-78.0,-1.9L-48.3,-4.4L-18.3,-12.5L10.2,-25.7L35.5,-43.3L56.2,-63.9L71.2,-86.2L80.0,-108.2L82.6,-128.2L79.4,-144.5L71.3,-155.7L59.7,-160.5L46.1,-158.3L32.3,-149.1L19.9,-133.1L10.6,-111.3L5.5,-84.9L5.5,-55.7L11.0,-25.4L21.8,4.1L37.3,31.0L56.5,53.8L77.8,71.1L99.7,82.4L120.2,87.3L137.6,86.1L150.4,79.7L157.3,69.0L157.5,55.8L150.5,41.6L136.7,28.2L116.7,17.1L91.6,9.9L62.9,7.5L32.6,10.4L2.3,18.7L-25.9,32.1L-50.5,49.5L-70.1,69.7L-83.8,91.0L-91.1,111.8L-92.2,130.1L-87.5,144.4L-78.1,153.3L-65.4,155.6L-51.1,151.0L-36.9,139.4L-24.4,121.3L-15.1,97.7L-10.3,70.0L-10.7,39.8L-16.5,9.1L-27.5,-20.2L-43.0,-46.5L-61.8,-68.3L-82.4,-84.3L-103.1,-94.0L-122.1,-97.3L-137.7,-94.6L-148.3,-86.7L-152.9,-74.9L-150.6,-60.7L-141.3,-45.9L-125.3,-32.2L-103.3,-21.1L-76.7,-14.1L-47.1,-12.0L-16.2,-15.2L14.1,-23.8L41.8,-37.2L65.5,-54.4L83.8,-74.0L96.0,-94.4L101.6,-113.7L101.0,-130.3L94.8,-142.6L84.0,-149.2L70.3,-149.2L55.2,-142.2L40.5,-128.4L27.9,-108.3L18.7,-83.0L14.1,-54.1L14.8,-23.3L20.9,7.5L32.0,36.5L47.4,62.0L65.7,82.4L85.5,97.0L105.0,105.0L122.5,106.6L136.1,102.2L144.6,92.8L146.8,79.7L142.2,64.6L130.6,49.2L112.5,35.2L88.9,24.1L61.0,17.2L30.5,15.3L-0.6,18.8L-30.6,27.6L-57.7,41.0L-80.2,57.9L-97.0,76.8L-107.5,96.1L-111.4,114.1L-109.0,129.0L-101.1,139.2L-89.0,143.5L-74.1,141.2L-58.2,132.0L-43.1,116.0L-30.2,94.1L-21.1,67.5L-16.8,37.7L-17.7,6.4L-24.0,-24.3L-35.2,-52.7L-50.4,-77.1L-68.2,-96.2L-87.2,-109.0L-105.4,-115.2L-121.2,-115.0L-132.9,-108.8L-139.3,-97.9L-139.2,-83.5L-132.4,-67.4L-118.7,-51.4L-98.7,-37.0L-73.6,-25.9L-44.6,-19.2L-13.6,-17.5L17.6,-21.3L47.1,-30.2L73.2,-43.4L94.4,-59.9L109.6,-78.2L118.2,-96.4L120.2,-112.9L115.9,-126.0L106.3,-134.2L92.8,-136.3L76.8,-131.8L60.1,-120.4L44.4,-102.6L31.5,-79.1L22.4,-51.3L18.3,-20.7L19.4,10.7L25.9,41.1L37.1,68.6L52.0,91.7L69.3,109.2L87.3,120.2L104.3,124.5L118.4,122.2L128.3,114.3L132.5,101.7L130.3,86.1L121.3,69.0L105.6,52.4L84.0,37.7L57.5,26.5L27.8,19.9L-3.6,18.5L-34.6,22.5L-63.4,31.4L-88.2,44.6L-107.9,60.7L-121.2,78.1L-127.9,95.3L-127.8,110.3L-121.6,121.6L-110.3,127.8L-95.3,127.9L-78.1,121.2L-60.7,107.9L-44.6,88.2L-31.4,63.4L-22.5,34.6L-18.5,3.6L-19.9,-27.8L-26.5,-57.5L-37.7,-84.0L-52.4,-105.6L-69.0,-121.3L-86.1,-130.3L-101.7,-132.5L-114.3,-128.3L-122.2,-118.4L-124.5,-104.3L-120.2,-87.3L-109.2,-69.3L-91.7,-52.0L-68.6,-37.1L-41.1,-25.9L-10.7,-19.4L20.7,-18.3L51.3,-22.4L79.1,-31.5L102.6,-44.4L120.4,-60.1L131.8,-76.8L136.3,-92.8L134.2,-106.3L126.0,-115.9L112.9,-120.2L96.4,-118.2L78.2,-109.6L59.9,-94.4L43.4,-73.2L30.2,-47.1L21.3,-17.6L17.5,13.6L19.2,44.6L25.9,73.6L37.0,98.7L51.4,118.7L67.4,132.4L83.5,139.2L97.9,139.3L108.8,132.9L115.0,121.2L115.2,105.4L109.0,87.2L96.2,68.2L77.1,50.4L52.7,35.2L24.3,24.0L-6.4,17.7L-37.7,16.8L-67.5,21.1L-94.1,30.2L-116.0,43.1L-132.0,58.2L-141.2,74.1L-143.5,89.0L-139.2,101.1L-129.0,109.0L-114.1,111.4L-96.1,107.5L-76.8,97.0L-57.9,80.2L-41.0,57.7L-27.6,30.6L-18.8,0.6L-15.3,-30.5L-17.2,-61.0L-24.1,-88.9L-35.2,-112.5L-49.2,-130.6L-64.6,-142.2L-79.7,-146.8L-92.8,-144.6L-102.2,-136.1L-106.6,-122.5L-105.0,-105.0L-97.0,-85.5L-82.4,-65.7L-62.0,-47.4L-36.5,-32.0L-7.5,-20.9L23.3,-14.8L54.1,-14.1L83.0,-18.7L108.3,-27.9L128.4,-40.5L142.2,-55.2L149.2,-70.3L149.2,-84.0L142.6,-94.8L130.3,-101.0L113.7,-101.6L94.4,-96.0L74.0,-83.8L54.4,-65.5L37.2,-41.8L23.8,-14.1L15.2,16.2L12.0,47.1L14.1,76.7L21.1,103.3L32.2,125.3L45.9,141.3L60.7,150.6L74.9,152.9L86.7,148.3L94.6,137.7L97.3,122.1L94.0,103.1L84.3,82.4L68.3,61.8L46.5,43.0L20.2,27.5L-9.1,16.5L-39.8,10.7L-70.0,10.3L-97.7,15.1L-121.3,24.4L-139.4,36.9L-151.0,51.1L-155.6,65.4L-153.3,78.1L-144.4,87.5L-130.1,92.2L-111.8,91.1L-91.0,83.8L-69.7,70.1L-49.5,50.5L-32.1,25.9L-18.7,-2.3L-10.4,-32.6L-7.5,-62.9L-9.9,-91.6L-17.1,-116.7L-28.2,-136.7L-41.6,-150.5L-55.8,-157.5L-69.0,-157.3L-79.7,-150.4L-86.1,-137.6L-87.3,-120.2L-82.4,-99.7L-71.1,-77.8L-53.8,-56.5L-31.0,-37.3L-4.1,-21.8L25.4,-11.0L55.7,-5.5L84.9,-5.5L111.3,-10.6L133.1,-19.9L149.1,-32.3L158.3,-46.1L160.5,-59.7L155.7,-71.3L144.5,-79.4L128.2,-82.6L108.2,-80.0L86.2,-71.2L63.9,-56.2L43.3,-35.5L25.7,-10.2L12.5,18.3L4.4,48.3L1.9,78.0L4.7,105.3L12.2,128.7L23.2,146.7L36.4,158.2L50.0,162.7L62.4,160.1L71.9,150.8L77.0,135.9L76.7,116.6L70.4,94.6L57.7,71.7L39.2,49.8L15.7,30.4L-11.6,14.9L-41.0,4.3L-70.7,-0.7L-98.9,-0.3L-123.6,5.1L-143.5,14.6L-157.2,26.8L-164.0,40.3L-163.6,53.2L-156.3,63.8L-142.9,70.7L-124.7,72.5L-103.0,68.6L-79.8,58.4L-56.8,42.2L-35.7,20.6L-18.1,-5.2L-5.1,-33.8L2.5,-63.3L4.5,-92.0L1.3,-117.9L-6.4,-139.4L-17.5,-155.2L-30.5,-164.3L-43.6,-166.2L-55.2,-161.0L-63.6,-149.4L-67.4,-132.4L-65.8,-111.3L-58.1,-88.0L-44.3,-64.2L-24.8,-41.7L-0.7,-22.2L26.8,-6.9L55.9,3.3L84.8,7.9L111.6,7.0L134.6,1.1L152.3,-8.6L163.6,-20.7L167.8,-33.8L164.9,-46.1L155.2,-55.8L139.6,-61.5L119.4,-62.1L96.3,-56.9L71.9,-45.5L48.3,-28.3L27.0,-6.0L9.5,20.1L-3.2,48.4L-10.3,77.3L-11.8,104.8L-8.1,129.1L0.0,148.6L11.2,162.0L24.0,168.5L36.6,167.9L47.4,160.2L54.8,146.2L57.6,127.1L54.7,104.5L45.8,79.9L31.0,55.3L10.8,32.4L-13.8,12.9L-41.2,-2.1L-69.7,-11.8L-97.6,-15.8L-122.9,-14.3L-144.0,-8.0L-159.4,1.9L-168.2,14.1L-169.9,26.9L-164.4,38.6L-152.2,47.4L-134.5,52.1L-112.5,51.6L-87.9,45.2L-62.7,32.8L-38.5,14.8L-17.1,-8.0L0.2,-34.2L12.4,-62.2L18.9,-90.1L19.7,-116.2L15.5,-138.7L7.0,-156.0L-4.4,-167.0L-17.1,-171.0L-29.3,-167.7L-39.4,-157.5L-45.9,-141.3L-47.6,-120.3L-43.6,-96.0L-33.7,-70.3L-18.0,-45.1L2.8,-22.0L27.5,-2.6L54.7,12.0L82.5,21.0L109.1,24.3L132.8,22.2L151.8,15.4L164.8,5.1L171.1,-7.2L170.1,-19.7L162.0,-30.8L147.5,-38.9L127.7,-42.7L104.0,-41.1L78.2,-33.7L52.1,-20.4L27.6,-1.7L6.2,21.3L-10.7,47.4L-22.3,74.7L-28.1,101.6L-28.2,126.2L-23.2,146.7L-14.3,161.7L-2.7,170.2L9.9,171.5L21.8,165.6L31.3,153.0L37.0,134.6L37.7,111.7L32.7,86.1L21.9,59.5L5.5,33.7L-15.6,10.6L-40.3,-8.6L-67.0,-22.6L-93.9,-30.9L-119.2,-33.4L-141.0,-30.5L-157.8,-23.0L-168.4,-12.4L-172.0,-0.0L-168.4,12.4L-157.8,23.0L-141.0,30.5L-119.2,33.4L-93.9,30.9L-67.0,22.6L-40.3,8.6L-15.6,-10.6L5.5,-33.7L21.9,-59.5L32.7,-86.1L37.7,-111.7L37.0,-134.6L31.3,-153.0L21.8,-165.6L9.9,-171.5L-2.7,-170.2L-14.3,-161.7L-23.2,-146.7L-28.2,-126.2L-28.1,-101.6L-22.3,-74.7L-10.7,-47.4L6.2,-21.3L27.6,1.7L52.1,20.4L78.2,33.7L104.0,41.1L127.7,42.7L147.5,38.9L162.0,30.8L170.1,19.7L171.1,7.2L164.8,-5.1L151.8,-15.4L132.8,-22.2L109.1,-24.3L82.5,-21.0L54.7,-12.0L27.5,2.6L2.8,22.0L-18.0,45.1L-33.7,70.3L-43.6,96.0L-47.6,120.3L-45.9,141.3L-39.4,157.5L-29.3,167.7L-17.1,171.0L-4.4,167.0L7.0,156.0L15.5,138.7L19.7,116.2L18.9,90.1L12.4,62.2L0.2,34.2L-17.1,8.0L-38.5,-14.8L-62.7,-32.8L-87.9,-45.2L-112.5,-51.6L-134.5,-52.1L-152.2,-47.4L-164.4,-38.6L-169.9,-26.9L-168.2,-14.1L-159.4,-1.9L-144.0,8.0L-122.9,14.3L-97.6,15.8L-69.7,11.8L-41.2,2.1L-13.8,-12.9L10.8,-32.4L31.0,-55.3L45.8,-79.9L54.7,-104.5L57.6,-127.1L54.8,-146.2L47.4,-160.2L36.6,-167.9L24.0,-168.5L11.2,-162.0L0.0,-148.6L-8.1,-129.1L-11.8,-104.8L-10.3,-77.3L-3.2,-48.4L9.5,-20.1L27.0,6.0L48.3,28.3L71.9,45.5L96.3,56.9L119.4,62.1L139.6,61.5L155.2,55.8L164.9,46.1L167.8,33.8L163.6,20.7L152.3,8.6L134.6,-1.1L111.6,-7.0L84.8,-7.9L55.9,-3.3L26.8,6.9L-0.7,22.2L-24.8,41.7L-44.3,64.2L-58.1,88.0L-65.8,111.3L-67.4,132.4L-63.6,149.4L-55.2,161.0L-43.6,166.2L-30.5,164.3L-17.5,155.2L-6.4,139.4L1.3,117.9L4.5,92.0L2.5,63.3L-5.1,33.8L-18.1,5.2L-35.7,-20.6L-56.8,-42.2L-79.8,-58.4L-103.0,-68.6L-124.7,-72.5L-142.9,-70.7L-156.3,-63.8L-163.6,-53.2L-164.0,-40.3L-157.2,-26.8L-143.5,-14.6L-123.6,-5.1L-98.9,0.3L-70.7,0.7L-41.0,-4.3L-11.6,-14.9L15.7,-30.4L39.2,-49.8L57.7,-71.7L70.4,-94.6L76.7,-116.6L77.0,-135.9L71.9,-150.8L62.4,-160.1L50.0,-162.7L36.4,-158.2L23.2,-146.7L12.2,-128.7L4.7,-105.3L1.9,-78.0L4.4,-48.3L12.5,-18.3L25.7,10.2L43.3,35.5L63.9,56.2L86.2,71.2L108.2,80.0L128.2,82.6L144.5,79.4L155.7,71.3L160.5,59.7L158.3,46.1L149.1,32.3L133.1,19.9L111.3,10.6L84.9,5.5L55.7,5.5L25.4,11.0L-4.1,21.8L-31.0,37.3L-53.8,56.5L-71.1,77.8L-82.4,99.7L-87.3,120.2L-86.1,137.6L-79.7,150.4L-69.0,157.3L-55.8,157.5L-41.6,150.5L-28.2,136.7L-17.1,116.7L-9.9,91.6L-7.5,62.9L-10.4,32.6L-18.7,2.3L-32.1,-25.9L-49.5,-50.5L-69.7,-70.1L-91.0,-83.8L-111.8,-91.1L-130.1,-92.2L-144.4,-87.5L-153.3,-78.1L-155.6,-65.4L-151.0,-51.1L-139.4,-36.9L-121.3,-24.4L-97.7,-15.1L-70.0,-10.3L-39.8,-10.7L-9.1,-16.5L20.2,-27.5L46.5,-43.0L68.3,-61.8L84.3,-82.4L94.0,-103.1L97.3,-122.1L94.6,-137.7L86.7,-148.3L74.9,-152.9L60.7,-150.6L45.9,-141.3L32.2,-125.3L21.1,-103.3L14.1,-76.7L12.0,-47.1L15.2,-16.2L23.8,14.1L37.2,41.8L54.4,65.5L74.0,83.8L94.4,96.0L113.7,101.6L130.3,101.0L142.6,94.8L149.2,84.0L149.2,70.3L142.2,55.2L128.4,40.5L108.3,27.9L83.0,18.7L54.1,14.1L23.3,14.8L-7.5,20.9L-36.5,32.0L-62.0,47.4L-82.4,65.7L-97.0,85.5L-105.0,105.0L-106.6,122.5L-102.2,136.1L-92.8,144.6L-79.7,146.8L-64.6,142.2L-49.2,130.6L-35.2,112.5L-24.1,88.9L-17.2,61.0L-15.3,30.5L-18.8,-0.6L-27.6,-30.6L-41.0,-57.7L-57.9,-80.2L-76.8,-97.0L-96.1,-107.5L-114.1,-111.4L-129.0,-109.0L-139.2,-101.1L-143.5,-89.0L-141.2,-74.1L-132.0,-58.2L-116.0,-43.1L-94.1,-30.2L-67.5,-21.1L-37.7,-16.8L-6.4,-17.7L24.3,-24.0L52.7,-35.2L77.1,-50.4L96.2,-68.2L109.0,-87.2L115.2,-105.4L115.0,-121.2L108.8,-132.9L97.9,-139.3L83.5,-139.2L67.4,-132.4L51.4,-118.7L37.0,-98.7L25.9,-73.6L19.2,-44.6L17.5,-13.6L21.3,17.6L30.2,47.1L43.4,73.2L59.9,94.4L78.2,109.6L96.4,118.2L112.9,120.2L126.0,115.9L134.2,106.3L136.3,92.8L131.8,76.8L120.4,60.1L102.6,44.4L79.1,31.5L51.3,22.4L20.7,18.3L-10.7,19.4L-41.1,25.9L-68.6,37.1L-91.7,52.0L-109.2,69.3L-120.2,87.3L-124.5,104.3L-122.2,118.4L-114.3,128.3L-101.7,132.5L-86.1,130.3L-69.0,121.3L-52.4,105.6L-37.7,84.0L-26.5,57.5L-19.9,27.8L-18.5,-3.6L-22.5,-34.6L-31.4,-63.4L-44.6,-88.2L-60.7,-107.9L-78.1,-121.2L-95.3,-127.9L-110.3,-127.8L-121.6,-121.6L-127.8,-110.3L-127.9,-95.3L-121.2,-78.1L-107.9,-60.7L-88.2,-44.6L-63.4,-31.4L-34.6,-22.5L-3.6,-18.5L27.8,-19.9L57.5,-26.5L84.0,-37.7L105.6,-52.4L121.3,-69.0L130.3,-86.1L132.5,-101.7L128.3,-114.3L118.4,-122.2L104.3,-124.5L87.3,-120.2L69.3,-109.2L52.0,-91.7L37.1,-68.6L25.9,-41.1L19.4,-10.7L18.3,20.7L22.4,51.3L31.5,79.1L44.4,102.6L60.1,120.4L76.8,131.8L92.8,136.3L106.3,134.2L115.9,126.0L120.2,112.9L118.2,96.4L109.6,78.2L94.4,59.9L73.2,43.4L47.1,30.2L17.6,21.3L-13.6,17.5L-44.6,19.2L-73.6,25.9L-98.7,37.0L-118.7,51.4L-132.4,67.4L-139.2,83.5L-139.3,97.9L-132.9,108.8L-121.2,115.0L-105.4,115.2L-87.2,109.0L-68.2,96.2L-50.4,77.1L-35.2,52.7L-24.0,24.3L-17.7,-6.4L-16.8,-37.7L-21.1,-67.5L-30.2,-94.1L-43.1,-116.0L-58.2,-132.0L-74.1,-141.2L-89.0,-143.5L-101.1,-139.2L-109.0,-129.0L-111.4,-114.1L-107.5,-96.1L-97.0,-76.8L-80.2,-57.9L-57.7,-41.0L-30.6,-27.6L-0.6,-18.8L30.5,-15.3L61.0,-17.2L88.9,-24.1L112.5,-35.2L130.6,-49.2L142.2,-64.6L146.8,-79.7L144.6,-92.8L136.1,-102.2L122.5,-106.6L105.0,-105.0L85.5,-97.0L65.7,-82.4L47.4,-62.0L32.0,-36.5L20.9,-7.5L14.8,23.3L14.1,54.1L18.7,83.0L27.9,108.3L40.5,128.4L55.2,142.2L70.3,149.2L84.0,149.2L94.8,142.6L101.0,130.3L101.6,113.7L96.0,94.4L83.8,74.0L65.5,54.4L41.8,37.2L14.1,23.8L-16.2,15.2L-47.1,12.0L-76.7,14.1L-103.3,21.1L-125.3,32.2L-141.3,45.9L-150.6,60.7L-152.9,74.9L-148.3,86.7L-137.7,94.6L-122.1,97.3L-103.1,94.0L-82.4,84.3L-61.8,68.3L-43.0,46.5L-27.5,20.2L-16.5,-9.1L-10.7,-39.8L-10.3,-70.0L-15.1,-97.7L-24.4,-121.3L-36.9,-139.4L-51.1,-151.0L-65.4,-155.6L-78.1,-153.3L-87.5,-144.4L-92.2,-130.1L-91.1,-111.8L-83.8,-91.0L-70.1,-69.7L-50.5,-49.5L-25.9,-32.1L2.3,-18.7L32.6,-10.4L62.9,-7.5L91.6,-9.9L116.7,-17.1L136.7,-28.2L150.5,-41.6L157.5,-55.8L157.3,-69.0L150.4,-79.7L137.6,-86.1L120.2,-87.3L99.7,-82.4L77.8,-71.1L56.5,-53.8L37.3,-31.0L21.8,-4.1L11.0,25.4L5.5,55.7L5.5,84.9L10.6,111.3L19.9,133.1L32.3,149.1L46.1,158.3L59.7,160.5L71.3,155.7L79.4,144.5L82.6,128.2L80.0,108.2L71.2,86.2L56.2,63.9L35.5,43.3L10.2,25.7L-18.3,12.5L-48.3,4.4L-78.0,1.9L-105.3,4.7L-128.7,12.2L-146.7,23.2L-158.2,36.4L-162.7,50.0L-160.1,62.4L-150.8,71.9L-135.9,77.0L-116.6,76.7L-94.6,70.4L-71.7,57.7L-49.8,39.2L-30.4,15.7L-14.9,-11.6L-4.3,-41.0L0.7,-70.7L0.3,-98.9L-5.1,-123.6L-14.6,-143.5L-26.8,-157.2L-40.3,-164.0L-53.2,-163.6L-63.8,-156.3L-70.7,-142.9L-72.5,-124.7L-68.6,-103.0L-58.4,-79.8L-42.2,-56.8L-20.6,-35.7L5.2,-18.1L33.8,-5.1L63.3,2.5L92.0,4.5L117.9,1.3L139.4,-6.4L155.2,-17.5L164.3,-30.5L166.2,-43.6L161.0,-55.2L149.4,-63.6L132.4,-67.4L111.3,-65.8L88.0,-58.1L64.2,-44.3L41.7,-24.8L22.2,-0.7L6.9,26.8L-3.3,55.9L-7.9,84.8L-7.0,111.6L-1.1,134.6L8.6,152.3L20.7,163.6L33.8,167.8L46.1,164.9L55.8,155.2L61.5,139.6L62.1,119.4L56.9,96.3L45.5,71.9L28.3,48.3L6.0,27.0L-20.1,9.5L-48.4,-3.2L-77.3,-10.3L-104.8,-11.8L-129.1,-8.1L-148.6,0.0L-162.0,11.2L-168.5,24.0L-167.9,36.6L-160.2,47.4L-146.2,54.8L-127.1,57.6L-104.5,54.7L-79.9,45.8L-55.3,31.0L-32.4,10.8L-12.9,-13.8L2.1,-41.2L11.8,-69.7L15.8,-97.6L14.3,-122.9L8.0,-144.0L-1.9,-159.4L-14.1,-168.2L-26.9,-169.9L-38.6,-164.4L-47.4,-152.2L-52.1,-134.5L-51.6,-112.5L-45.2,-87.9L-32.8,-62.7L-14.8,-38.5L8.0,-17.1L34.2,0.2L62.2,12.4L90.1,18.9L116.2,19.7L138.7,15.5L156.0,7.0L167.0,-4.4L171.0,-17.1L167.7,-29.3L157.5,-39.4L141.3,-45.9L120.3,-47.6L96.0,-43.6L70.3,-33.7L45.1,-18.0L22.0,2.8L2.6,27.5L-12.0,54.7L-21.0,82.5L-24.3,109.1L-22.2,132.8L-15.4,151.8L-5.1,164.8L7.2,171.1L19.7,170.1L30.8,162.0L38.9,147.5L42.7,127.7L41.1,104.0L33.7,78.2L20.4,52.1L1.7,27.6L-21.3,6.2L-47.4,-10.7L-74.7,-22.3L-101.6,-28.1L-126.2,-28.2L-146.7,-23.2L-161.7,-14.3L-170.2,-2.7L-171.5,9.9L-165.6,21.8L-153.0,31.3L-134.6,37.0L-111.7,37.7L-86.1,32.7L-59.5,21.9L-33.7,5.5L-10.6,-15.6L8.6,-40.3L22.6,-67.0L30.9,-93.9L33.4,-119.2L30.5,-141.0L23.0,-157.8L12.4,-168.4L0.0,-172.0L-12.4,-168.4L-23.0,-157.8L-30.5,-141.0L-33.4,-119.2L-30.9,-93.9L-22.6,-67.0L-8.6,-40.3L10.6,-15.6L33.7,5.5L59.5,21.9L86.1,32.7L111.7,37.7L134.6,37.0L153.0,31.3L165.6,21.8L171.5,9.9L170.2,-2.7L161.7,-14.3L146.7,-23.2L126.2,-28.2L101.6,-28.1L74.7,-22.3L47.4,-10.7L21.3,6.2L-1.7,27.6L-20.4,52.1L-33.7,78.2L-41.1,104.0L-42.7,127.7L-38.9,147.5L-30.8,162.0L-19.7,170.1L-7.2,171.1L5.1,164.8L15.4,151.8L22.2,132.8L24.3,109.1L21.0,82.5L12.0,54.7L-2.6,27.5L-22.0,2.8L-45.1,-18.0L-70.3,-33.7L-96.0,-43.6L-120.3,-47.6L-141.3,-45.9L-157.5,-39.4L-167.7,-29.3L-171.0,-17.1L-167.0,-4.4L-156.0,7.0L-138.7,15.5L-116.2,19.7L-90.1,18.9L-62.2,12.4L-34.2,0.2L-8.0,-17.1L14.8,-38.5L32.8,-62.7L45.2,-87.9L51.6,-112.5L52.1,-134.5L47.4,-152.2L38.6,-164.4L26.9,-169.9L14.1,-168.2L1.9,-159.4L-8.0,-144.0L-14.3,-122.9L-15.8,-97.6L-11.8,-69.7L-2.1,-41.2L12.9,-13.8L32.4,10.8L55.3,31.0L79.9,45.8L104.5,54.7L127.1,57.6L146.2,54.8L160.2,47.4L167.9,36.6L168.5,24.0L162.0,11.2L148.6,0.0L129.1,-8.1L104.8,-11.8L77.3,-10.3L48.4,-3.2L20.1,9.5L-6.0,27.0L-28.3,48.3L-45.5,71.9L-56.9,96.3L-62.1,119.4L-61.5,139.6L-55.8,155.2L-46.1,164.9L-33.8,167.8L-20.7,163.6L-8.6,152.3L1.1,134.6L7.0,111.6L7.9,84.8L3.3,55.9L-6.9,26.8L-22.2,-0.7L-41.7,-24.8L-64.2,-44.3L-88.0,-58.1L-111.3,-65.8L-132.4,-67.4L-149.4,-63.6L-161.0,-55.2L-166.2,-43.6L-164.3,-30.5L-155.2,-17.5L-139.4,-6.4L-117.9,1.3L-92.0,4.5L-63.3,2.5L-33.8,-5.1L-5.2,-18.1L20.6,-35.7L42.2,-56.8L58.4,-79.8L68.6,-103.0L72.5,-124.7L70.7,-142.9L63.8,-156.3L53.2,-163.6L40.3,-164.0L26.8,-157.2L14.6,-143.5L5.1,-123.6L-0.3,-98.9L-0.7,-70.7L4.3,-41.0L14.9,-11.6L30.4,15.7L49.8,39.2L71.7,57.7L94.6,70.4L116.6,76.7L135.9,77.0L150.8,71.9L160.1,62.4L162.7,50.0L158.2,36.4L146.7,23.2L128.7,12.2L105.3,4.7L78.0,1.9L48.3,4.4L18.3,12.5L-10.2,25.7L-35.5,43.3L-56.2,63.9L-71.2,86.2L-80.0,108.2L-82.6,128.2L-79.4,144.5L-71.3,155.7L-59.7,160.5L-46.1,158.3L-32.3,149.1L-19.9,133.1L-10.6,111.3L-5.5,84.9L-5.5,55.7L-11.0,25.4L-21.8,-4.1L-37.3,-31.0L-56.5,-53.8L-77.8,-71.1L-99.7,-82.4L-120.2,-87.3L-137.6,-86.1L-150.4,-79.7L-157.3,-69.0L-157.5,-55.8L-150.5,-41.6L-136.7,-28.2L-116.7,-17.1L-91.6,-9.9L-62.9,-7.5L-32.6,-10.4L-2.3,-18.7L25.9,-32.1L50.5,-49.5L70.1,-69.7L83.8,-91.0L91.1,-111.8L92.2,-130.1L87.5,-144.4L78.1,-153.3L65.4,-155.6L51.1,-151.0L36.9,-139.4L24.4,-121.3L15.1,-97.7L10.3,-70.0L10.7,-39.8L16.5,-9.1L27.5,20.2L43.0,46.5L61.8,68.3L82.4,84.3L103.1,94.0L122.1,97.3L137.7,94.6L148.3,86.7L152.9,74.9L150.6,60.7L141.3,45.9L125.3,32.2L103.3,21.1L76.7,14.1L47.1,12.0L16.2,15.2L-14.1,23.8L-41.8,37.2L-65.5,54.4L-83.8,74.0L-96.0,94.4L-101.6,113.7L-101.0,130.3L-94.8,142.6L-84.0,149.2L-70.3,149.2L-55.2,142.2L-40.5,128.4L-27.9,108.3L-18.7,83.0L-14.1,54.1L-14.8,23.3L-20.9,-7.5L-32.0,-36.5L-47.4,-62.0L-65.7,-82.4L-85.5,-97.0L-105.0,-105.0L-122.5,-106.6L-136.1,-102.2L-144.6,-92.8L-146.8,-79.7L-142.2,-64.6L-130.6,-49.2L-112.5,-35.2L-88.9,-24.1L-61.0,-17.2L-30.5,-15.3L0.6,-18.8L30.6,-27.6L57.7,-41.0L80.2,-57.9L97.0,-76.8L107.5,-96.1L111.4,-114.1L109.0,-129.0L101.1,-139.2L89.0,-143.5L74.1,-141.2L58.2,-132.0L43.1,-116.0L30.2,-94.1L21.1,-67.5L16.8,-37.7L17.7,-6.4L24.0,24.3L35.2,52.7L50.4,77.1L68.2,96.2L87.2,109.0L105.4,115.2L121.2,115.0L132.9,108.8L139.3,97.9L139.2,83.5L132.4,67.4L118.7,51.4L98.7,37.0L73.6,25.9L44.6,19.2L13.6,17.5L-17.6,21.3L-47.1,30.2L-73.2,43.4L-94.4,59.9L-109.6,78.2L-118.2,96.4L-120.2,112.9L-115.9,126.0L-106.3,134.2L-92.8,136.3L-76.8,131.8L-60.1,120.4L-44.4,102.6L-31.5,79.1L-22.4,51.3L-18.3,20.7L-19.4,-10.7L-25.9,-41.1L-37.1,-68.6L-52.0,-91.7L-69.3,-109.2L-87.3,-120.2L-104.3,-124.5L-118.4,-122.2L-128.3,-114.3L-132.5,-101.7L-130.3,-86.1L-121.3,-69.0L-105.6,-52.4L-84.0,-37.7L-57.5,-26.5L-27.8,-19.9L3.6,-18.5L34.6,-22.5L63.4,-31.4L88.2,-44.6L107.9,-60.7L121.2,-78.1L127.9,-95.3L127.8,-110.3L121.6,-121.6L110.3,-127.8L95.3,-127.9L78.1,-121.2L60.7,-107.9L44.6,-88.2L31.4,-63.4L22.5,-34.6L18.5,-3.6L19.9,27.8L26.5,57.5L37.7,84.0L52.4,105.6L69.0,121.3L86.1,130.3L101.7,132.5L114.3,128.3L122.2,118.4L124.5,104.3L120.2,87.3L109.2,69.3L91.7,52.0L68.6,37.1L41.1,25.9L10.7,19.4L-20.7,18.3L-51.3,22.4L-79.1,31.5L-102.6,44.4L-120.4,60.1L-131.8,76.8L-136.3,92.8L-134.2,106.3L-126.0,115.9L-112.9,120.2L-96.4,118.2L-78.2,109.6L-59.9,94.4L-43.4,73.2L-30.2,47.1L-21.3,17.6L-17.5,-13.6L-19.2,-44.6L-25.9,-73.6L-37.0,-98.7L-51.4,-118.7L-67.4,-132.4L-83.5,-139.2L-97.9,-139.3L-108.8,-132.9L-115.0,-121.2L-115.2,-105.4L-109.0,-87.2L-96.2,-68.2L-77.1,-50.4L-52.7,-35.2L-24.3,-24.0L6.4,-17.7L37.7,-16.8L67.5,-21.1L94.1,-30.2L116.0,-43.1L132.0,-58.2L141.2,-74.1L143.5,-89.0L139.2,-101.1L129.0,-109.0L114.1,-111.4L96.1,-107.5L76.8,-97.0L57.9,-80.2L41.0,-57.7L27.6,-30.6L18.8,-0.6L15.3,30.5L17.2,61.0L24.1,88.9L35.2,112.5L49.2,130.6L64.6,142.2L79.7,146.8L92.8,144.6L102.2,136.1L106.6,122.5L105.0,105.0L97.0,85.5L82.4,65.7L62.0,47.4L36.5,32.0L7.5,20.9L-23.3,14.8L-54.1,14.1L-83.0,18.7L-108.3,27.9L-128.4,40.5L-142.2,55.2L-149.2,70.3L-149.2,84.0L-142.6,94.8L-130.3,101.0L-113.7,101.6L-94.4,96.0L-74.0,83.8L-54.4,65.5L-37.2,41.8L-23.8,14.1L-15.2,-16.2L-12.0,-47.1L-14.1,-76.7L-21.1,-103.3L-32.2,-125.3L-45.9,-141.3L-60.7,-150.6L-74.9,-152.9L-86.7,-148.3L-94.6,-137.7L-97.3,-122.1L-94.0,-103.1L-84.3,-82.4L-68.3,-61.8L-46.5,-43.0L-20.2,-27.5L9.1,-16.5L39.8,-10.7L70.0,-10.3L97.7,-15.1L121.3,-24.4L139.4,-36.9L151.0,-51.1L155.6,-65.4L153.3,-78.1L144.4,-87.5L130.1,-92.2L111.8,-91.1L91.0,-83.8L69.7,-70.1L49.5,-50.5L32.1,-25.9L18.7,2.3L10.4,32.6L7.5,62.9L9.9,91.6L17.1,116.7L28.2,136.7L41.6,150.5L55.8,157.5L69.0,157.3L79.7,150.4L86.1,137.6L87.3,120.2L82.4,99.7L71.1,77.8L53.8,56.5L31.0,37.3L4.1,21.8L-25.4,11.0L-55.7,5.5L-84.9,5.5L-111.3,10.6L-133.1,19.9L-149.1,32.3L-158.3,46.1L-160.5,59.7L-155.7,71.3L-144.5,79.4L-128.2,82.6L-108.2,80.0L-86.2,71.2L-63.9,56.2L-43.3,35.5L-25.7,10.2L-12.5,-18.3L-4.4,-48.3L-1.9,-78.0L-4.7,-105.3L-12.2,-128.7L-23.2,-146.7L-36.4,-158.2L-50.0,-162.7L-62.4,-160.1L-71.9,-150.8L-77.0,-135.9L-76.7,-116.6L-70.4,-94.6L-57.7,-71.7L-39.2,-49.8L-15.7,-30.4L11.6,-14.9L41.0,-4.3L70.7,0.7L98.9,0.3L123.6,-5.1L143.5,-14.6L157.2,-26.8L164.0,-40.3L163.6,-53.2L156.3,-63.8L142.9,-70.7L124.7,-72.5L103.0,-68.6L79.8,-58.4L56.8,-42.2L35.7,-20.6L18.1,5.2L5.1,33.8L-2.5,63.3L-4.5,92.0L-1.3,117.9L6.4,139.4L17.5,155.2L30.5,164.3L43.6,166.2L55.2,161.0L63.6,149.4L67.4,132.4L65.8,111.3L58.1,88.0L44.3,64.2L24.8,41.7L0.7,22.2L-26.8,6.9L-55.9,-3.3L-84.8,-7.9L-111.6,-7.0L-134.6,-1.1L-152.3,8.6L-163.6,20.7L-167.8,33.8L-164.9,46.1L-155.2,55.8L-139.6,61.5L-119.4,62.1L-96.3,56.9L-71.9,45.5L-48.3,28.3L-27.0,6.0L-9.5,-20.1L3.2,-48.4L10.3,-77.3L11.8,-104.8L8.1,-129.1L-0.0,-148.6L-11.2,-162.0L-24.0,-168.5L-36.6,-167.9L-47.4,-160.2L-54.8,-146.2L-57.6,-127.1L-54.7,-104.5L-45.8,-79.9L-31.0,-55.3L-10.8,-32.4L13.8,-12.9L41.2,2.1L69.7,11.8L97.6,15.8L122.9,14.3L144.0,8.0L159.4,-1.9L168.2,-14.1L169.9,-26.9L164.4,-38.6L152.2,-47.4L134.5,-52.1L112.5,-51.6L87.9,-45.2L62.7,-32.8L38.5,-14.8L17.1,8.0L-0.2,34.2L-12.4,62.2L-18.9,90.1L-19.7,116.2L-15.5,138.7L-7.0,156.0L4.4,167.0L17.1,171.0L29.3,167.7L39.4,157.5L45.9,141.3L47.6,120.3L43.6,96.0L33.7,70.3L18.0,45.1L-2.8,22.0L-27.5,2.6L-54.7,-12.0L-82.5,-21.0L-109.1,-24.3L-132.8,-22.2L-151.8,-15.4L-164.8,-5.1L-171.1,7.2L-170.1,19.7L-162.0,30.8L-147.5,38.9L-127.7,42.7L-104.0,41.1L-78.2,33.7L-52.1,20.4L-27.6,1.7L-6.2,-21.3L10.7,-47.4L22.3,-74.7L28.1,-101.6L28.2,-126.2L23.2,-146.7L14.3,-161.7L2.7,-170.2L-9.9,-171.5L-21.8,-165.6L-31.3,-153.0L-37.0,-134.6L-37.7,-111.7L-32.7,-86.1L-21.9,-59.5L-5.5,-33.7L15.6,-10.6L40.3,8.6L67.0,22.6L93.9,30.9L119.2,33.4L141.0,30.5L157.8,23.0L168.4,12.4L172.0,0.0" fill="none" stroke="#9E86C9" stroke-width="0.3" opacity="0.2"/><path d="M133.3,0.0L130.5,-9.6L122.3,-17.9L109.3,-23.6L92.4,-25.9L72.8,-23.9L52.0,-17.5L31.3,-6.6L12.1,8.2L-4.3,26.1L-17.0,46.1L-25.4,66.7L-29.2,86.6L-28.6,104.3L-24.2,118.6L-16.9,128.4L-7.7,132.9L2.1,131.9L11.1,125.3L18.0,113.7L21.8,97.8L21.7,78.8L17.3,57.9L8.3,36.7L-4.8,16.5L-21.4,-1.4L-40.4,-15.8L-60.6,-26.1L-80.6,-31.9L-98.9,-33.1L-114.3,-30.2L-125.5,-23.9L-131.8,-15.3L-132.6,-5.5L-127.7,4.0L-117.6,11.9L-102.9,17.2L-84.6,18.9L-63.9,16.3L-42.4,9.3L-21.3,-2.0L-2.2,-17.1L13.9,-34.9L26.1,-54.5L33.8,-74.4L36.9,-93.2L35.6,-109.5L30.5,-122.1L22.7,-130.0L13.2,-132.5L3.4,-129.4L-5.4,-120.9L-12.0,-107.5L-15.3,-90.1L-14.6,-69.9L-9.6,-48.2L-0.2,-26.5L13.2,-6.2L29.8,11.4L48.6,25.4L68.2,35.0L87.2,40.0L104.2,40.4L118.0,36.8L127.4,29.9L131.7,20.9L130.4,10.9L123.6,1.5L111.6,-6.2L95.3,-11.1L75.6,-12.2L54.0,-9.1L31.9,-1.7L10.7,10.0L-8.3,25.1L-24.0,42.9L-35.5,61.9L-42.4,81.0L-44.6,98.5L-42.5,113.3L-36.7,124.1L-28.4,130.1L-18.6,130.6L-8.7,125.5L-0.0,115.1L6.3,100.0L9.2,81.2L8.0,59.9L2.5,37.5L-7.3,15.6L-20.9,-4.7L-37.4,-21.9L-55.8,-35.3L-74.6,-44.1L-92.5,-48.1L-108.2,-47.7L-120.3,-43.2L-127.8,-35.7L-130.1,-26.2L-126.8,-16.1L-118.0,-6.6L-104.3,0.9L-86.5,5.4L-65.7,6.1L-43.3,2.6L-20.7,-5.3L0.5,-17.2L19.2,-32.3L34.3,-49.8L45.0,-68.2L51.0,-86.3L52.3,-102.6L49.3,-115.8L42.7,-124.8L33.8,-128.8L23.6,-127.3L13.6,-120.3L5.0,-108.1L-1.0,-91.4L-3.5,-71.3L-1.9,-49.1L4.0,-26.2L14.0,-4.0L27.7,16.0L44.0,32.7L61.8,45.2L79.8,53.1L96.6,56.2L110.8,54.8L121.1,49.4L126.8,41.2L127.1,31.2L121.8,20.8L111.2,11.3L95.8,4.0L76.6,-0.3L54.8,-0.6L31.8,3.4L9.0,11.5L-12.2,23.5L-30.4,38.6L-44.7,55.6L-54.5,73.3L-59.5,90.3L-59.7,105.3L-55.7,116.9L-48.4,124.0L-38.8,126.1L-28.2,122.6L-18.0,113.7L-9.5,99.8L-3.7,81.6L-1.5,60.4L-3.4,37.5L-9.7,14.2L-19.9,-7.9L-33.5,-27.5L-49.6,-43.5L-66.8,-55.2L-83.9,-62.0L-99.4,-64.0L-112.0,-61.5L-120.6,-55.2L-124.4,-46.2L-122.7,-35.7L-115.5,-25.0L-103.2,-15.4L-86.3,-8.2L-65.8,-4.2L-43.2,-4.2L-19.7,-8.5L3.2,-16.9L24.1,-28.9L41.7,-43.8L55.1,-60.3L63.9,-77.2L67.7,-93.1L66.8,-106.7L61.7,-116.6L53.5,-121.9L43.2,-122.0L32.2,-116.7L21.8,-105.9L13.3,-90.4L7.7,-71.0L5.8,-48.8L8.0,-25.2L14.5,-1.8L24.8,20.1L38.4,39.2L54.0,54.4L70.6,65.0L86.6,70.6L100.8,71.4L111.9,67.8L118.8,60.5L120.6,50.7L117.1,39.6L108.1,28.6L94.0,18.9L75.7,11.7L54.2,8.0L30.9,8.3L7.1,12.8L-15.7,21.3L-36.1,33.3L-52.9,47.9L-65.3,63.9L-72.9,79.9L-75.4,94.7L-73.3,106.7L-67.2,115.0L-58.0,118.5L-47.0,116.7L-35.6,109.5L-24.9,97.1L-16.4,80.1L-10.9,59.4L-9.3,36.5L-11.8,12.5L-18.4,-10.9L-28.8,-32.4L-42.1,-50.8L-57.3,-65.0L-73.1,-74.4L-88.1,-78.8L-101.0,-78.3L-110.5,-73.4L-115.6,-65.1L-115.6,-54.5L-110.2,-42.8L-99.5,-31.4L-83.9,-21.6L-64.4,-14.5L-42.0,-10.9L-18.1,-11.5L5.8,-16.2L28.3,-24.8L48.0,-36.7L63.9,-51.0L75.2,-66.3L81.4,-81.4L82.6,-94.9L79.2,-105.5L71.9,-112.0L61.8,-113.8L50.1,-110.2L38.1,-101.2L27.3,-87.2L18.7,-68.9L13.3,-47.3L11.9,-23.7L14.6,0.5L21.4,23.7L31.8,44.7L44.8,62.1L59.5,75.2L74.5,83.3L88.4,86.3L99.9,84.5L107.8,78.4L111.2,68.9L109.4,57.4L102.3,45.1L89.9,33.4L73.0,23.4L52.3,16.4L29.2,13.0L5.0,13.7L-18.8,18.6L-40.8,27.3L-59.7,39.1L-74.5,52.9L-84.5,67.5L-89.3,81.7L-89.1,93.9L-84.3,103.0L-75.8,107.9L-64.7,107.9L-52.3,102.6L-39.8,92.0L-28.7,76.5L-20.1,57.0L-14.9,34.6L-13.6,10.5L-16.5,-13.7L-23.4,-36.5L-33.7,-56.7L-46.5,-73.1L-60.6,-84.9L-74.7,-91.6L-87.5,-93.1L-97.7,-89.8L-104.0,-82.4L-105.7,-71.9L-102.2,-59.5L-93.3,-46.6L-79.5,-34.4L-61.3,-24.4L-39.7,-17.4L-16.1,-14.2L8.3,-15.1L31.8,-20.1L53.2,-28.8L71.1,-40.3L84.6,-53.7L93.1,-67.7L96.5,-80.8L94.7,-91.8L88.6,-99.4L78.8,-102.7L66.7,-101.0L53.5,-94.0L40.6,-81.9L29.2,-65.1L20.6,-44.6L15.4,-21.5L14.3,2.8L17.4,26.8L24.4,49.1L34.6,68.4L47.0,83.6L60.6,93.9L73.8,99.1L85.5,99.0L94.3,94.3L99.0,85.5L99.1,73.8L93.9,60.6L83.6,47.0L68.4,34.6L49.1,24.4L26.8,17.4L2.8,14.3L-21.5,15.4L-44.6,20.6L-65.1,29.2L-81.9,40.6L-94.0,53.5L-101.0,66.7L-102.7,78.8L-99.4,88.6L-91.8,94.7L-80.8,96.5L-67.7,93.1L-53.7,84.6L-40.3,71.1L-28.8,53.2L-20.1,31.8L-15.1,8.3L-14.2,-16.1L-17.4,-39.7L-24.4,-61.3L-34.4,-79.5L-46.6,-93.3L-59.5,-102.2L-71.9,-105.7L-82.4,-104.0L-89.8,-97.7L-93.1,-87.5L-91.6,-74.7L-84.9,-60.6L-73.1,-46.5L-56.7,-33.7L-36.5,-23.4L-13.7,-16.5L10.5,-13.6L34.6,-14.9L57.0,-20.1L76.5,-28.7L92.0,-39.8L102.6,-52.3L107.9,-64.7L107.9,-75.8L103.0,-84.3L93.9,-89.1L81.7,-89.3L67.5,-84.5L52.9,-74.5L39.1,-59.7L27.3,-40.8L18.6,-18.8L13.7,5.0L13.0,29.2L16.4,52.3L23.4,73.0L33.4,89.9L45.1,102.3L57.4,109.4L68.9,111.2L78.4,107.8L84.5,99.9L86.3,88.4L83.3,74.5L75.2,59.5L62.1,44.8L44.7,31.8L23.7,21.4L0.5,14.6L-23.7,11.9L-47.3,13.3L-68.9,18.7L-87.2,27.3L-101.2,38.1L-110.2,50.1L-113.8,61.8L-112.0,71.9L-105.5,79.2L-94.9,82.6L-81.4,81.4L-66.3,75.2L-51.0,63.9L-36.7,48.0L-24.8,28.3L-16.2,5.8L-11.5,-18.1L-10.9,-42.0L-14.5,-64.4L-21.6,-83.9L-31.4,-99.5L-42.8,-110.2L-54.5,-115.6L-65.1,-115.6L-73.4,-110.5L-78.3,-101.0L-78.8,-88.1L-74.4,-73.1L-65.0,-57.3L-50.8,-42.1L-32.4,-28.8L-10.9,-18.4L12.5,-11.8L36.5,-9.3L59.4,-10.9L80.1,-16.4L97.1,-24.9L109.5,-35.6L116.7,-47.0L118.5,-58.0L115.0,-67.2L106.7,-73.3L94.7,-75.4L79.9,-72.9L63.9,-65.3L47.9,-52.9L33.3,-36.1L21.3,-15.7L12.8,7.1L8.3,30.9L8.0,54.2L11.7,75.7L18.9,94.0L28.6,108.1L39.6,117.1L50.7,120.6L60.5,118.8L67.8,111.9L71.4,100.8L70.6,86.6L65.0,70.6L54.4,54.0L39.2,38.4L20.1,24.8L-1.8,14.5L-25.2,8.0L-48.8,5.8L-71.0,7.7L-90.4,13.3L-105.9,21.8L-116.7,32.2L-122.0,43.2L-121.9,53.5L-116.6,61.7L-106.7,66.8L-93.1,67.7L-77.2,63.9L-60.3,55.1L-43.8,41.7L-28.9,24.1L-16.9,3.2L-8.5,-19.7L-4.2,-43.2L-4.2,-65.8L-8.2,-86.3L-15.4,-103.2L-25.0,-115.5L-35.7,-122.7L-46.2,-124.4L-55.2,-120.6L-61.5,-112.0L-64.0,-99.4L-62.0,-83.9L-55.2,-66.8L-43.5,-49.6L-27.5,-33.5L-7.9,-19.9L14.2,-9.7L37.5,-3.4L60.4,-1.5L81.6,-3.7L99.8,-9.5L113.7,-18.0L122.6,-28.2L126.1,-38.8L124.0,-48.4L116.9,-55.7L105.3,-59.7L90.3,-59.5L73.3,-54.5L55.6,-44.7L38.6,-30.4L23.5,-12.2L11.5,9.0L3.4,31.8L-0.6,54.8L-0.3,76.6L4.0,95.8L11.3,111.2L20.8,121.8L31.2,127.1L41.2,126.8L49.4,121.1L54.8,110.8L56.2,96.6L53.1,79.8L45.2,61.8L32.7,44.0L16.0,27.7L-4.0,14.0L-26.2,4.0L-49.1,-1.9L-71.3,-3.5L-91.4,-1.0L-108.1,5.0L-120.3,13.6L-127.3,23.6L-128.8,33.8L-124.8,42.7L-115.8,49.3L-102.6,52.3L-86.3,51.0L-68.2,45.0L-49.8,34.3L-32.3,19.2L-17.2,0.5L-5.3,-20.7L2.6,-43.3L6.1,-65.7L5.4,-86.5L0.9,-104.3L-6.6,-118.0L-16.1,-126.8L-26.2,-130.1L-35.7,-127.8L-43.2,-120.3L-47.7,-108.2L-48.1,-92.5L-44.1,-74.6L-35.3,-55.8L-21.9,-37.4L-4.7,-20.9L15.6,-7.3L37.5,2.5L59.9,8.0L81.2,9.2L100.0,6.3L115.1,-0.0L125.5,-8.7L130.6,-18.6L130.1,-28.4L124.1,-36.7L113.3,-42.5L98.5,-44.6L81.0,-42.4L61.9,-35.5L42.9,-24.0L25.1,-8.3L10.0,10.7L-1.7,31.9L-9.1,54.0L-12.2,75.6L-11.1,95.3L-6.2,111.6L1.5,123.6L10.9,130.4L20.9,131.7L29.9,127.4L36.8,118.0L40.4,104.2L40.0,87.2L35.0,68.2L25.4,48.6L11.4,29.8L-6.2,13.2L-26.5,-0.2L-48.2,-9.6L-69.9,-14.6L-90.1,-15.3L-107.5,-12.0L-120.9,-5.4L-129.4,3.4L-132.5,13.2L-130.0,22.7L-122.1,30.5L-109.5,35.6L-93.2,36.9L-74.4,33.8L-54.5,26.1L-34.9,13.9L-17.1,-2.2L-2.0,-21.3L9.3,-42.4L16.3,-63.9L18.9,-84.6L17.2,-102.9L11.9,-117.6L4.0,-127.7L-5.5,-132.6L-15.3,-131.8L-23.9,-125.5L-30.2,-114.3L-33.1,-98.9L-31.9,-80.6L-26.1,-60.6L-15.8,-40.4L-1.4,-21.4L16.5,-4.8L36.7,8.3L57.9,17.3L78.8,21.7L97.8,21.8L113.7,18.0L125.3,11.1L131.9,2.1L132.9,-7.7L128.4,-16.9L118.6,-24.2L104.3,-28.6L86.6,-29.2L66.7,-25.4L46.1,-17.0L26.1,-4.3L8.2,12.1L-6.6,31.3L-17.5,52.0L-23.9,72.8L-25.9,92.4L-23.6,109.3L-17.9,122.3L-9.6,130.5L-0.0,133.3L9.6,130.5L17.9,122.3L23.6,109.3L25.9,92.4L23.9,72.8L17.5,52.0L6.6,31.3L-8.2,12.1L-26.1,-4.3L-46.1,-17.0L-66.7,-25.4L-86.6,-29.2L-104.3,-28.6L-118.6,-24.2L-128.4,-16.9L-132.9,-7.7L-131.9,2.1L-125.3,11.1L-113.7,18.0L-97.8,21.8L-78.8,21.7L-57.9,17.3L-36.7,8.3L-16.5,-4.8L1.4,-21.4L15.8,-40.4L26.1,-60.6L31.9,-80.6L33.1,-98.9L30.2,-114.3L23.9,-125.5L15.3,-131.8L5.5,-132.6L-4.0,-127.7L-11.9,-117.6L-17.2,-102.9L-18.9,-84.6L-16.3,-63.9L-9.3,-42.4L2.0,-21.3L17.1,-2.2L34.9,13.9L54.5,26.1L74.4,33.8L93.2,36.9L109.5,35.6L122.1,30.5L130.0,22.7L132.5,13.2L129.4,3.4L120.9,-5.4L107.5,-12.0L90.1,-15.3L69.9,-14.6L48.2,-9.6L26.5,-0.2L6.2,13.2L-11.4,29.8L-25.4,48.6L-35.0,68.2L-40.0,87.2L-40.4,104.2L-36.8,118.0L-29.9,127.4L-20.9,131.7L-10.9,130.4L-1.5,123.6L6.2,111.6L11.1,95.3L12.2,75.6L9.1,54.0L1.7,31.9L-10.0,10.7L-25.1,-8.3L-42.9,-24.0L-61.9,-35.5L-81.0,-42.4L-98.5,-44.6L-113.3,-42.5L-124.1,-36.7L-130.1,-28.4L-130.6,-18.6L-125.5,-8.7L-115.1,-0.0L-100.0,6.3L-81.2,9.2L-59.9,8.0L-37.5,2.5L-15.6,-7.3L4.7,-20.9L21.9,-37.4L35.3,-55.8L44.1,-74.6L48.1,-92.5L47.7,-108.2L43.2,-120.3L35.7,-127.8L26.2,-130.1L16.1,-126.8L6.6,-118.0L-0.9,-104.3L-5.4,-86.5L-6.1,-65.7L-2.6,-43.3L5.3,-20.7L17.2,0.5L32.3,19.2L49.8,34.3L68.2,45.0L86.3,51.0L102.6,52.3L115.8,49.3L124.8,42.7L128.8,33.8L127.3,23.6L120.3,13.6L108.1,5.0L91.4,-1.0L71.3,-3.5L49.1,-1.9L26.2,4.0L4.0,14.0L-16.0,27.7L-32.7,44.0L-45.2,61.8L-53.1,79.8L-56.2,96.6L-54.8,110.8L-49.4,121.1L-41.2,126.8L-31.2,127.1L-20.8,121.8L-11.3,111.2L-4.0,95.8L0.3,76.6L0.6,54.8L-3.4,31.8L-11.5,9.0L-23.5,-12.2L-38.6,-30.4L-55.6,-44.7L-73.3,-54.5L-90.3,-59.5L-105.3,-59.7L-116.9,-55.7L-124.0,-48.4L-126.1,-38.8L-122.6,-28.2L-113.7,-18.0L-99.8,-9.5L-81.6,-3.7L-60.4,-1.5L-37.5,-3.4L-14.2,-9.7L7.9,-19.9L27.5,-33.5L43.5,-49.6L55.2,-66.8L62.0,-83.9L64.0,-99.4L61.5,-112.0L55.2,-120.6L46.2,-124.4L35.7,-122.7L25.0,-115.5L15.4,-103.2L8.2,-86.3L4.2,-65.8L4.2,-43.2L8.5,-19.7L16.9,3.2L28.9,24.1L43.8,41.7L60.3,55.1L77.2,63.9L93.1,67.7L106.7,66.8L116.6,61.7L121.9,53.5L122.0,43.2L116.7,32.2L105.9,21.8L90.4,13.3L71.0,7.7L48.8,5.8L25.2,8.0L1.8,14.5L-20.1,24.8L-39.2,38.4L-54.4,54.0L-65.0,70.6L-70.6,86.6L-71.4,100.8L-67.8,111.9L-60.5,118.8L-50.7,120.6L-39.6,117.1L-28.6,108.1L-18.9,94.0L-11.7,75.7L-8.0,54.2L-8.3,30.9L-12.8,7.1L-21.3,-15.7L-33.3,-36.1L-47.9,-52.9L-63.9,-65.3L-79.9,-72.9L-94.7,-75.4L-106.7,-73.3L-115.0,-67.2L-118.5,-58.0L-116.7,-47.0L-109.5,-35.6L-97.1,-24.9L-80.1,-16.4L-59.4,-10.9L-36.5,-9.3L-12.5,-11.8L10.9,-18.4L32.4,-28.8L50.8,-42.1L65.0,-57.3L74.4,-73.1L78.8,-88.1L78.3,-101.0L73.4,-110.5L65.1,-115.6L54.5,-115.6L42.8,-110.2L31.4,-99.5L21.6,-83.9L14.5,-64.4L10.9,-42.0L11.5,-18.1L16.2,5.8L24.8,28.3L36.7,48.0L51.0,63.9L66.3,75.2L81.4,81.4L94.9,82.6L105.5,79.2L112.0,71.9L113.8,61.8L110.2,50.1L101.2,38.1L87.2,27.3L68.9,18.7L47.3,13.3L23.7,11.9L-0.5,14.6L-23.7,21.4L-44.7,31.8L-62.1,44.8L-75.2,59.5L-83.3,74.5L-86.3,88.4L-84.5,99.9L-78.4,107.8L-68.9,111.2L-57.4,109.4L-45.1,102.3L-33.4,89.9L-23.4,73.0L-16.4,52.3L-13.0,29.2L-13.7,5.0L-18.6,-18.8L-27.3,-40.8L-39.1,-59.7L-52.9,-74.5L-67.5,-84.5L-81.7,-89.3L-93.9,-89.1L-103.0,-84.3L-107.9,-75.8L-107.9,-64.7L-102.6,-52.3L-92.0,-39.8L-76.5,-28.7L-57.0,-20.1L-34.6,-14.9L-10.5,-13.6L13.7,-16.5L36.5,-23.4L56.7,-33.7L73.1,-46.5L84.9,-60.6L91.6,-74.7L93.1,-87.5L89.8,-97.7L82.4,-104.0L71.9,-105.7L59.5,-102.2L46.6,-93.3L34.4,-79.5L24.4,-61.3L17.4,-39.7L14.2,-16.1L15.1,8.3L20.1,31.8L28.8,53.2L40.3,71.1L53.7,84.6L67.7,93.1L80.8,96.5L91.8,94.7L99.4,88.6L102.7,78.8L101.0,66.7L94.0,53.5L81.9,40.6L65.1,29.2L44.6,20.6L21.5,15.4L-2.8,14.3L-26.8,17.4L-49.1,24.4L-68.4,34.6L-83.6,47.0L-93.9,60.6L-99.1,73.8L-99.0,85.5L-94.3,94.3L-85.5,99.0L-73.8,99.1L-60.6,93.9L-47.0,83.6L-34.6,68.4L-24.4,49.1L-17.4,26.8L-14.3,2.8L-15.4,-21.5L-20.6,-44.6L-29.2,-65.1L-40.6,-81.9L-53.5,-94.0L-66.7,-101.0L-78.8,-102.7L-88.6,-99.4L-94.7,-91.8L-96.5,-80.8L-93.1,-67.7L-84.6,-53.7L-71.1,-40.3L-53.2,-28.8L-31.8,-20.1L-8.3,-15.1L16.1,-14.2L39.7,-17.4L61.3,-24.4L79.5,-34.4L93.3,-46.6L102.2,-59.5L105.7,-71.9L104.0,-82.4L97.7,-89.8L87.5,-93.1L74.7,-91.6L60.6,-84.9L46.5,-73.1L33.7,-56.7L23.4,-36.5L16.5,-13.7L13.6,10.5L14.9,34.6L20.1,57.0L28.7,76.5L39.8,92.0L52.3,102.6L64.7,107.9L75.8,107.9L84.3,103.0L89.1,93.9L89.3,81.7L84.5,67.5L74.5,52.9L59.7,39.1L40.8,27.3L18.8,18.6L-5.0,13.7L-29.2,13.0L-52.3,16.4L-73.0,23.4L-89.9,33.4L-102.3,45.1L-109.4,57.4L-111.2,68.9L-107.8,78.4L-99.9,84.5L-88.4,86.3L-74.5,83.3L-59.5,75.2L-44.8,62.1L-31.8,44.7L-21.4,23.7L-14.6,0.5L-11.9,-23.7L-13.3,-47.3L-18.7,-68.9L-27.3,-87.2L-38.1,-101.2L-50.1,-110.2L-61.8,-113.8L-71.9,-112.0L-79.2,-105.5L-82.6,-94.9L-81.4,-81.4L-75.2,-66.3L-63.9,-51.0L-48.0,-36.7L-28.3,-24.8L-5.8,-16.2L18.1,-11.5L42.0,-10.9L64.4,-14.5L83.9,-21.6L99.5,-31.4L110.2,-42.8L115.6,-54.5L115.6,-65.1L110.5,-73.4L101.0,-78.3L88.1,-78.8L73.1,-74.4L57.3,-65.0L42.1,-50.8L28.8,-32.4L18.4,-10.9L11.8,12.5L9.3,36.5L10.9,59.4L16.4,80.1L24.9,97.1L35.6,109.5L47.0,116.7L58.0,118.5L67.2,115.0L73.3,106.7L75.4,94.7L72.9,79.9L65.3,63.9L52.9,47.9L36.1,33.3L15.7,21.3L-7.1,12.8L-30.9,8.3L-54.2,8.0L-75.7,11.7L-94.0,18.9L-108.1,28.6L-117.1,39.6L-120.6,50.7L-118.8,60.5L-111.9,67.8L-100.8,71.4L-86.6,70.6L-70.6,65.0L-54.0,54.4L-38.4,39.2L-24.8,20.1L-14.5,-1.8L-8.0,-25.2L-5.8,-48.8L-7.7,-71.0L-13.3,-90.4L-21.8,-105.9L-32.2,-116.7L-43.2,-122.0L-53.5,-121.9L-61.7,-116.6L-66.8,-106.7L-67.7,-93.1L-63.9,-77.2L-55.1,-60.3L-41.7,-43.8L-24.1,-28.9L-3.2,-16.9L19.7,-8.5L43.2,-4.2L65.8,-4.2L86.3,-8.2L103.2,-15.4L115.5,-25.0L122.7,-35.7L124.4,-46.2L120.6,-55.2L112.0,-61.5L99.4,-64.0L83.9,-62.0L66.8,-55.2L49.6,-43.5L33.5,-27.5L19.9,-7.9L9.7,14.2L3.4,37.5L1.5,60.4L3.7,81.6L9.5,99.8L18.0,113.7L28.2,122.6L38.8,126.1L48.4,124.0L55.7,116.9L59.7,105.3L59.5,90.3L54.5,73.3L44.7,55.6L30.4,38.6L12.2,23.5L-9.0,11.5L-31.8,3.4L-54.8,-0.6L-76.6,-0.3L-95.8,4.0L-111.2,11.3L-121.8,20.8L-127.1,31.2L-126.8,41.2L-121.1,49.4L-110.8,54.8L-96.6,56.2L-79.8,53.1L-61.8,45.2L-44.0,32.7L-27.7,16.0L-14.0,-4.0L-4.0,-26.2L1.9,-49.1L3.5,-71.3L1.0,-91.4L-5.0,-108.1L-13.6,-120.3L-23.6,-127.3L-33.8,-128.8L-42.7,-124.8L-49.3,-115.8L-52.3,-102.6L-51.0,-86.3L-45.0,-68.2L-34.3,-49.8L-19.2,-32.3L-0.5,-17.2L20.7,-5.3L43.3,2.6L65.7,6.1L86.5,5.4L104.3,0.9L118.0,-6.6L126.8,-16.1L130.1,-26.2L127.8,-35.7L120.3,-43.2L108.2,-47.7L92.5,-48.1L74.6,-44.1L55.8,-35.3L37.4,-21.9L20.9,-4.7L7.3,15.6L-2.5,37.5L-8.0,59.9L-9.2,81.2L-6.3,100.0L0.0,115.1L8.7,125.5L18.6,130.6L28.4,130.1L36.7,124.1L42.5,113.3L44.6,98.5L42.4,81.0L35.5,61.9L24.0,42.9L8.3,25.1L-10.7,10.0L-31.9,-1.7L-54.0,-9.1L-75.6,-12.2L-95.3,-11.1L-111.6,-6.2L-123.6,1.5L-130.4,10.9L-131.7,20.9L-127.4,29.9L-118.0,36.8L-104.2,40.4L-87.2,40.0L-68.2,35.0L-48.6,25.4L-29.8,11.4L-13.2,-6.2L0.2,-26.5L9.6,-48.2L14.6,-69.9L15.3,-90.1L12.0,-107.5L5.4,-120.9L-3.4,-129.4L-13.2,-132.5L-22.7,-130.0L-30.5,-122.1L-35.6,-109.5L-36.9,-93.2L-33.8,-74.4L-26.1,-54.5L-13.9,-34.9L2.2,-17.1L21.3,-2.0L42.4,9.3L63.9,16.3L84.6,18.9L102.9,17.2L117.6,11.9L127.7,4.0L132.6,-5.5L131.8,-15.3L125.5,-23.9L114.3,-30.2L98.9,-33.1L80.6,-31.9L60.6,-26.1L40.4,-15.8L21.4,-1.4L4.8,16.5L-8.3,36.7L-17.3,57.9L-21.7,78.8L-21.8,97.8L-18.0,113.7L-11.1,125.3L-2.1,131.9L7.7,132.9L16.9,128.4L24.2,118.6L28.6,104.3L29.2,86.6L25.4,66.7L17.0,46.1L4.3,26.1L-12.1,8.2L-31.3,-6.6L-52.0,-17.5L-72.8,-23.9L-92.4,-25.9L-109.3,-23.6L-122.3,-17.9L-130.5,-9.6L-133.3,-0.0L-130.5,9.6L-122.3,17.9L-109.3,23.6L-92.4,25.9L-72.8,23.9L-52.0,17.5L-31.3,6.6L-12.1,-8.2L4.3,-26.1L17.0,-46.1L25.4,-66.7L29.2,-86.6L28.6,-104.3L24.2,-118.6L16.9,-128.4L7.7,-132.9L-2.1,-131.9L-11.1,-125.3L-18.0,-113.7L-21.8,-97.8L-21.7,-78.8L-17.3,-57.9L-8.3,-36.7L4.8,-16.5L21.4,1.4L40.4,15.8L60.6,26.1L80.6,31.9L98.9,33.1L114.3,30.2L125.5,23.9L131.8,15.3L132.6,5.5L127.7,-4.0L117.6,-11.9L102.9,-17.2L84.6,-18.9L63.9,-16.3L42.4,-9.3L21.3,2.0L2.2,17.1L-13.9,34.9L-26.1,54.5L-33.8,74.4L-36.9,93.2L-35.6,109.5L-30.5,122.1L-22.7,130.0L-13.2,132.5L-3.4,129.4L5.4,120.9L12.0,107.5L15.3,90.1L14.6,69.9L9.6,48.2L0.2,26.5L-13.2,6.2L-29.8,-11.4L-48.6,-25.4L-68.2,-35.0L-87.2,-40.0L-104.2,-40.4L-118.0,-36.8L-127.4,-29.9L-131.7,-20.9L-130.4,-10.9L-123.6,-1.5L-111.6,6.2L-95.3,11.1L-75.6,12.2L-54.0,9.1L-31.9,1.7L-10.7,-10.0L8.3,-25.1L24.0,-42.9L35.5,-61.9L42.4,-81.0L44.6,-98.5L42.5,-113.3L36.7,-124.1L28.4,-130.1L18.6,-130.6L8.7,-125.5L0.0,-115.1L-6.3,-100.0L-9.2,-81.2L-8.0,-59.9L-2.5,-37.5L7.3,-15.6L20.9,4.7L37.4,21.9L55.8,35.3L74.6,44.1L92.5,48.1L108.2,47.7L120.3,43.2L127.8,35.7L130.1,26.2L126.8,16.1L118.0,6.6L104.3,-0.9L86.5,-5.4L65.7,-6.1L43.3,-2.6L20.7,5.3L-0.5,17.2L-19.2,32.3L-34.3,49.8L-45.0,68.2L-51.0,86.3L-52.3,102.6L-49.3,115.8L-42.7,124.8L-33.8,128.8L-23.6,127.3L-13.6,120.3L-5.0,108.1L1.0,91.4L3.5,71.3L1.9,49.1L-4.0,26.2L-14.0,4.0L-27.7,-16.0L-44.0,-32.7L-61.8,-45.2L-79.8,-53.1L-96.6,-56.2L-110.8,-54.8L-121.1,-49.4L-126.8,-41.2L-127.1,-31.2L-121.8,-20.8L-111.2,-11.3L-95.8,-4.0L-76.6,0.3L-54.8,0.6L-31.8,-3.4L-9.0,-11.5L12.2,-23.5L30.4,-38.6L44.7,-55.6L54.5,-73.3L59.5,-90.3L59.7,-105.3L55.7,-116.9L48.4,-124.0L38.8,-126.1L28.2,-122.6L18.0,-113.7L9.5,-99.8L3.7,-81.6L1.5,-60.4L3.4,-37.5L9.7,-14.2L19.9,7.9L33.5,27.5L49.6,43.5L66.8,55.2L83.9,62.0L99.4,64.0L112.0,61.5L120.6,55.2L124.4,46.2L122.7,35.7L115.5,25.0L103.2,15.4L86.3,8.2L65.8,4.2L43.2,4.2L19.7,8.5L-3.2,16.9L-24.1,28.9L-41.7,43.8L-55.1,60.3L-63.9,77.2L-67.7,93.1L-66.8,106.7L-61.7,116.6L-53.5,121.9L-43.2,122.0L-32.2,116.7L-21.8,105.9L-13.3,90.4L-7.7,71.0L-5.8,48.8L-8.0,25.2L-14.5,1.8L-24.8,-20.1L-38.4,-39.2L-54.0,-54.4L-70.6,-65.0L-86.6,-70.6L-100.8,-71.4L-111.9,-67.8L-118.8,-60.5L-120.6,-50.7L-117.1,-39.6L-108.1,-28.6L-94.0,-18.9L-75.7,-11.7L-54.2,-8.0L-30.9,-8.3L-7.1,-12.8L15.7,-21.3L36.1,-33.3L52.9,-47.9L65.3,-63.9L72.9,-79.9L75.4,-94.7L73.3,-106.7L67.2,-115.0L58.0,-118.5L47.0,-116.7L35.6,-109.5L24.9,-97.1L16.4,-80.1L10.9,-59.4L9.3,-36.5L11.8,-12.5L18.4,10.9L28.8,32.4L42.1,50.8L57.3,65.0L73.1,74.4L88.1,78.8L101.0,78.3L110.5,73.4L115.6,65.1L115.6,54.5L110.2,42.8L99.5,31.4L83.9,21.6L64.4,14.5L42.0,10.9L18.1,11.5L-5.8,16.2L-28.3,24.8L-48.0,36.7L-63.9,51.0L-75.2,66.3L-81.4,81.4L-82.6,94.9L-79.2,105.5L-71.9,112.0L-61.8,113.8L-50.1,110.2L-38.1,101.2L-27.3,87.2L-18.7,68.9L-13.3,47.3L-11.9,23.7L-14.6,-0.5L-21.4,-23.7L-31.8,-44.7L-44.8,-62.1L-59.5,-75.2L-74.5,-83.3L-88.4,-86.3L-99.9,-84.5L-107.8,-78.4L-111.2,-68.9L-109.4,-57.4L-102.3,-45.1L-89.9,-33.4L-73.0,-23.4L-52.3,-16.4L-29.2,-13.0L-5.0,-13.7L18.8,-18.6L40.8,-27.3L59.7,-39.1L74.5,-52.9L84.5,-67.5L89.3,-81.7L89.1,-93.9L84.3,-103.0L75.8,-107.9L64.7,-107.9L52.3,-102.6L39.8,-92.0L28.7,-76.5L20.1,-57.0L14.9,-34.6L13.6,-10.5L16.5,13.7L23.4,36.5L33.7,56.7L46.5,73.1L60.6,84.9L74.7,91.6L87.5,93.1L97.7,89.8L104.0,82.4L105.7,71.9L102.2,59.5L93.3,46.6L79.5,34.4L61.3,24.4L39.7,17.4L16.1,14.2L-8.3,15.1L-31.8,20.1L-53.2,28.8L-71.1,40.3L-84.6,53.7L-93.1,67.7L-96.5,80.8L-94.7,91.8L-88.6,99.4L-78.8,102.7L-66.7,101.0L-53.5,94.0L-40.6,81.9L-29.2,65.1L-20.6,44.6L-15.4,21.5L-14.3,-2.8L-17.4,-26.8L-24.4,-49.1L-34.6,-68.4L-47.0,-83.6L-60.6,-93.9L-73.8,-99.1L-85.5,-99.0L-94.3,-94.3L-99.0,-85.5L-99.1,-73.8L-93.9,-60.6L-83.6,-47.0L-68.4,-34.6L-49.1,-24.4L-26.8,-17.4L-2.8,-14.3L21.5,-15.4L44.6,-20.6L65.1,-29.2L81.9,-40.6L94.0,-53.5L101.0,-66.7L102.7,-78.8L99.4,-88.6L91.8,-94.7L80.8,-96.5L67.7,-93.1L53.7,-84.6L40.3,-71.1L28.8,-53.2L20.1,-31.8L15.1,-8.3L14.2,16.1L17.4,39.7L24.4,61.3L34.4,79.5L46.6,93.3L59.5,102.2L71.9,105.7L82.4,104.0L89.8,97.7L93.1,87.5L91.6,74.7L84.9,60.6L73.1,46.5L56.7,33.7L36.5,23.4L13.7,16.5L-10.5,13.6L-34.6,14.9L-57.0,20.1L-76.5,28.7L-92.0,39.8L-102.6,52.3L-107.9,64.7L-107.9,75.8L-103.0,84.3L-93.9,89.1L-81.7,89.3L-67.5,84.5L-52.9,74.5L-39.1,59.7L-27.3,40.8L-18.6,18.8L-13.7,-5.0L-13.0,-29.2L-16.4,-52.3L-23.4,-73.0L-33.4,-89.9L-45.1,-102.3L-57.4,-109.4L-68.9,-111.2L-78.4,-107.8L-84.5,-99.9L-86.3,-88.4L-83.3,-74.5L-75.2,-59.5L-62.1,-44.8L-44.7,-31.8L-23.7,-21.4L-0.5,-14.6L23.7,-11.9L47.3,-13.3L68.9,-18.7L87.2,-27.3L101.2,-38.1L110.2,-50.1L113.8,-61.8L112.0,-71.9L105.5,-79.2L94.9,-82.6L81.4,-81.4L66.3,-75.2L51.0,-63.9L36.7,-48.0L24.8,-28.3L16.2,-5.8L11.5,18.1L10.9,42.0L14.5,64.4L21.6,83.9L31.4,99.5L42.8,110.2L54.5,115.6L65.1,115.6L73.4,110.5L78.3,101.0L78.8,88.1L74.4,73.1L65.0,57.3L50.8,42.1L32.4,28.8L10.9,18.4L-12.5,11.8L-36.5,9.3L-59.4,10.9L-80.1,16.4L-97.1,24.9L-109.5,35.6L-116.7,47.0L-118.5,58.0L-115.0,67.2L-106.7,73.3L-94.7,75.4L-79.9,72.9L-63.9,65.3L-47.9,52.9L-33.3,36.1L-21.3,15.7L-12.8,-7.1L-8.3,-30.9L-8.0,-54.2L-11.7,-75.7L-18.9,-94.0L-28.6,-108.1L-39.6,-117.1L-50.7,-120.6L-60.5,-118.8L-67.8,-111.9L-71.4,-100.8L-70.6,-86.6L-65.0,-70.6L-54.4,-54.0L-39.2,-38.4L-20.1,-24.8L1.8,-14.5L25.2,-8.0L48.8,-5.8L71.0,-7.7L90.4,-13.3L105.9,-21.8L116.7,-32.2L122.0,-43.2L121.9,-53.5L116.6,-61.7L106.7,-66.8L93.1,-67.7L77.2,-63.9L60.3,-55.1L43.8,-41.7L28.9,-24.1L16.9,-3.2L8.5,19.7L4.2,43.2L4.2,65.8L8.2,86.3L15.4,103.2L25.0,115.5L35.7,122.7L46.2,124.4L55.2,120.6L61.5,112.0L64.0,99.4L62.0,83.9L55.2,66.8L43.5,49.6L27.5,33.5L7.9,19.9L-14.2,9.7L-37.5,3.4L-60.4,1.5L-81.6,3.7L-99.8,9.5L-113.7,18.0L-122.6,28.2L-126.1,38.8L-124.0,48.4L-116.9,55.7L-105.3,59.7L-90.3,59.5L-73.3,54.5L-55.6,44.7L-38.6,30.4L-23.5,12.2L-11.5,-9.0L-3.4,-31.8L0.6,-54.8L0.3,-76.6L-4.0,-95.8L-11.3,-111.2L-20.8,-121.8L-31.2,-127.1L-41.2,-126.8L-49.4,-121.1L-54.8,-110.8L-56.2,-96.6L-53.1,-79.8L-45.2,-61.8L-32.7,-44.0L-16.0,-27.7L4.0,-14.0L26.2,-4.0L49.1,1.9L71.3,3.5L91.4,1.0L108.1,-5.0L120.3,-13.6L127.3,-23.6L128.8,-33.8L124.8,-42.7L115.8,-49.3L102.6,-52.3L86.3,-51.0L68.2,-45.0L49.8,-34.3L32.3,-19.2L17.2,-0.5L5.3,20.7L-2.6,43.3L-6.1,65.7L-5.4,86.5L-0.9,104.3L6.6,118.0L16.1,126.8L26.2,130.1L35.7,127.8L43.2,120.3L47.7,108.2L48.1,92.5L44.1,74.6L35.3,55.8L21.9,37.4L4.7,20.9L-15.6,7.3L-37.5,-2.5L-59.9,-8.0L-81.2,-9.2L-100.0,-6.3L-115.1,0.0L-125.5,8.7L-130.6,18.6L-130.1,28.4L-124.1,36.7L-113.3,42.5L-98.5,44.6L-81.0,42.4L-61.9,35.5L-42.9,24.0L-25.1,8.3L-10.0,-10.7L1.7,-31.9L9.1,-54.0L12.2,-75.6L11.1,-95.3L6.2,-111.6L-1.5,-123.6L-10.9,-130.4L-20.9,-131.7L-29.9,-127.4L-36.8,-118.0L-40.4,-104.2L-40.0,-87.2L-35.0,-68.2L-25.4,-48.6L-11.4,-29.8L6.2,-13.2L26.5,0.2L48.2,9.6L69.9,14.6L90.1,15.3L107.5,12.0L120.9,5.4L129.4,-3.4L132.5,-13.2L130.0,-22.7L122.1,-30.5L109.5,-35.6L93.2,-36.9L74.4,-33.8L54.5,-26.1L34.9,-13.9L17.1,2.2L2.0,21.3L-9.3,42.4L-16.3,63.9L-18.9,84.6L-17.2,102.9L-11.9,117.6L-4.0,127.7L5.5,132.6L15.3,131.8L23.9,125.5L30.2,114.3L33.1,98.9L31.9,80.6L26.1,60.6L15.8,40.4L1.4,21.4L-16.5,4.8L-36.7,-8.3L-57.9,-17.3L-78.8,-21.7L-97.8,-21.8L-113.7,-18.0L-125.3,-11.1L-131.9,-2.1L-132.9,7.7L-128.4,16.9L-118.6,24.2L-104.3,28.6L-86.6,29.2L-66.7,25.4L-46.1,17.0L-26.1,4.3L-8.2,-12.1L6.6,-31.3L17.5,-52.0L23.9,-72.8L25.9,-92.4L23.6,-109.3L17.9,-122.3L9.6,-130.5L0.0,-133.3L-9.6,-130.5L-17.9,-122.3L-23.6,-109.3L-25.9,-92.4L-23.9,-72.8L-17.5,-52.0L-6.6,-31.3L8.2,-12.1L26.1,4.3L46.1,17.0L66.7,25.4L86.6,29.2L104.3,28.6L118.6,24.2L128.4,16.9L132.9,7.7L131.9,-2.1L125.3,-11.1L113.7,-18.0L97.8,-21.8L78.8,-21.7L57.9,-17.3L36.7,-8.3L16.5,4.8L-1.4,21.4L-15.8,40.4L-26.1,60.6L-31.9,80.6L-33.1,98.9L-30.2,114.3L-23.9,125.5L-15.3,131.8L-5.5,132.6L4.0,127.7L11.9,117.6L17.2,102.9L18.9,84.6L16.3,63.9L9.3,42.4L-2.0,21.3L-17.1,2.2L-34.9,-13.9L-54.5,-26.1L-74.4,-33.8L-93.2,-36.9L-109.5,-35.6L-122.1,-30.5L-130.0,-22.7L-132.5,-13.2L-129.4,-3.4L-120.9,5.4L-107.5,12.0L-90.1,15.3L-69.9,14.6L-48.2,9.6L-26.5,0.2L-6.2,-13.2L11.4,-29.8L25.4,-48.6L35.0,-68.2L40.0,-87.2L40.4,-104.2L36.8,-118.0L29.9,-127.4L20.9,-131.7L10.9,-130.4L1.5,-123.6L-6.2,-111.6L-11.1,-95.3L-12.2,-75.6L-9.1,-54.0L-1.7,-31.9L10.0,-10.7L25.1,8.3L42.9,24.0L61.9,35.5L81.0,42.4L98.5,44.6L113.3,42.5L124.1,36.7L130.1,28.4L130.6,18.6L125.5,8.7L115.1,0.0L100.0,-6.3L81.2,-9.2L59.9,-8.0L37.5,-2.5L15.6,7.3L-4.7,20.9L-21.9,37.4L-35.3,55.8L-44.1,74.6L-48.1,92.5L-47.7,108.2L-43.2,120.3L-35.7,127.8L-26.2,130.1L-16.1,126.8L-6.6,118.0L0.9,104.3L5.4,86.5L6.1,65.7L2.6,43.3L-5.3,20.7L-17.2,-0.5L-32.3,-19.2L-49.8,-34.3L-68.2,-45.0L-86.3,-51.0L-102.6,-52.3L-115.8,-49.3L-124.8,-42.7L-128.8,-33.8L-127.3,-23.6L-120.3,-13.6L-108.1,-5.0L-91.4,1.0L-71.3,3.5L-49.1,1.9L-26.2,-4.0L-4.0,-14.0L16.0,-27.7L32.7,-44.0L45.2,-61.8L53.1,-79.8L56.2,-96.6L54.8,-110.8L49.4,-121.1L41.2,-126.8L31.2,-127.1L20.8,-121.8L11.3,-111.2L4.0,-95.8L-0.3,-76.6L-0.6,-54.8L3.4,-31.8L11.5,-9.0L23.5,12.2L38.6,30.4L55.6,44.7L73.3,54.5L90.3,59.5L105.3,59.7L116.9,55.7L124.0,48.4L126.1,38.8L122.6,28.2L113.7,18.0L99.8,9.5L81.6,3.7L60.4,1.5L37.5,3.4L14.2,9.7L-7.9,19.9L-27.5,33.5L-43.5,49.6L-55.2,66.8L-62.0,83.9L-64.0,99.4L-61.5,112.0L-55.2,120.6L-46.2,124.4L-35.7,122.7L-25.0,115.5L-15.4,103.2L-8.2,86.3L-4.2,65.8L-4.2,43.2L-8.5,19.7L-16.9,-3.2L-28.9,-24.1L-43.8,-41.7L-60.3,-55.1L-77.2,-63.9L-93.1,-67.7L-106.7,-66.8L-116.6,-61.7L-121.9,-53.5L-122.0,-43.2L-116.7,-32.2L-105.9,-21.8L-90.4,-13.3L-71.0,-7.7L-48.8,-5.8L-25.2,-8.0L-1.8,-14.5L20.1,-24.8L39.2,-38.4L54.4,-54.0L65.0,-70.6L70.6,-86.6L71.4,-100.8L67.8,-111.9L60.5,-118.8L50.7,-120.6L39.6,-117.1L28.6,-108.1L18.9,-94.0L11.7,-75.7L8.0,-54.2L8.3,-30.9L12.8,-7.1L21.3,15.7L33.3,36.1L47.9,52.9L63.9,65.3L79.9,72.9L94.7,75.4L106.7,73.3L115.0,67.2L118.5,58.0L116.7,47.0L109.5,35.6L97.1,24.9L80.1,16.4L59.4,10.9L36.5,9.3L12.5,11.8L-10.9,18.4L-32.4,28.8L-50.8,42.1L-65.0,57.3L-74.4,73.1L-78.8,88.1L-78.3,101.0L-73.4,110.5L-65.1,115.6L-54.5,115.6L-42.8,110.2L-31.4,99.5L-21.6,83.9L-14.5,64.4L-10.9,42.0L-11.5,18.1L-16.2,-5.8L-24.8,-28.3L-36.7,-48.0L-51.0,-63.9L-66.3,-75.2L-81.4,-81.4L-94.9,-82.6L-105.5,-79.2L-112.0,-71.9L-113.8,-61.8L-110.2,-50.1L-101.2,-38.1L-87.2,-27.3L-68.9,-18.7L-47.3,-13.3L-23.7,-11.9L0.5,-14.6L23.7,-21.4L44.7,-31.8L62.1,-44.8L75.2,-59.5L83.3,-74.5L86.3,-88.4L84.5,-99.9L78.4,-107.8L68.9,-111.2L57.4,-109.4L45.1,-102.3L33.4,-89.9L23.4,-73.0L16.4,-52.3L13.0,-29.2L13.7,-5.0L18.6,18.8L27.3,40.8L39.1,59.7L52.9,74.5L67.5,84.5L81.7,89.3L93.9,89.1L103.0,84.3L107.9,75.8L107.9,64.7L102.6,52.3L92.0,39.8L76.5,28.7L57.0,20.1L34.6,14.9L10.5,13.6L-13.7,16.5L-36.5,23.4L-56.7,33.7L-73.1,46.5L-84.9,60.6L-91.6,74.7L-93.1,87.5L-89.8,97.7L-82.4,104.0L-71.9,105.7L-59.5,102.2L-46.6,93.3L-34.4,79.5L-24.4,61.3L-17.4,39.7L-14.2,16.1L-15.1,-8.3L-20.1,-31.8L-28.8,-53.2L-40.3,-71.1L-53.7,-84.6L-67.7,-93.1L-80.8,-96.5L-91.8,-94.7L-99.4,-88.6L-102.7,-78.8L-101.0,-66.7L-94.0,-53.5L-81.9,-40.6L-65.1,-29.2L-44.6,-20.6L-21.5,-15.4L2.8,-14.3L26.8,-17.4L49.1,-24.4L68.4,-34.6L83.6,-47.0L93.9,-60.6L99.1,-73.8L99.0,-85.5L94.3,-94.3L85.5,-99.0L73.8,-99.1L60.6,-93.9L47.0,-83.6L34.6,-68.4L24.4,-49.1L17.4,-26.8L14.3,-2.8L15.4,21.5L20.6,44.6L29.2,65.1L40.6,81.9L53.5,94.0L66.7,101.0L78.8,102.7L88.6,99.4L94.7,91.8L96.5,80.8L93.1,67.7L84.6,53.7L71.1,40.3L53.2,28.8L31.8,20.1L8.3,15.1L-16.1,14.2L-39.7,17.4L-61.3,24.4L-79.5,34.4L-93.3,46.6L-102.2,59.5L-105.7,71.9L-104.0,82.4L-97.7,89.8L-87.5,93.1L-74.7,91.6L-60.6,84.9L-46.5,73.1L-33.7,56.7L-23.4,36.5L-16.5,13.7L-13.6,-10.5L-14.9,-34.6L-20.1,-57.0L-28.7,-76.5L-39.8,-92.0L-52.3,-102.6L-64.7,-107.9L-75.8,-107.9L-84.3,-103.0L-89.1,-93.9L-89.3,-81.7L-84.5,-67.5L-74.5,-52.9L-59.7,-39.1L-40.8,-27.3L-18.8,-18.6L5.0,-13.7L29.2,-13.0L52.3,-16.4L73.0,-23.4L89.9,-33.4L102.3,-45.1L109.4,-57.4L111.2,-68.9L107.8,-78.4L99.9,-84.5L88.4,-86.3L74.5,-83.3L59.5,-75.2L44.8,-62.1L31.8,-44.7L21.4,-23.7L14.6,-0.5L11.9,23.7L13.3,47.3L18.7,68.9L27.3,87.2L38.1,101.2L50.1,110.2L61.8,113.8L71.9,112.0L79.2,105.5L82.6,94.9L81.4,81.4L75.2,66.3L63.9,51.0L48.0,36.7L28.3,24.8L5.8,16.2L-18.1,11.5L-42.0,10.9L-64.4,14.5L-83.9,21.6L-99.5,31.4L-110.2,42.8L-115.6,54.5L-115.6,65.1L-110.5,73.4L-101.0,78.3L-88.1,78.8L-73.1,74.4L-57.3,65.0L-42.1,50.8L-28.8,32.4L-18.4,10.9L-11.8,-12.5L-9.3,-36.5L-10.9,-59.4L-16.4,-80.1L-24.9,-97.1L-35.6,-109.5L-47.0,-116.7L-58.0,-118.5L-67.2,-115.0L-73.3,-106.7L-75.4,-94.7L-72.9,-79.9L-65.3,-63.9L-52.9,-47.9L-36.1,-33.3L-15.7,-21.3L7.1,-12.8L30.9,-8.3L54.2,-8.0L75.7,-11.7L94.0,-18.9L108.1,-28.6L117.1,-39.6L120.6,-50.7L118.8,-60.5L111.9,-67.8L100.8,-71.4L86.6,-70.6L70.6,-65.0L54.0,-54.4L38.4,-39.2L24.8,-20.1L14.5,1.8L8.0,25.2L5.8,48.8L7.7,71.0L13.3,90.4L21.8,105.9L32.2,116.7L43.2,122.0L53.5,121.9L61.7,116.6L66.8,106.7L67.7,93.1L63.9,77.2L55.1,60.3L41.7,43.8L24.1,28.9L3.2,16.9L-19.7,8.5L-43.2,4.2L-65.8,4.2L-86.3,8.2L-103.2,15.4L-115.5,25.0L-122.7,35.7L-124.4,46.2L-120.6,55.2L-112.0,61.5L-99.4,64.0L-83.9,62.0L-66.8,55.2L-49.6,43.5L-33.5,27.5L-19.9,7.9L-9.7,-14.2L-3.4,-37.5L-1.5,-60.4L-3.7,-81.6L-9.5,-99.8L-18.0,-113.7L-28.2,-122.6L-38.8,-126.1L-48.4,-124.0L-55.7,-116.9L-59.7,-105.3L-59.5,-90.3L-54.5,-73.3L-44.7,-55.6L-30.4,-38.6L-12.2,-23.5L9.0,-11.5L31.8,-3.4L54.8,0.6L76.6,0.3L95.8,-4.0L111.2,-11.3L121.8,-20.8L127.1,-31.2L126.8,-41.2L121.1,-49.4L110.8,-54.8L96.6,-56.2L79.8,-53.1L61.8,-45.2L44.0,-32.7L27.7,-16.0L14.0,4.0L4.0,26.2L-1.9,49.1L-3.5,71.3L-1.0,91.4L5.0,108.1L13.6,120.3L23.6,127.3L33.8,128.8L42.7,124.8L49.3,115.8L52.3,102.6L51.0,86.3L45.0,68.2L34.3,49.8L19.2,32.3L0.5,17.2L-20.7,5.3L-43.3,-2.6L-65.7,-6.1L-86.5,-5.4L-104.3,-0.9L-118.0,6.6L-126.8,16.1L-130.1,26.2L-127.8,35.7L-120.3,43.2L-108.2,47.7L-92.5,48.1L-74.6,44.1L-55.8,35.3L-37.4,21.9L-20.9,4.7L-7.3,-15.6L2.5,-37.5L8.0,-59.9L9.2,-81.2L6.3,-100.0L-0.0,-115.1L-8.7,-125.5L-18.6,-130.6L-28.4,-130.1L-36.7,-124.1L-42.5,-113.3L-44.6,-98.5L-42.4,-81.0L-35.5,-61.9L-24.0,-42.9L-8.3,-25.1L10.7,-10.0L31.9,1.7L54.0,9.1L75.6,12.2L95.3,11.1L111.6,6.2L123.6,-1.5L130.4,-10.9L131.7,-20.9L127.4,-29.9L118.0,-36.8L104.2,-40.4L87.2,-40.0L68.2,-35.0L48.6,-25.4L29.8,-11.4L13.2,6.2L-0.2,26.5L-9.6,48.2L-14.6,69.9L-15.3,90.1L-12.0,107.5L-5.4,120.9L3.4,129.4L13.2,132.5L22.7,130.0L30.5,122.1L35.6,109.5L36.9,93.2L33.8,74.4L26.1,54.5L13.9,34.9L-2.2,17.1L-21.3,2.0L-42.4,-9.3L-63.9,-16.3L-84.6,-18.9L-102.9,-17.2L-117.6,-11.9L-127.7,-4.0L-132.6,5.5L-131.8,15.3L-125.5,23.9L-114.3,30.2L-98.9,33.1L-80.6,31.9L-60.6,26.1L-40.4,15.8L-21.4,1.4L-4.8,-16.5L8.3,-36.7L17.3,-57.9L21.7,-78.8L21.8,-97.8L18.0,-113.7L11.1,-125.3L2.1,-131.9L-7.7,-132.9L-16.9,-128.4L-24.2,-118.6L-28.6,-104.3L-29.2,-86.6L-25.4,-66.7L-17.0,-46.1L-4.3,-26.1L12.1,-8.2L31.3,6.6L52.0,17.5L72.8,23.9L92.4,25.9L109.3,23.6L122.3,17.9L130.5,9.6L133.3,0.0" fill="none" stroke="#9E86C9" stroke-width="0.28" opacity="0.13"/><path d="M94.6,0.0L92.6,-6.8L86.8,-12.7L77.5,-16.8L65.5,-18.3L51.7,-17.0L36.9,-12.4L22.2,-4.7L8.6,5.8L-3.0,18.5L-12.1,32.7L-18.0,47.3L-20.7,61.4L-20.3,74.0L-17.2,84.2L-12.0,91.1L-5.4,94.3L1.5,93.6L7.9,89.0L12.8,80.7L15.5,69.4L15.4,55.9L12.2,41.1L5.9,26.0L-3.4,11.7L-15.2,-1.0L-28.7,-11.2L-43.0,-18.5L-57.2,-22.6L-70.2,-23.5L-81.1,-21.4L-89.1,-17.0L-93.5,-10.8L-94.1,-3.9L-90.7,2.8L-83.5,8.5L-73.0,12.2L-60.0,13.4L-45.4,11.6L-30.1,6.6L-15.1,-1.4L-1.5,-12.1L9.9,-24.8L18.5,-38.7L24.0,-52.8L26.2,-66.1L25.2,-77.7L21.7,-86.6L16.1,-92.2L9.4,-94.0L2.4,-91.9L-3.8,-85.8L-8.5,-76.3L-10.9,-63.9L-10.4,-49.6L-6.8,-34.2L-0.1,-18.8L9.4,-4.4L21.2,8.1L34.5,18.0L48.4,24.8L61.9,28.4L74.0,28.7L83.7,26.1L90.4,21.2L93.4,14.8L92.5,7.8L87.7,1.1L79.2,-4.4L67.6,-7.9L53.7,-8.7L38.4,-6.5L22.6,-1.2L7.6,7.1L-5.9,17.8L-17.0,30.4L-25.2,43.9L-30.1,57.4L-31.7,69.9L-30.2,80.4L-26.1,88.1L-20.1,92.3L-13.2,92.7L-6.2,89.1L-0.0,81.7L4.4,71.0L6.5,57.6L5.7,42.5L1.7,26.6L-5.2,11.0L-14.8,-3.3L-26.6,-15.6L-39.6,-25.0L-52.9,-31.3L-65.7,-34.2L-76.8,-33.8L-85.3,-30.7L-90.7,-25.3L-92.3,-18.6L-90.0,-11.4L-83.8,-4.7L-74.0,0.6L-61.4,3.8L-46.6,4.3L-30.7,1.8L-14.7,-3.8L0.4,-12.2L13.7,-22.9L24.4,-35.3L32.0,-48.4L36.2,-61.2L37.1,-72.8L35.0,-82.2L30.3,-88.6L24.0,-91.4L16.8,-90.3L9.6,-85.4L3.5,-76.7L-0.7,-64.8L-2.5,-50.6L-1.4,-34.8L2.8,-18.6L10.0,-2.9L19.6,11.3L31.2,23.2L43.9,32.1L56.7,37.7L68.6,39.9L78.6,38.9L86.0,35.1L90.0,29.2L90.2,22.1L86.4,14.8L78.9,8.0L68.0,2.8L54.4,-0.2L38.9,-0.4L22.6,2.4L6.4,8.2L-8.6,16.7L-21.6,27.4L-31.8,39.5L-38.7,52.0L-42.2,64.1L-42.4,74.7L-39.5,82.9L-34.3,88.0L-27.5,89.5L-20.0,87.0L-12.8,80.7L-6.7,70.8L-2.6,57.9L-1.1,42.9L-2.4,26.6L-6.9,10.1L-14.1,-5.6L-23.8,-19.5L-35.2,-30.9L-47.4,-39.2L-59.5,-44.0L-70.5,-45.4L-79.5,-43.7L-85.6,-39.2L-88.3,-32.8L-87.1,-25.3L-82.0,-17.7L-73.2,-11.0L-61.2,-5.8L-46.7,-3.0L-30.6,-3.0L-13.9,-6.0L2.3,-12.0L17.1,-20.5L29.6,-31.1L39.1,-42.8L45.3,-54.8L48.0,-66.1L47.4,-75.7L43.8,-82.7L38.0,-86.5L30.7,-86.6L22.9,-82.8L15.5,-75.2L9.4,-64.2L5.4,-50.4L4.1,-34.6L5.7,-17.9L10.3,-1.3L17.6,14.3L27.2,27.8L38.3,38.6L50.1,46.1L61.5,50.1L71.6,50.7L79.4,48.1L84.3,42.9L85.6,36.0L83.1,28.1L76.7,20.3L66.7,13.4L53.7,8.3L38.5,5.7L21.9,5.9L5.0,9.1L-11.1,15.1L-25.6,23.7L-37.5,34.0L-46.4,45.3L-51.7,56.7L-53.5,67.2L-52.0,75.7L-47.7,81.6L-41.2,84.1L-33.4,82.8L-25.2,77.7L-17.7,68.9L-11.6,56.8L-7.8,42.2L-6.6,25.9L-8.4,8.9L-13.1,-7.7L-20.4,-23.0L-29.9,-36.0L-40.7,-46.1L-51.9,-52.8L-62.6,-55.9L-71.7,-55.6L-78.4,-52.1L-82.0,-46.2L-82.0,-38.7L-78.2,-30.4L-70.6,-22.3L-59.6,-15.3L-45.7,-10.3L-29.8,-7.8L-12.8,-8.1L4.1,-11.5L20.1,-17.6L34.1,-26.1L45.3,-36.2L53.3,-47.0L57.8,-57.8L58.6,-67.4L56.2,-74.9L51.0,-79.5L43.9,-80.7L35.5,-78.2L27.1,-71.8L19.4,-61.9L13.3,-48.9L9.5,-33.5L8.4,-16.8L10.4,0.3L15.2,16.8L22.5,31.7L31.8,44.1L42.2,53.4L52.9,59.1L62.8,61.3L70.9,59.9L76.5,55.6L78.9,48.9L77.7,40.8L72.6,32.0L63.8,23.7L51.8,16.6L37.1,11.6L20.7,9.2L3.5,9.8L-13.4,13.2L-29.0,19.4L-42.4,27.7L-52.9,37.5L-60.0,47.9L-63.4,58.0L-63.2,66.7L-59.9,73.1L-53.8,76.6L-45.9,76.6L-37.1,72.8L-28.3,65.3L-20.4,54.3L-14.3,40.5L-10.5,24.5L-9.6,7.5L-11.7,-9.7L-16.6,-25.9L-23.9,-40.3L-33.0,-51.9L-43.0,-60.3L-53.0,-65.0L-62.1,-66.1L-69.3,-63.7L-73.8,-58.5L-75.0,-51.0L-72.5,-42.2L-66.2,-33.0L-56.4,-24.4L-43.5,-17.3L-28.2,-12.3L-11.4,-10.0L5.9,-10.7L22.6,-14.2L37.7,-20.4L50.4,-28.6L60.0,-38.1L66.1,-48.0L68.5,-57.3L67.2,-65.1L62.9,-70.6L55.9,-72.9L47.3,-71.7L38.0,-66.7L28.8,-58.1L20.7,-46.2L14.6,-31.7L11.0,-15.3L10.2,2.0L12.4,19.0L17.3,34.8L24.5,48.5L33.4,59.3L43.0,66.7L52.4,70.3L60.7,70.3L66.9,66.9L70.3,60.7L70.3,52.4L66.7,43.0L59.3,33.4L48.5,24.5L34.8,17.3L19.0,12.4L2.0,10.2L-15.3,11.0L-31.7,14.6L-46.2,20.7L-58.1,28.8L-66.7,38.0L-71.7,47.3L-72.9,55.9L-70.6,62.9L-65.1,67.2L-57.3,68.5L-48.0,66.1L-38.1,60.0L-28.6,50.4L-20.4,37.7L-14.2,22.6L-10.7,5.9L-10.0,-11.4L-12.3,-28.2L-17.3,-43.5L-24.4,-56.4L-33.0,-66.2L-42.2,-72.5L-51.0,-75.0L-58.5,-73.8L-63.7,-69.3L-66.1,-62.1L-65.0,-53.0L-60.3,-43.0L-51.9,-33.0L-40.3,-23.9L-25.9,-16.6L-9.7,-11.7L7.5,-9.6L24.5,-10.5L40.5,-14.3L54.3,-20.4L65.3,-28.3L72.8,-37.1L76.6,-45.9L76.6,-53.8L73.1,-59.9L66.7,-63.2L58.0,-63.4L47.9,-60.0L37.5,-52.9L27.7,-42.4L19.4,-29.0L13.2,-13.4L9.8,3.5L9.2,20.7L11.6,37.1L16.6,51.8L23.7,63.8L32.0,72.6L40.8,77.7L48.9,78.9L55.6,76.5L59.9,70.9L61.3,62.8L59.1,52.9L53.4,42.2L44.1,31.8L31.7,22.5L16.8,15.2L0.3,10.4L-16.8,8.4L-33.5,9.5L-48.9,13.3L-61.9,19.4L-71.8,27.1L-78.2,35.5L-80.7,43.9L-79.5,51.0L-74.9,56.2L-67.4,58.6L-57.8,57.8L-47.0,53.3L-36.2,45.3L-26.1,34.1L-17.6,20.1L-11.5,4.1L-8.1,-12.8L-7.8,-29.8L-10.3,-45.7L-15.3,-59.6L-22.3,-70.6L-30.4,-78.2L-38.7,-82.0L-46.2,-82.0L-52.1,-78.4L-55.6,-71.7L-55.9,-62.6L-52.8,-51.9L-46.1,-40.7L-36.0,-29.9L-23.0,-20.4L-7.7,-13.1L8.9,-8.4L25.9,-6.6L42.2,-7.8L56.8,-11.6L68.9,-17.7L77.7,-25.2L82.8,-33.4L84.1,-41.2L81.6,-47.7L75.7,-52.0L67.2,-53.5L56.7,-51.7L45.3,-46.4L34.0,-37.5L23.7,-25.6L15.1,-11.1L9.1,5.0L5.9,21.9L5.7,38.5L8.3,53.7L13.4,66.7L20.3,76.7L28.1,83.1L36.0,85.6L42.9,84.3L48.1,79.4L50.7,71.6L50.1,61.5L46.1,50.1L38.6,38.3L27.8,27.2L14.3,17.6L-1.3,10.3L-17.9,5.7L-34.6,4.1L-50.4,5.4L-64.2,9.4L-75.2,15.5L-82.8,22.9L-86.6,30.7L-86.5,38.0L-82.7,43.8L-75.7,47.4L-66.1,48.0L-54.8,45.3L-42.8,39.1L-31.1,29.6L-20.5,17.1L-12.0,2.3L-6.0,-13.9L-3.0,-30.6L-3.0,-46.7L-5.8,-61.2L-11.0,-73.2L-17.7,-82.0L-25.3,-87.1L-32.8,-88.3L-39.2,-85.6L-43.7,-79.5L-45.4,-70.5L-44.0,-59.5L-39.2,-47.4L-30.9,-35.2L-19.5,-23.8L-5.6,-14.1L10.1,-6.9L26.6,-2.4L42.9,-1.1L57.9,-2.6L70.8,-6.7L80.7,-12.8L87.0,-20.0L89.5,-27.5L88.0,-34.3L82.9,-39.5L74.7,-42.4L64.1,-42.2L52.0,-38.7L39.5,-31.8L27.4,-21.6L16.7,-8.6L8.2,6.4L2.4,22.6L-0.4,38.9L-0.2,54.4L2.8,68.0L8.0,78.9L14.8,86.4L22.1,90.2L29.2,90.0L35.1,86.0L38.9,78.6L39.9,68.6L37.7,56.7L32.1,43.9L23.2,31.2L11.3,19.6L-2.9,10.0L-18.6,2.8L-34.8,-1.4L-50.6,-2.5L-64.8,-0.7L-76.7,3.5L-85.4,9.6L-90.3,16.8L-91.4,24.0L-88.6,30.3L-82.2,35.0L-72.8,37.1L-61.2,36.2L-48.4,32.0L-35.3,24.4L-22.9,13.7L-12.2,0.4L-3.8,-14.7L1.8,-30.7L4.3,-46.6L3.8,-61.4L0.6,-74.0L-4.7,-83.8L-11.4,-90.0L-18.6,-92.3L-25.3,-90.7L-30.7,-85.3L-33.8,-76.8L-34.2,-65.7L-31.3,-52.9L-25.0,-39.6L-15.6,-26.6L-3.3,-14.8L11.0,-5.2L26.6,1.7L42.5,5.7L57.6,6.5L71.0,4.4L81.7,-0.0L89.1,-6.2L92.7,-13.2L92.3,-20.1L88.1,-26.1L80.4,-30.2L69.9,-31.7L57.4,-30.1L43.9,-25.2L30.4,-17.0L17.8,-5.9L7.1,7.6L-1.2,22.6L-6.5,38.4L-8.7,53.7L-7.9,67.6L-4.4,79.2L1.1,87.7L7.8,92.5L14.8,93.4L21.2,90.4L26.1,83.7L28.7,74.0L28.4,61.9L24.8,48.4L18.0,34.5L8.1,21.2L-4.4,9.4L-18.8,-0.1L-34.2,-6.8L-49.6,-10.4L-63.9,-10.9L-76.3,-8.5L-85.8,-3.8L-91.9,2.4L-94.0,9.4L-92.2,16.1L-86.6,21.7L-77.7,25.2L-66.1,26.2L-52.8,24.0L-38.7,18.5L-24.8,9.9L-12.1,-1.5L-1.4,-15.1L6.6,-30.1L11.6,-45.4L13.4,-60.0L12.2,-73.0L8.5,-83.5L2.8,-90.7L-3.9,-94.1L-10.8,-93.5L-17.0,-89.1L-21.4,-81.1L-23.5,-70.2L-22.6,-57.2L-18.5,-43.0L-11.2,-28.7L-1.0,-15.2L11.7,-3.4L26.0,5.9L41.1,12.2L55.9,15.4L69.4,15.5L80.7,12.8L89.0,7.9L93.6,1.5L94.3,-5.4L91.1,-12.0L84.2,-17.2L74.0,-20.3L61.4,-20.7L47.3,-18.0L32.7,-12.1L18.5,-3.0L5.8,8.6L-4.7,22.2L-12.4,36.9L-17.0,51.7L-18.3,65.5L-16.8,77.5L-12.7,86.8L-6.8,92.6L-0.0,94.6L6.8,92.6L12.7,86.8L16.8,77.5L18.3,65.5L17.0,51.7L12.4,36.9L4.7,22.2L-5.8,8.6L-18.5,-3.0L-32.7,-12.1L-47.3,-18.0L-61.4,-20.7L-74.0,-20.3L-84.2,-17.2L-91.1,-12.0L-94.3,-5.4L-93.6,1.5L-89.0,7.9L-80.7,12.8L-69.4,15.5L-55.9,15.4L-41.1,12.2L-26.0,5.9L-11.7,-3.4L1.0,-15.2L11.2,-28.7L18.5,-43.0L22.6,-57.2L23.5,-70.2L21.4,-81.1L17.0,-89.1L10.8,-93.5L3.9,-94.1L-2.8,-90.7L-8.5,-83.5L-12.2,-73.0L-13.4,-60.0L-11.6,-45.4L-6.6,-30.1L1.4,-15.1L12.1,-1.5L24.8,9.9L38.7,18.5L52.8,24.0L66.1,26.2L77.7,25.2L86.6,21.7L92.2,16.1L94.0,9.4L91.9,2.4L85.8,-3.8L76.3,-8.5L63.9,-10.9L49.6,-10.4L34.2,-6.8L18.8,-0.1L4.4,9.4L-8.1,21.2L-18.0,34.5L-24.8,48.4L-28.4,61.9L-28.7,74.0L-26.1,83.7L-21.2,90.4L-14.8,93.4L-7.8,92.5L-1.1,87.7L4.4,79.2L7.9,67.6L8.7,53.7L6.5,38.4L1.2,22.6L-7.1,7.6L-17.8,-5.9L-30.4,-17.0L-43.9,-25.2L-57.4,-30.1L-69.9,-31.7L-80.4,-30.2L-88.1,-26.1L-92.3,-20.1L-92.7,-13.2L-89.1,-6.2L-81.7,-0.0L-71.0,4.4L-57.6,6.5L-42.5,5.7L-26.6,1.7L-11.0,-5.2L3.3,-14.8L15.6,-26.6L25.0,-39.6L31.3,-52.9L34.2,-65.7L33.8,-76.8L30.7,-85.3L25.3,-90.7L18.6,-92.3L11.4,-90.0L4.7,-83.8L-0.6,-74.0L-3.8,-61.4L-4.3,-46.6L-1.8,-30.7L3.8,-14.7L12.2,0.4L22.9,13.7L35.3,24.4L48.4,32.0L61.2,36.2L72.8,37.1L82.2,35.0L88.6,30.3L91.4,24.0L90.3,16.8L85.4,9.6L76.7,3.5L64.8,-0.7L50.6,-2.5L34.8,-1.4L18.6,2.8L2.9,10.0L-11.3,19.6L-23.2,31.2L-32.1,43.9L-37.7,56.7L-39.9,68.6L-38.9,78.6L-35.1,86.0L-29.2,90.0L-22.1,90.2L-14.8,86.4L-8.0,78.9L-2.8,68.0L0.2,54.4L0.4,38.9L-2.4,22.6L-8.2,6.4L-16.7,-8.6L-27.4,-21.6L-39.5,-31.8L-52.0,-38.7L-64.1,-42.2L-74.7,-42.4L-82.9,-39.5L-88.0,-34.3L-89.5,-27.5L-87.0,-20.0L-80.7,-12.8L-70.8,-6.7L-57.9,-2.6L-42.9,-1.1L-26.6,-2.4L-10.1,-6.9L5.6,-14.1L19.5,-23.8L30.9,-35.2L39.2,-47.4L44.0,-59.5L45.4,-70.5L43.7,-79.5L39.2,-85.6L32.8,-88.3L25.3,-87.1L17.7,-82.0L11.0,-73.2L5.8,-61.2L3.0,-46.7L3.0,-30.6L6.0,-13.9L12.0,2.3L20.5,17.1L31.1,29.6L42.8,39.1L54.8,45.3L66.1,48.0L75.7,47.4L82.7,43.8L86.5,38.0L86.6,30.7L82.8,22.9L75.2,15.5L64.2,9.4L50.4,5.4L34.6,4.1L17.9,5.7L1.3,10.3L-14.3,17.6L-27.8,27.2L-38.6,38.3L-46.1,50.1L-50.1,61.5L-50.7,71.6L-48.1,79.4L-42.9,84.3L-36.0,85.6L-28.1,83.1L-20.3,76.7L-13.4,66.7L-8.3,53.7L-5.7,38.5L-5.9,21.9L-9.1,5.0L-15.1,-11.1L-23.7,-25.6L-34.0,-37.5L-45.3,-46.4L-56.7,-51.7L-67.2,-53.5L-75.7,-52.0L-81.6,-47.7L-84.1,-41.2L-82.8,-33.4L-77.7,-25.2L-68.9,-17.7L-56.8,-11.6L-42.2,-7.8L-25.9,-6.6L-8.9,-8.4L7.7,-13.1L23.0,-20.4L36.0,-29.9L46.1,-40.7L52.8,-51.9L55.9,-62.6L55.6,-71.7L52.1,-78.4L46.2,-82.0L38.7,-82.0L30.4,-78.2L22.3,-70.6L15.3,-59.6L10.3,-45.7L7.8,-29.8L8.1,-12.8L11.5,4.1L17.6,20.1L26.1,34.1L36.2,45.3L47.0,53.3L57.8,57.8L67.4,58.6L74.9,56.2L79.5,51.0L80.7,43.9L78.2,35.5L71.8,27.1L61.9,19.4L48.9,13.3L33.5,9.5L16.8,8.4L-0.3,10.4L-16.8,15.2L-31.7,22.5L-44.1,31.8L-53.4,42.2L-59.1,52.9L-61.3,62.8L-59.9,70.9L-55.6,76.5L-48.9,78.9L-40.8,77.7L-32.0,72.6L-23.7,63.8L-16.6,51.8L-11.6,37.1L-9.2,20.7L-9.8,3.5L-13.2,-13.4L-19.4,-29.0L-27.7,-42.4L-37.5,-52.9L-47.9,-60.0L-58.0,-63.4L-66.7,-63.2L-73.1,-59.9L-76.6,-53.8L-76.6,-45.9L-72.8,-37.1L-65.3,-28.3L-54.3,-20.4L-40.5,-14.3L-24.5,-10.5L-7.5,-9.6L9.7,-11.7L25.9,-16.6L40.3,-23.9L51.9,-33.0L60.3,-43.0L65.0,-53.0L66.1,-62.1L63.7,-69.3L58.5,-73.8L51.0,-75.0L42.2,-72.5L33.0,-66.2L24.4,-56.4L17.3,-43.5L12.3,-28.2L10.0,-11.4L10.7,5.9L14.2,22.6L20.4,37.7L28.6,50.4L38.1,60.0L48.0,66.1L57.3,68.5L65.1,67.2L70.6,62.9L72.9,55.9L71.7,47.3L66.7,38.0L58.1,28.8L46.2,20.7L31.7,14.6L15.3,11.0L-2.0,10.2L-19.0,12.4L-34.8,17.3L-48.5,24.5L-59.3,33.4L-66.7,43.0L-70.3,52.4L-70.3,60.7L-66.9,66.9L-60.7,70.3L-52.4,70.3L-43.0,66.7L-33.4,59.3L-24.5,48.5L-17.3,34.8L-12.4,19.0L-10.2,2.0L-11.0,-15.3L-14.6,-31.7L-20.7,-46.2L-28.8,-58.1L-38.0,-66.7L-47.3,-71.7L-55.9,-72.9L-62.9,-70.6L-67.2,-65.1L-68.5,-57.3L-66.1,-48.0L-60.0,-38.1L-50.4,-28.6L-37.7,-20.4L-22.6,-14.2L-5.9,-10.7L11.4,-10.0L28.2,-12.3L43.5,-17.3L56.4,-24.4L66.2,-33.0L72.5,-42.2L75.0,-51.0L73.8,-58.5L69.3,-63.7L62.1,-66.1L53.0,-65.0L43.0,-60.3L33.0,-51.9L23.9,-40.3L16.6,-25.9L11.7,-9.7L9.6,7.5L10.5,24.5L14.3,40.5L20.4,54.3L28.3,65.3L37.1,72.8L45.9,76.6L53.8,76.6L59.9,73.1L63.2,66.7L63.4,58.0L60.0,47.9L52.9,37.5L42.4,27.7L29.0,19.4L13.4,13.2L-3.5,9.8L-20.7,9.2L-37.1,11.6L-51.8,16.6L-63.8,23.7L-72.6,32.0L-77.7,40.8L-78.9,48.9L-76.5,55.6L-70.9,59.9L-62.8,61.3L-52.9,59.1L-42.2,53.4L-31.8,44.1L-22.5,31.7L-15.2,16.8L-10.4,0.3L-8.4,-16.8L-9.5,-33.5L-13.3,-48.9L-19.4,-61.9L-27.1,-71.8L-35.5,-78.2L-43.9,-80.7L-51.0,-79.5L-56.2,-74.9L-58.6,-67.4L-57.8,-57.8L-53.3,-47.0L-45.3,-36.2L-34.1,-26.1L-20.1,-17.6L-4.1,-11.5L12.8,-8.1L29.8,-7.8L45.7,-10.3L59.6,-15.3L70.6,-22.3L78.2,-30.4L82.0,-38.7L82.0,-46.2L78.4,-52.1L71.7,-55.6L62.6,-55.9L51.9,-52.8L40.7,-46.1L29.9,-36.0L20.4,-23.0L13.1,-7.7L8.4,8.9L6.6,25.9L7.8,42.2L11.6,56.8L17.7,68.9L25.2,77.7L33.4,82.8L41.2,84.1L47.7,81.6L52.0,75.7L53.5,67.2L51.7,56.7L46.4,45.3L37.5,34.0L25.6,23.7L11.1,15.1L-5.0,9.1L-21.9,5.9L-38.5,5.7L-53.7,8.3L-66.7,13.4L-76.7,20.3L-83.1,28.1L-85.6,36.0L-84.3,42.9L-79.4,48.1L-71.6,50.7L-61.5,50.1L-50.1,46.1L-38.3,38.6L-27.2,27.8L-17.6,14.3L-10.3,-1.3L-5.7,-17.9L-4.1,-34.6L-5.4,-50.4L-9.4,-64.2L-15.5,-75.2L-22.9,-82.8L-30.7,-86.6L-38.0,-86.5L-43.8,-82.7L-47.4,-75.7L-48.0,-66.1L-45.3,-54.8L-39.1,-42.8L-29.6,-31.1L-17.1,-20.5L-2.3,-12.0L13.9,-6.0L30.6,-3.0L46.7,-3.0L61.2,-5.8L73.2,-11.0L82.0,-17.7L87.1,-25.3L88.3,-32.8L85.6,-39.2L79.5,-43.7L70.5,-45.4L59.5,-44.0L47.4,-39.2L35.2,-30.9L23.8,-19.5L14.1,-5.6L6.9,10.1L2.4,26.6L1.1,42.9L2.6,57.9L6.7,70.8L12.8,80.7L20.0,87.0L27.5,89.5L34.3,88.0L39.5,82.9L42.4,74.7L42.2,64.1L38.7,52.0L31.8,39.5L21.6,27.4L8.6,16.7L-6.4,8.2L-22.6,2.4L-38.9,-0.4L-54.4,-0.2L-68.0,2.8L-78.9,8.0L-86.4,14.8L-90.2,22.1L-90.0,29.2L-86.0,35.1L-78.6,38.9L-68.6,39.9L-56.7,37.7L-43.9,32.1L-31.2,23.2L-19.6,11.3L-10.0,-2.9L-2.8,-18.6L1.4,-34.8L2.5,-50.6L0.7,-64.8L-3.5,-76.7L-9.6,-85.4L-16.8,-90.3L-24.0,-91.4L-30.3,-88.6L-35.0,-82.2L-37.1,-72.8L-36.2,-61.2L-32.0,-48.4L-24.4,-35.3L-13.7,-22.9L-0.4,-12.2L14.7,-3.8L30.7,1.8L46.6,4.3L61.4,3.8L74.0,0.6L83.8,-4.7L90.0,-11.4L92.3,-18.6L90.7,-25.3L85.3,-30.7L76.8,-33.8L65.7,-34.2L52.9,-31.3L39.6,-25.0L26.6,-15.6L14.8,-3.3L5.2,11.0L-1.7,26.6L-5.7,42.5L-6.5,57.6L-4.4,71.0L0.0,81.7L6.2,89.1L13.2,92.7L20.1,92.3L26.1,88.1L30.2,80.4L31.7,69.9L30.1,57.4L25.2,43.9L17.0,30.4L5.9,17.8L-7.6,7.1L-22.6,-1.2L-38.4,-6.5L-53.7,-8.7L-67.6,-7.9L-79.2,-4.4L-87.7,1.1L-92.5,7.8L-93.4,14.8L-90.4,21.2L-83.7,26.1L-74.0,28.7L-61.9,28.4L-48.4,24.8L-34.5,18.0L-21.2,8.1L-9.4,-4.4L0.1,-18.8L6.8,-34.2L10.4,-49.6L10.9,-63.9L8.5,-76.3L3.8,-85.8L-2.4,-91.9L-9.4,-94.0L-16.1,-92.2L-21.7,-86.6L-25.2,-77.7L-26.2,-66.1L-24.0,-52.8L-18.5,-38.7L-9.9,-24.8L1.5,-12.1L15.1,-1.4L30.1,6.6L45.4,11.6L60.0,13.4L73.0,12.2L83.5,8.5L90.7,2.8L94.1,-3.9L93.5,-10.8L89.1,-17.0L81.1,-21.4L70.2,-23.5L57.2,-22.6L43.0,-18.5L28.7,-11.2L15.2,-1.0L3.4,11.7L-5.9,26.0L-12.2,41.1L-15.4,55.9L-15.5,69.4L-12.8,80.7L-7.9,89.0L-1.5,93.6L5.4,94.3L12.0,91.1L17.2,84.2L20.3,74.0L20.7,61.4L18.0,47.3L12.1,32.7L3.0,18.5L-8.6,5.8L-22.2,-4.7L-36.9,-12.4L-51.7,-17.0L-65.5,-18.3L-77.5,-16.8L-86.8,-12.7L-92.6,-6.8L-94.6,-0.0L-92.6,6.8L-86.8,12.7L-77.5,16.8L-65.5,18.3L-51.7,17.0L-36.9,12.4L-22.2,4.7L-8.6,-5.8L3.0,-18.5L12.1,-32.7L18.0,-47.3L20.7,-61.4L20.3,-74.0L17.2,-84.2L12.0,-91.1L5.4,-94.3L-1.5,-93.6L-7.9,-89.0L-12.8,-80.7L-15.5,-69.4L-15.4,-55.9L-12.2,-41.1L-5.9,-26.0L3.4,-11.7L15.2,1.0L28.7,11.2L43.0,18.5L57.2,22.6L70.2,23.5L81.1,21.4L89.1,17.0L93.5,10.8L94.1,3.9L90.7,-2.8L83.5,-8.5L73.0,-12.2L60.0,-13.4L45.4,-11.6L30.1,-6.6L15.1,1.4L1.5,12.1L-9.9,24.8L-18.5,38.7L-24.0,52.8L-26.2,66.1L-25.2,77.7L-21.7,86.6L-16.1,92.2L-9.4,94.0L-2.4,91.9L3.8,85.8L8.5,76.3L10.9,63.9L10.4,49.6L6.8,34.2L0.1,18.8L-9.4,4.4L-21.2,-8.1L-34.5,-18.0L-48.4,-24.8L-61.9,-28.4L-74.0,-28.7L-83.7,-26.1L-90.4,-21.2L-93.4,-14.8L-92.5,-7.8L-87.7,-1.1L-79.2,4.4L-67.6,7.9L-53.7,8.7L-38.4,6.5L-22.6,1.2L-7.6,-7.1L5.9,-17.8L17.0,-30.4L25.2,-43.9L30.1,-57.4L31.7,-69.9L30.2,-80.4L26.1,-88.1L20.1,-92.3L13.2,-92.7L6.2,-89.1L0.0,-81.7L-4.4,-71.0L-6.5,-57.6L-5.7,-42.5L-1.7,-26.6L5.2,-11.0L14.8,3.3L26.6,15.6L39.6,25.0L52.9,31.3L65.7,34.2L76.8,33.8L85.3,30.7L90.7,25.3L92.3,18.6L90.0,11.4L83.8,4.7L74.0,-0.6L61.4,-3.8L46.6,-4.3L30.7,-1.8L14.7,3.8L-0.4,12.2L-13.7,22.9L-24.4,35.3L-32.0,48.4L-36.2,61.2L-37.1,72.8L-35.0,82.2L-30.3,88.6L-24.0,91.4L-16.8,90.3L-9.6,85.4L-3.5,76.7L0.7,64.8L2.5,50.6L1.4,34.8L-2.8,18.6L-10.0,2.9L-19.6,-11.3L-31.2,-23.2L-43.9,-32.1L-56.7,-37.7L-68.6,-39.9L-78.6,-38.9L-86.0,-35.1L-90.0,-29.2L-90.2,-22.1L-86.4,-14.8L-78.9,-8.0L-68.0,-2.8L-54.4,0.2L-38.9,0.4L-22.6,-2.4L-6.4,-8.2L8.6,-16.7L21.6,-27.4L31.8,-39.5L38.7,-52.0L42.2,-64.1L42.4,-74.7L39.5,-82.9L34.3,-88.0L27.5,-89.5L20.0,-87.0L12.8,-80.7L6.7,-70.8L2.6,-57.9L1.1,-42.9L2.4,-26.6L6.9,-10.1L14.1,5.6L23.8,19.5L35.2,30.9L47.4,39.2L59.5,44.0L70.5,45.4L79.5,43.7L85.6,39.2L88.3,32.8L87.1,25.3L82.0,17.7L73.2,11.0L61.2,5.8L46.7,3.0L30.6,3.0L13.9,6.0L-2.3,12.0L-17.1,20.5L-29.6,31.1L-39.1,42.8L-45.3,54.8L-48.0,66.1L-47.4,75.7L-43.8,82.7L-38.0,86.5L-30.7,86.6L-22.9,82.8L-15.5,75.2L-9.4,64.2L-5.4,50.4L-4.1,34.6L-5.7,17.9L-10.3,1.3L-17.6,-14.3L-27.2,-27.8L-38.3,-38.6L-50.1,-46.1L-61.5,-50.1L-71.6,-50.7L-79.4,-48.1L-84.3,-42.9L-85.6,-36.0L-83.1,-28.1L-76.7,-20.3L-66.7,-13.4L-53.7,-8.3L-38.5,-5.7L-21.9,-5.9L-5.0,-9.1L11.1,-15.1L25.6,-23.7L37.5,-34.0L46.4,-45.3L51.7,-56.7L53.5,-67.2L52.0,-75.7L47.7,-81.6L41.2,-84.1L33.4,-82.8L25.2,-77.7L17.7,-68.9L11.6,-56.8L7.8,-42.2L6.6,-25.9L8.4,-8.9L13.1,7.7L20.4,23.0L29.9,36.0L40.7,46.1L51.9,52.8L62.6,55.9L71.7,55.6L78.4,52.1L82.0,46.2L82.0,38.7L78.2,30.4L70.6,22.3L59.6,15.3L45.7,10.3L29.8,7.8L12.8,8.1L-4.1,11.5L-20.1,17.6L-34.1,26.1L-45.3,36.2L-53.3,47.0L-57.8,57.8L-58.6,67.4L-56.2,74.9L-51.0,79.5L-43.9,80.7L-35.5,78.2L-27.1,71.8L-19.4,61.9L-13.3,48.9L-9.5,33.5L-8.4,16.8L-10.4,-0.3L-15.2,-16.8L-22.5,-31.7L-31.8,-44.1L-42.2,-53.4L-52.9,-59.1L-62.8,-61.3L-70.9,-59.9L-76.5,-55.6L-78.9,-48.9L-77.7,-40.8L-72.6,-32.0L-63.8,-23.7L-51.8,-16.6L-37.1,-11.6L-20.7,-9.2L-3.5,-9.8L13.4,-13.2L29.0,-19.4L42.4,-27.7L52.9,-37.5L60.0,-47.9L63.4,-58.0L63.2,-66.7L59.9,-73.1L53.8,-76.6L45.9,-76.6L37.1,-72.8L28.3,-65.3L20.4,-54.3L14.3,-40.5L10.5,-24.5L9.6,-7.5L11.7,9.7L16.6,25.9L23.9,40.3L33.0,51.9L43.0,60.3L53.0,65.0L62.1,66.1L69.3,63.7L73.8,58.5L75.0,51.0L72.5,42.2L66.2,33.0L56.4,24.4L43.5,17.3L28.2,12.3L11.4,10.0L-5.9,10.7L-22.6,14.2L-37.7,20.4L-50.4,28.6L-60.0,38.1L-66.1,48.0L-68.5,57.3L-67.2,65.1L-62.9,70.6L-55.9,72.9L-47.3,71.7L-38.0,66.7L-28.8,58.1L-20.7,46.2L-14.6,31.7L-11.0,15.3L-10.2,-2.0L-12.4,-19.0L-17.3,-34.8L-24.5,-48.5L-33.4,-59.3L-43.0,-66.7L-52.4,-70.3L-60.7,-70.3L-66.9,-66.9L-70.3,-60.7L-70.3,-52.4L-66.7,-43.0L-59.3,-33.4L-48.5,-24.5L-34.8,-17.3L-19.0,-12.4L-2.0,-10.2L15.3,-11.0L31.7,-14.6L46.2,-20.7L58.1,-28.8L66.7,-38.0L71.7,-47.3L72.9,-55.9L70.6,-62.9L65.1,-67.2L57.3,-68.5L48.0,-66.1L38.1,-60.0L28.6,-50.4L20.4,-37.7L14.2,-22.6L10.7,-5.9L10.0,11.4L12.3,28.2L17.3,43.5L24.4,56.4L33.0,66.2L42.2,72.5L51.0,75.0L58.5,73.8L63.7,69.3L66.1,62.1L65.0,53.0L60.3,43.0L51.9,33.0L40.3,23.9L25.9,16.6L9.7,11.7L-7.5,9.6L-24.5,10.5L-40.5,14.3L-54.3,20.4L-65.3,28.3L-72.8,37.1L-76.6,45.9L-76.6,53.8L-73.1,59.9L-66.7,63.2L-58.0,63.4L-47.9,60.0L-37.5,52.9L-27.7,42.4L-19.4,29.0L-13.2,13.4L-9.8,-3.5L-9.2,-20.7L-11.6,-37.1L-16.6,-51.8L-23.7,-63.8L-32.0,-72.6L-40.8,-77.7L-48.9,-78.9L-55.6,-76.5L-59.9,-70.9L-61.3,-62.8L-59.1,-52.9L-53.4,-42.2L-44.1,-31.8L-31.7,-22.5L-16.8,-15.2L-0.3,-10.4L16.8,-8.4L33.5,-9.5L48.9,-13.3L61.9,-19.4L71.8,-27.1L78.2,-35.5L80.7,-43.9L79.5,-51.0L74.9,-56.2L67.4,-58.6L57.8,-57.8L47.0,-53.3L36.2,-45.3L26.1,-34.1L17.6,-20.1L11.5,-4.1L8.1,12.8L7.8,29.8L10.3,45.7L15.3,59.6L22.3,70.6L30.4,78.2L38.7,82.0L46.2,82.0L52.1,78.4L55.6,71.7L55.9,62.6L52.8,51.9L46.1,40.7L36.0,29.9L23.0,20.4L7.7,13.1L-8.9,8.4L-25.9,6.6L-42.2,7.8L-56.8,11.6L-68.9,17.7L-77.7,25.2L-82.8,33.4L-84.1,41.2L-81.6,47.7L-75.7,52.0L-67.2,53.5L-56.7,51.7L-45.3,46.4L-34.0,37.5L-23.7,25.6L-15.1,11.1L-9.1,-5.0L-5.9,-21.9L-5.7,-38.5L-8.3,-53.7L-13.4,-66.7L-20.3,-76.7L-28.1,-83.1L-36.0,-85.6L-42.9,-84.3L-48.1,-79.4L-50.7,-71.6L-50.1,-61.5L-46.1,-50.1L-38.6,-38.3L-27.8,-27.2L-14.3,-17.6L1.3,-10.3L17.9,-5.7L34.6,-4.1L50.4,-5.4L64.2,-9.4L75.2,-15.5L82.8,-22.9L86.6,-30.7L86.5,-38.0L82.7,-43.8L75.7,-47.4L66.1,-48.0L54.8,-45.3L42.8,-39.1L31.1,-29.6L20.5,-17.1L12.0,-2.3L6.0,13.9L3.0,30.6L3.0,46.7L5.8,61.2L11.0,73.2L17.7,82.0L25.3,87.1L32.8,88.3L39.2,85.6L43.7,79.5L45.4,70.5L44.0,59.5L39.2,47.4L30.9,35.2L19.5,23.8L5.6,14.1L-10.1,6.9L-26.6,2.4L-42.9,1.1L-57.9,2.6L-70.8,6.7L-80.7,12.8L-87.0,20.0L-89.5,27.5L-88.0,34.3L-82.9,39.5L-74.7,42.4L-64.1,42.2L-52.0,38.7L-39.5,31.8L-27.4,21.6L-16.7,8.6L-8.2,-6.4L-2.4,-22.6L0.4,-38.9L0.2,-54.4L-2.8,-68.0L-8.0,-78.9L-14.8,-86.4L-22.1,-90.2L-29.2,-90.0L-35.1,-86.0L-38.9,-78.6L-39.9,-68.6L-37.7,-56.7L-32.1,-43.9L-23.2,-31.2L-11.3,-19.6L2.9,-10.0L18.6,-2.8L34.8,1.4L50.6,2.5L64.8,0.7L76.7,-3.5L85.4,-9.6L90.3,-16.8L91.4,-24.0L88.6,-30.3L82.2,-35.0L72.8,-37.1L61.2,-36.2L48.4,-32.0L35.3,-24.4L22.9,-13.7L12.2,-0.4L3.8,14.7L-1.8,30.7L-4.3,46.6L-3.8,61.4L-0.6,74.0L4.7,83.8L11.4,90.0L18.6,92.3L25.3,90.7L30.7,85.3L33.8,76.8L34.2,65.7L31.3,52.9L25.0,39.6L15.6,26.6L3.3,14.8L-11.0,5.2L-26.6,-1.7L-42.5,-5.7L-57.6,-6.5L-71.0,-4.4L-81.7,0.0L-89.1,6.2L-92.7,13.2L-92.3,20.1L-88.1,26.1L-80.4,30.2L-69.9,31.7L-57.4,30.1L-43.9,25.2L-30.4,17.0L-17.8,5.9L-7.1,-7.6L1.2,-22.6L6.5,-38.4L8.7,-53.7L7.9,-67.6L4.4,-79.2L-1.1,-87.7L-7.8,-92.5L-14.8,-93.4L-21.2,-90.4L-26.1,-83.7L-28.7,-74.0L-28.4,-61.9L-24.8,-48.4L-18.0,-34.5L-8.1,-21.2L4.4,-9.4L18.8,0.1L34.2,6.8L49.6,10.4L63.9,10.9L76.3,8.5L85.8,3.8L91.9,-2.4L94.0,-9.4L92.2,-16.1L86.6,-21.7L77.7,-25.2L66.1,-26.2L52.8,-24.0L38.7,-18.5L24.8,-9.9L12.1,1.5L1.4,15.1L-6.6,30.1L-11.6,45.4L-13.4,60.0L-12.2,73.0L-8.5,83.5L-2.8,90.7L3.9,94.1L10.8,93.5L17.0,89.1L21.4,81.1L23.5,70.2L22.6,57.2L18.5,43.0L11.2,28.7L1.0,15.2L-11.7,3.4L-26.0,-5.9L-41.1,-12.2L-55.9,-15.4L-69.4,-15.5L-80.7,-12.8L-89.0,-7.9L-93.6,-1.5L-94.3,5.4L-91.1,12.0L-84.2,17.2L-74.0,20.3L-61.4,20.7L-47.3,18.0L-32.7,12.1L-18.5,3.0L-5.8,-8.6L4.7,-22.2L12.4,-36.9L17.0,-51.7L18.3,-65.5L16.8,-77.5L12.7,-86.8L6.8,-92.6L0.0,-94.6L-6.8,-92.6L-12.7,-86.8L-16.8,-77.5L-18.3,-65.5L-17.0,-51.7L-12.4,-36.9L-4.7,-22.2L5.8,-8.6L18.5,3.0L32.7,12.1L47.3,18.0L61.4,20.7L74.0,20.3L84.2,17.2L91.1,12.0L94.3,5.4L93.6,-1.5L89.0,-7.9L80.7,-12.8L69.4,-15.5L55.9,-15.4L41.1,-12.2L26.0,-5.9L11.7,3.4L-1.0,15.2L-11.2,28.7L-18.5,43.0L-22.6,57.2L-23.5,70.2L-21.4,81.1L-17.0,89.1L-10.8,93.5L-3.9,94.1L2.8,90.7L8.5,83.5L12.2,73.0L13.4,60.0L11.6,45.4L6.6,30.1L-1.4,15.1L-12.1,1.5L-24.8,-9.9L-38.7,-18.5L-52.8,-24.0L-66.1,-26.2L-77.7,-25.2L-86.6,-21.7L-92.2,-16.1L-94.0,-9.4L-91.9,-2.4L-85.8,3.8L-76.3,8.5L-63.9,10.9L-49.6,10.4L-34.2,6.8L-18.8,0.1L-4.4,-9.4L8.1,-21.2L18.0,-34.5L24.8,-48.4L28.4,-61.9L28.7,-74.0L26.1,-83.7L21.2,-90.4L14.8,-93.4L7.8,-92.5L1.1,-87.7L-4.4,-79.2L-7.9,-67.6L-8.7,-53.7L-6.5,-38.4L-1.2,-22.6L7.1,-7.6L17.8,5.9L30.4,17.0L43.9,25.2L57.4,30.1L69.9,31.7L80.4,30.2L88.1,26.1L92.3,20.1L92.7,13.2L89.1,6.2L81.7,0.0L71.0,-4.4L57.6,-6.5L42.5,-5.7L26.6,-1.7L11.0,5.2L-3.3,14.8L-15.6,26.6L-25.0,39.6L-31.3,52.9L-34.2,65.7L-33.8,76.8L-30.7,85.3L-25.3,90.7L-18.6,92.3L-11.4,90.0L-4.7,83.8L0.6,74.0L3.8,61.4L4.3,46.6L1.8,30.7L-3.8,14.7L-12.2,-0.4L-22.9,-13.7L-35.3,-24.4L-48.4,-32.0L-61.2,-36.2L-72.8,-37.1L-82.2,-35.0L-88.6,-30.3L-91.4,-24.0L-90.3,-16.8L-85.4,-9.6L-76.7,-3.5L-64.8,0.7L-50.6,2.5L-34.8,1.4L-18.6,-2.8L-2.9,-10.0L11.3,-19.6L23.2,-31.2L32.1,-43.9L37.7,-56.7L39.9,-68.6L38.9,-78.6L35.1,-86.0L29.2,-90.0L22.1,-90.2L14.8,-86.4L8.0,-78.9L2.8,-68.0L-0.2,-54.4L-0.4,-38.9L2.4,-22.6L8.2,-6.4L16.7,8.6L27.4,21.6L39.5,31.8L52.0,38.7L64.1,42.2L74.7,42.4L82.9,39.5L88.0,34.3L89.5,27.5L87.0,20.0L80.7,12.8L70.8,6.7L57.9,2.6L42.9,1.1L26.6,2.4L10.1,6.9L-5.6,14.1L-19.5,23.8L-30.9,35.2L-39.2,47.4L-44.0,59.5L-45.4,70.5L-43.7,79.5L-39.2,85.6L-32.8,88.3L-25.3,87.1L-17.7,82.0L-11.0,73.2L-5.8,61.2L-3.0,46.7L-3.0,30.6L-6.0,13.9L-12.0,-2.3L-20.5,-17.1L-31.1,-29.6L-42.8,-39.1L-54.8,-45.3L-66.1,-48.0L-75.7,-47.4L-82.7,-43.8L-86.5,-38.0L-86.6,-30.7L-82.8,-22.9L-75.2,-15.5L-64.2,-9.4L-50.4,-5.4L-34.6,-4.1L-17.9,-5.7L-1.3,-10.3L14.3,-17.6L27.8,-27.2L38.6,-38.3L46.1,-50.1L50.1,-61.5L50.7,-71.6L48.1,-79.4L42.9,-84.3L36.0,-85.6L28.1,-83.1L20.3,-76.7L13.4,-66.7L8.3,-53.7L5.7,-38.5L5.9,-21.9L9.1,-5.0L15.1,11.1L23.7,25.6L34.0,37.5L45.3,46.4L56.7,51.7L67.2,53.5L75.7,52.0L81.6,47.7L84.1,41.2L82.8,33.4L77.7,25.2L68.9,17.7L56.8,11.6L42.2,7.8L25.9,6.6L8.9,8.4L-7.7,13.1L-23.0,20.4L-36.0,29.9L-46.1,40.7L-52.8,51.9L-55.9,62.6L-55.6,71.7L-52.1,78.4L-46.2,82.0L-38.7,82.0L-30.4,78.2L-22.3,70.6L-15.3,59.6L-10.3,45.7L-7.8,29.8L-8.1,12.8L-11.5,-4.1L-17.6,-20.1L-26.1,-34.1L-36.2,-45.3L-47.0,-53.3L-57.8,-57.8L-67.4,-58.6L-74.9,-56.2L-79.5,-51.0L-80.7,-43.9L-78.2,-35.5L-71.8,-27.1L-61.9,-19.4L-48.9,-13.3L-33.5,-9.5L-16.8,-8.4L0.3,-10.4L16.8,-15.2L31.7,-22.5L44.1,-31.8L53.4,-42.2L59.1,-52.9L61.3,-62.8L59.9,-70.9L55.6,-76.5L48.9,-78.9L40.8,-77.7L32.0,-72.6L23.7,-63.8L16.6,-51.8L11.6,-37.1L9.2,-20.7L9.8,-3.5L13.2,13.4L19.4,29.0L27.7,42.4L37.5,52.9L47.9,60.0L58.0,63.4L66.7,63.2L73.1,59.9L76.6,53.8L76.6,45.9L72.8,37.1L65.3,28.3L54.3,20.4L40.5,14.3L24.5,10.5L7.5,9.6L-9.7,11.7L-25.9,16.6L-40.3,23.9L-51.9,33.0L-60.3,43.0L-65.0,53.0L-66.1,62.1L-63.7,69.3L-58.5,73.8L-51.0,75.0L-42.2,72.5L-33.0,66.2L-24.4,56.4L-17.3,43.5L-12.3,28.2L-10.0,11.4L-10.7,-5.9L-14.2,-22.6L-20.4,-37.7L-28.6,-50.4L-38.1,-60.0L-48.0,-66.1L-57.3,-68.5L-65.1,-67.2L-70.6,-62.9L-72.9,-55.9L-71.7,-47.3L-66.7,-38.0L-58.1,-28.8L-46.2,-20.7L-31.7,-14.6L-15.3,-11.0L2.0,-10.2L19.0,-12.4L34.8,-17.3L48.5,-24.5L59.3,-33.4L66.7,-43.0L70.3,-52.4L70.3,-60.7L66.9,-66.9L60.7,-70.3L52.4,-70.3L43.0,-66.7L33.4,-59.3L24.5,-48.5L17.3,-34.8L12.4,-19.0L10.2,-2.0L11.0,15.3L14.6,31.7L20.7,46.2L28.8,58.1L38.0,66.7L47.3,71.7L55.9,72.9L62.9,70.6L67.2,65.1L68.5,57.3L66.1,48.0L60.0,38.1L50.4,28.6L37.7,20.4L22.6,14.2L5.9,10.7L-11.4,10.0L-28.2,12.3L-43.5,17.3L-56.4,24.4L-66.2,33.0L-72.5,42.2L-75.0,51.0L-73.8,58.5L-69.3,63.7L-62.1,66.1L-53.0,65.0L-43.0,60.3L-33.0,51.9L-23.9,40.3L-16.6,25.9L-11.7,9.7L-9.6,-7.5L-10.5,-24.5L-14.3,-40.5L-20.4,-54.3L-28.3,-65.3L-37.1,-72.8L-45.9,-76.6L-53.8,-76.6L-59.9,-73.1L-63.2,-66.7L-63.4,-58.0L-60.0,-47.9L-52.9,-37.5L-42.4,-27.7L-29.0,-19.4L-13.4,-13.2L3.5,-9.8L20.7,-9.2L37.1,-11.6L51.8,-16.6L63.8,-23.7L72.6,-32.0L77.7,-40.8L78.9,-48.9L76.5,-55.6L70.9,-59.9L62.8,-61.3L52.9,-59.1L42.2,-53.4L31.8,-44.1L22.5,-31.7L15.2,-16.8L10.4,-0.3L8.4,16.8L9.5,33.5L13.3,48.9L19.4,61.9L27.1,71.8L35.5,78.2L43.9,80.7L51.0,79.5L56.2,74.9L58.6,67.4L57.8,57.8L53.3,47.0L45.3,36.2L34.1,26.1L20.1,17.6L4.1,11.5L-12.8,8.1L-29.8,7.8L-45.7,10.3L-59.6,15.3L-70.6,22.3L-78.2,30.4L-82.0,38.7L-82.0,46.2L-78.4,52.1L-71.7,55.6L-62.6,55.9L-51.9,52.8L-40.7,46.1L-29.9,36.0L-20.4,23.0L-13.1,7.7L-8.4,-8.9L-6.6,-25.9L-7.8,-42.2L-11.6,-56.8L-17.7,-68.9L-25.2,-77.7L-33.4,-82.8L-41.2,-84.1L-47.7,-81.6L-52.0,-75.7L-53.5,-67.2L-51.7,-56.7L-46.4,-45.3L-37.5,-34.0L-25.6,-23.7L-11.1,-15.1L5.0,-9.1L21.9,-5.9L38.5,-5.7L53.7,-8.3L66.7,-13.4L76.7,-20.3L83.1,-28.1L85.6,-36.0L84.3,-42.9L79.4,-48.1L71.6,-50.7L61.5,-50.1L50.1,-46.1L38.3,-38.6L27.2,-27.8L17.6,-14.3L10.3,1.3L5.7,17.9L4.1,34.6L5.4,50.4L9.4,64.2L15.5,75.2L22.9,82.8L30.7,86.6L38.0,86.5L43.8,82.7L47.4,75.7L48.0,66.1L45.3,54.8L39.1,42.8L29.6,31.1L17.1,20.5L2.3,12.0L-13.9,6.0L-30.6,3.0L-46.7,3.0L-61.2,5.8L-73.2,11.0L-82.0,17.7L-87.1,25.3L-88.3,32.8L-85.6,39.2L-79.5,43.7L-70.5,45.4L-59.5,44.0L-47.4,39.2L-35.2,30.9L-23.8,19.5L-14.1,5.6L-6.9,-10.1L-2.4,-26.6L-1.1,-42.9L-2.6,-57.9L-6.7,-70.8L-12.8,-80.7L-20.0,-87.0L-27.5,-89.5L-34.3,-88.0L-39.5,-82.9L-42.4,-74.7L-42.2,-64.1L-38.7,-52.0L-31.8,-39.5L-21.6,-27.4L-8.6,-16.7L6.4,-8.2L22.6,-2.4L38.9,0.4L54.4,0.2L68.0,-2.8L78.9,-8.0L86.4,-14.8L90.2,-22.1L90.0,-29.2L86.0,-35.1L78.6,-38.9L68.6,-39.9L56.7,-37.7L43.9,-32.1L31.2,-23.2L19.6,-11.3L10.0,2.9L2.8,18.6L-1.4,34.8L-2.5,50.6L-0.7,64.8L3.5,76.7L9.6,85.4L16.8,90.3L24.0,91.4L30.3,88.6L35.0,82.2L37.1,72.8L36.2,61.2L32.0,48.4L24.4,35.3L13.7,22.9L0.4,12.2L-14.7,3.8L-30.7,-1.8L-46.6,-4.3L-61.4,-3.8L-74.0,-0.6L-83.8,4.7L-90.0,11.4L-92.3,18.6L-90.7,25.3L-85.3,30.7L-76.8,33.8L-65.7,34.2L-52.9,31.3L-39.6,25.0L-26.6,15.6L-14.8,3.3L-5.2,-11.0L1.7,-26.6L5.7,-42.5L6.5,-57.6L4.4,-71.0L-0.0,-81.7L-6.2,-89.1L-13.2,-92.7L-20.1,-92.3L-26.1,-88.1L-30.2,-80.4L-31.7,-69.9L-30.1,-57.4L-25.2,-43.9L-17.0,-30.4L-5.9,-17.8L7.6,-7.1L22.6,1.2L38.4,6.5L53.7,8.7L67.6,7.9L79.2,4.4L87.7,-1.1L92.5,-7.8L93.4,-14.8L90.4,-21.2L83.7,-26.1L74.0,-28.7L61.9,-28.4L48.4,-24.8L34.5,-18.0L21.2,-8.1L9.4,4.4L-0.1,18.8L-6.8,34.2L-10.4,49.6L-10.9,63.9L-8.5,76.3L-3.8,85.8L2.4,91.9L9.4,94.0L16.1,92.2L21.7,86.6L25.2,77.7L26.2,66.1L24.0,52.8L18.5,38.7L9.9,24.8L-1.5,12.1L-15.1,1.4L-30.1,-6.6L-45.4,-11.6L-60.0,-13.4L-73.0,-12.2L-83.5,-8.5L-90.7,-2.8L-94.1,3.9L-93.5,10.8L-89.1,17.0L-81.1,21.4L-70.2,23.5L-57.2,22.6L-43.0,18.5L-28.7,11.2L-15.2,1.0L-3.4,-11.7L5.9,-26.0L12.2,-41.1L15.4,-55.9L15.5,-69.4L12.8,-80.7L7.9,-89.0L1.5,-93.6L-5.4,-94.3L-12.0,-91.1L-17.2,-84.2L-20.3,-74.0L-20.7,-61.4L-18.0,-47.3L-12.1,-32.7L-3.0,-18.5L8.6,-5.8L22.2,4.7L36.9,12.4L51.7,17.0L65.5,18.3L77.5,16.8L86.8,12.7L92.6,6.8L94.6,0.0" fill="none" stroke="#9E86C9" stroke-width="0.26" opacity="0.09"/>
+          <!-- 月：純光體，冇任何具象紋理 -->
+          </g><circle r="80" fill="url(#mn)"/>
+          <circle r="90" fill="none" stroke="#9E86C9" stroke-width=".45" opacity=".13"/>
+          <circle r="117" fill="none" stroke="#9E86C9" stroke-width=".4" opacity=".08" stroke-dasharray="2 11"/>
+        </g>
+
+        <!-- ================= 地：水 · 荷 ================= -->
+        <g fill="none" stroke="#C6863C" stroke-width=".55">
+        <path d="M-20,520 C120,506 250,528 380,514 C480,503 520,516 580,510" opacity=".3"/>
+        <path d="M-20,566 C130,552 270,574 400,558 C490,547 528,560 580,554" opacity=".22"/>
+        <path d="M-20,612 C110,598 260,620 390,604 C480,593 530,606 580,600" opacity=".16"/>
+        <path d="M-20,658 C140,646 250,664 400,650 C490,641 534,652 580,646" opacity=".11"/>
+      </g>
+        <ellipse cx="286" cy="534" rx="64" ry="4.5" fill="#B899E9" opacity="0.2"/><ellipse cx="286" cy="556" rx="52" ry="3.6" fill="#B899E9" opacity="0.16"/><ellipse cx="286" cy="578" rx="42" ry="3" fill="#B899E9" opacity="0.13"/><ellipse cx="286" cy="602" rx="32" ry="2.4" fill="#B899E9" opacity="0.1"/><ellipse cx="286" cy="626" rx="24" ry="2" fill="#B899E9" opacity="0.075"/><ellipse cx="286" cy="650" rx="16" ry="1.6" fill="#B899E9" opacity="0.05"/>
+        <g fill="none" stroke="#C6863C" stroke-width=".7" opacity=".55" stroke-linecap="round">
+        <!-- 花莖：由花托直落水底 -->
+        <path d="M408,436 C413,498 403,556 411,664"/>
+        <!-- 蕾莖 -->
+        <path d="M150,490 C156,538 147,586 154,664"/>
+        <!-- 每塊葉各有莖，由葉心落水 -->
+        <path d="M238,550 C241,584 234,614 240,664"/>
+        <path d="M452,594 C455,618 448,638 453,664"/>
+        <path d="M120,622 C122,638 118,652 121,668"/>
+      </g>
+      <g transform="translate(238,548)" opacity="0.9"><ellipse rx="92" ry="25" fill="url(#pd)" stroke="#C6863C" stroke-width=".55"/><path d="M0,0 Q-45,-16 -86,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-34,-16 -66,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-23,-16 -44,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-11,-16 -22,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q11,-16 22,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q23,-16 44,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q34,-16 66,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q45,-16 86,-2" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M28,15 L0,0 L52,12" fill="#FFFFFF" stroke="#C6863C" stroke-width=".45" opacity=".9"/></g>
+      <g transform="translate(452,592)" opacity="0.7"><ellipse rx="74" ry="20" fill="url(#pd)" stroke="#C6863C" stroke-width=".55"/><path d="M0,0 Q-36,-12 -70,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-28,-12 -53,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-18,-12 -36,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-9,-12 -18,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q9,-12 18,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q18,-12 36,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q28,-12 53,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q36,-12 70,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M22,12 L0,0 L41,9" fill="#FFFFFF" stroke="#C6863C" stroke-width=".45" opacity=".9"/></g>
+      <g transform="translate(120,620)" opacity="0.5"><ellipse rx="60" ry="16" fill="url(#pd)" stroke="#C6863C" stroke-width=".55"/><path d="M0,0 Q-29,-10 -56,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-22,-10 -43,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-15,-10 -29,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q-7,-10 -14,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q7,-10 14,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q15,-10 29,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q22,-10 43,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/><path d="M0,0 Q29,-10 56,-1" fill="none" stroke="#C6863C" stroke-width=".38" opacity=".42"/></g>
+        
+        <g transform="translate(150,486) rotate(-13) scale(0.92)">
+        <path d="M0,0 C-13,-16 -14,-40 0,-56 C14,-40 13,-16 0,0Z" fill="url(#pf)" stroke="#C6863C" stroke-width=".6"/>
+        <path d="M0,-5 C-6,-19 -6,-38 0,-49" fill="none" stroke="#C6863C" stroke-width=".4" opacity=".55"/>
+        <path d="M-7,-8 C-10,-24 -7,-40 0,-52" fill="none" stroke="#C6863C" stroke-width=".4" opacity=".4"/>
+        <path d="M7,-8 C10,-24 7,-40 0,-52" fill="none" stroke="#C6863C" stroke-width=".4" opacity=".4"/>
+      </g>
+        <g transform="translate(408,432) scale(1.16)">
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-122) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-122) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-87) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-87) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-52) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-52) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-17) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-17) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(17) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(17) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(52) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(52) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(87) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(87) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(122) scale(1.0)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="0.95"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(122) scale(1.0)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.52"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-100) scale(0.72)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-100) scale(0.72)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-62) scale(0.72)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-62) scale(0.72)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-24) scale(0.72)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-24) scale(0.72)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(24) scale(0.72)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(24) scale(0.72)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(62) scale(0.72)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(62) scale(0.72)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(100) scale(0.72)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(100) scale(0.72)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(-44) scale(0.46)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(-44) scale(0.46)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(0) scale(0.46)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(0) scale(0.46)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <path d="M0,0 C-13,-19 -15,-46 0,-64 C15,-46 13,-19 0,0Z" transform="rotate(44) scale(0.46)" fill="url(#pf)" stroke="#C6863C" stroke-width="0.6" stroke-linejoin="round" opacity="1"/>
+        <path d="M0,-5 C-4,-24 -4,-46 0,-60" transform="rotate(44) scale(0.46)" fill="none" stroke="#C6863C" stroke-width="0.37" opacity="0.55"/>
+        <line x1="0" y1="-8" x2="-15.9" y2="-15.5" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="-17.7" cy="-16.5" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="-12.7" y2="-19.3" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="-14.1" cy="-20.7" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="-8.5" y2="-22.1" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="-9.4" cy="-23.9" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="-3.4" y2="-23.7" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="-3.8" cy="-25.7" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="1.9" y2="-23.9" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="2.1" cy="-25.9" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="7.0" y2="-22.7" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="7.8" cy="-24.6" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="11.6" y2="-20.3" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="12.9" cy="-21.8" r="1.1" fill="#C6863C" opacity=".55"/><line x1="0" y1="-8" x2="15.1" y2="-16.7" stroke="#C6863C" stroke-width=".4" opacity=".6"/><circle cx="16.8" cy="-17.8" r="1.1" fill="#C6863C" opacity=".55"/>
+        <ellipse cx="0" cy="-11" rx="10" ry="6" fill="url(#pf)" stroke="#C6863C" stroke-width=".55"/>
+        <g fill="#C6863C" opacity=".5">
+          <circle cx="-4.5" cy="-12.5" r="1"/><circle cx="0" cy="-13.5" r="1"/>
+          <circle cx="4.5" cy="-12.5" r="1"/><circle cx="-2" cy="-9.5" r="1"/><circle cx="2.5" cy="-9.5" r="1"/>
+        </g>
+      </g>
+      </svg>
+    </div>
+
+    <div class="hero-right">
+      <p class="tagline">A quiet light<br>for timeless moments</p>
+      <nav class="catlist">
+        <a href="#collection" data-jump="crystal"><span class="han">水晶原石</span>Crystals <span>→</span></a>
+        <a href="#collection" data-jump="bracelet"><span class="han">手串</span>Bracelets <span>→</span></a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-head">
+      <div class="ghost">About Us</div>
+      <p>月華，是月暈之光——不張揚，卻始終在。首飾並非裝飾，而是情感的載體：記一個時刻，記一份心意。</p>
+    </div>
+    <div class="about-row">
+      <div class="about-card">
+        <p class="lede">選料 · 配石</p>
+        <p>白水晶、海藍玉髓、黃水晶、月光石，每一顆親手過眼，色不對、質不合，寧可不用；哪一顆作主，哪一顆為襯，全由主理人逐串斟酌。</p>
+      </div>
+      <div class="about-card">
+        <p class="lede">心意</p>
+        <p>珠有其性，玉有其溫。自古佩珠以安神，贈玉以致意。我們不誇功效，只求每一件都配得起送出去的那份心意。</p>
+        <a class="pill" href="#collection">賞作品 <span>→</span></a>
+      </div>
+      <div class="figure">
+        <img id="aboutImgA" class="show" alt="月華手串作品">
+        <img id="aboutImgB" alt="月華手串作品">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 作品 ================= -->
+<div class="products-head" id="collection">
+  <div class="ghost">Our Products</div>
+  <nav class="filters" id="filters"></nav>
+</div>
+<div class="wrap"><div class="tiles" id="tiles"></div>
+  <p class="empty" id="empty" hidden>此分類暫時未有現貨。</p>
+</div>
+
+<!-- ================= 產品大圖 Lightbox ================= -->
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lb-close" id="lbClose" aria-label="關閉">&times;</button>
+  <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="上一張" hidden>&larr;</button>
+  <div class="lb-stage">
+    <img id="lbImg" src="" alt="">
+  </div>
+  <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="下一張" hidden>&rarr;</button>
+  <div class="lb-caption">
+    <span id="lbName"></span>
+    <span class="lb-dots" id="lbDots"></span>
+  </div>
+</div>
+
+<!-- ================= 題辭 ================= -->
+<section class="verse">
+  <p class="micro">Our Philosophy</p>
+  <h2>不設複製</h2>
+  <p>配石為手串之魂。逐串斟酌，故每串各異。</p>
+</section>
+
+
+<!-- ================= 服務資訊 ================= -->
+<section class="service" id="service">
+  <div class="wrap">
+    <p class="micro" style="text-align:center;">Service</p>
+    <h2 class="svc-title">購買須知</h2>
+    <div class="svc-grid">
+      <div class="svc-item">
+        <h3>發貨時間</h3>
+        <p>標示「現貨即發」嘅作品，確認後即日寄出或安排交收。標示「訂製」嘅款式，落單後由主理人逐顆編串，需時另議，落單時會與你確認完成日期。</p>
+      </div>
+      <div class="svc-item">
+        <h3>尺寸</h3>
+        <p>手串為彈性繩設計，分S（約14–15cm）、M（約15–17cm）、L（約17–19cm）三個手圍，彈性繩本身有伸縮空間，一般唔使太執著。如需特別長度，落單時註明即可。</p>
+      </div>
+      <div class="svc-item">
+        <h3>送貨方式</h3>
+        <p>香港：面交、自取點、順豐到付（約1–2個工作天）、郵局平郵。<br>內地：順豐到付（約3–4個工作天），運費按實收。</p>
+      </div>
+      <div class="svc-item">
+        <h3>付款</h3>
+        <p>支付寶、PayMe、面交現金，落去睇「付款方式」。</p>
+      </div>
+      <div class="svc-item">
+        <h3>更換</h3>
+        <p>作品為人手編串。若收貨時發現斷裂或與描述不符，七日內聯絡即可更換。現貨商品如未拆封、未配戴，七日內亦可申請退換（訂製款式除外），退貨運費由買家負責。</p>
+      </div>
+      <div class="svc-item">
+        <h3>保養</h3>
+        <p>天然石材忌撞擊、忌久浸。沐浴、運動前請除下，以軟布拭淨存放。</p>
+      </div>
+    </div>
+
+    <div class="pay-card" id="payment">
+      <p class="micro" style="text-align:center;">Payment</p>
+      <h3 class="pay-card-title">付款方式</h3>
+      <div class="pay-card-grid">
+        <div class="pay-method">
+          <p class="pay-step">① 支付寶 Alipay</p>
+          <p>支付寶App入面撳『掃一掃』，影低QR code就得，內地買家一樣用支付寶結算。</p>
+          <a href="alipay-qr.png" target="_blank" rel="noopener" class="pay-qr-wrap">
+            <img class="pay-qr" src="alipay-qr.png" alt="支付寶收款碼" loading="lazy">
+            <span class="pay-qr-hint">撳一下睇大圖</span>
+          </a>
+        </div>
+        <div class="pay-method">
+          <p class="pay-step">② PayMe</p>
+          <p>按掣會開啟 PayMe，畀你直接入金額過數。</p>
+          <a href="https://payme.hsbc/5e0ea09068254401a63895bb2f3d2cb3" target="_blank" rel="noopener" class="pill">開啟 PayMe</a>
+        </div>
+        <div class="pay-method">
+          <p class="pay-step">③ 面交現金</p>
+          <p>面交嗰陣直接俾現金就得，唔使先過數。</p>
+        </div>
+      </div>
+      <div class="rule" style="margin:32px 0 24px;"></div>
+      <p class="pay-confirm">過數後，WhatsApp埋張截圖俾我哋確認：<br>
+        <button type="button" id="payConfirmBtn" class="pill">WhatsApp 確認過數 +852 9792 9752</button>
+      </p>
+    </div>
+
+    <div class="pay-card" id="faq">
+      <p class="micro" style="text-align:center;">FAQ</p>
+      <h3 class="pay-card-title">常見問題</h3>
+      <div style="text-align:center;">
+        <button type="button" id="faqToggle" class="pill" aria-expanded="false">查看常見問題 <span>→</span></button>
+      </div>
+      <div class="faq-list" id="faqList" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 訂造 ================= -->
+<section class="order" id="contact">
+  <div class="wrap" style="text-align:center;">
+    <p class="micro">Custom Order</p>
+    <div class="ghost" style="font-size:clamp(40px,8vw,96px); margin-top:10px;">度身訂造</div>
+  </div>
+  <form class="crystal" id="orderForm">
+    <div class="field"><label for="name">稱呼</label><input id="name" required placeholder="點稱呼你？"></div>
+    <div class="field" id="cartField" hidden><label>已選商品</label><div class="chips" id="cartChips"></div></div>
+    <div class="field" id="itemSelectField"><label for="item">心水產品</label><select id="item"></select></div>
+    <div class="field"><label for="contact">聯絡方法 WhatsApp / IG</label><input id="contact" required placeholder="電話號碼 或 IG username"></div>
+    <div class="field"><label for="note">備註</label><textarea id="note" placeholder="尺寸、顏色、其他要求…"></textarea></div>
+    <button type="submit" class="submit-btn">透過 WhatsApp 查詢</button>
+    <p class="note">按掣會開啟 WhatsApp，訊息已幫你打好，直接send就得。</p>
+    <p class="note">或者喺 <a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener" class="ig-link">Instagram</a> 私訊我哋。</p>
+  </form>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="97" fill="#FFFFFF" stroke="#C6863C" stroke-width="3"/><circle cx="100" cy="100" r="85" fill="none" stroke="#C6863C" stroke-width="1.4" opacity=".45"/><text x="94" y="137" font-family="Cormorant Garamond, Georgia, serif" font-size="118" font-weight="500" fill="#241A0F" text-anchor="middle">L</text><circle cx="129" cy="71" r="13.5" fill="#8F5FDC"/></svg><div class="nm">Lunéa</div></div>
+        <p>逐顆過眼，逐串編成。</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="#collection" data-jump="crystal">水晶原石 Crystals</a>
+        <a href="#collection" data-jump="bracelet">手串 Bracelets</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="#contact">查詢訂造</a><a href="#service">購買須知</a><a href="#about">品牌故事</a><a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 月華 Lunéa · Handcrafted Jewelry</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   產品資料 — 有真相，price/材質等落單資料未齊，改呢度就得
+   img: 相片path／url（留空＝顯示placeholder）
+   ============================================================ */
+
+const PRODUCTS = [
+  /* ────────────────────────────────────────────────────────────
+     加貨就係喺下面copy一行，改資料。
+     cat  只可以係: 'crystal' 水晶原石 ｜ 'bracelet' 手串
+     ready: true  = 現有作品，即發
+            false = 客製款式，落單先做
+     img/img2: 留空 '' 會顯示placeholder；有相就填相嘅檔名或網址。
+               img2係可選嘅第二張相，滑鼠hover上去會切換顯示。
+     price: 未有真實售價前填0，商品會顯示「—」，落單表格亦唔會列出。
+     ──────────────────────────────────────────────────────────── */
+  /* ↓↓↓ 8件真貨，相／名／材質／價錢已經confirm，可以正式賣 ↓↓↓ */
+  { cat:'crystal',  name:'白水晶晶簇', spec:'天然白水晶·原礦擺件',      price:450, img:'product-crystal-cluster-1.jpg',    img2:'product-crystal-cluster-2.jpg',    ready:true },
+  { cat:'bracelet', name:'海霧藍手串', spec:'海藍玉髓·啞光渾圓珠',      price:220, img:'product-bracelet-blue-1.jpg',       img2:'product-bracelet-blue-2.jpg',       ready:true },
+  { cat:'bracelet', name:'苔痕手串',   spec:'苔蘚瑪瑙·隨形珠',          price:260, img:'product-bracelet-darkgreen-1.jpg',  img2:'product-bracelet-darkgreen-2.jpg',  ready:true },
+  { cat:'bracelet', name:'凝光手串',   spec:'天然白水晶·渾圓珠',        price:240, img:'product-bracelet-clearquartz-1.jpg',img2:'product-bracelet-clearquartz-2.jpg',ready:true },
+  { cat:'bracelet', name:'晨光手串',   spec:'髮晶·黃水晶·黃玉髓·漸層配珠', price:420, img:'product-bracelet-gradient-1.jpg',   img2:'product-bracelet-gradient-2.jpg',   ready:true },
+  { cat:'bracelet', name:'暖陽手串',   spec:'天然黃水晶·隨形珠',        price:280, img:'product-bracelet-citrine-1.jpg',    img2:'product-bracelet-citrine-2.jpg',    ready:true },
+  { cat:'bracelet', name:'極光手串',   spec:'天然螢石·渾圓珠',          price:320, img:'product-bracelet-multicolor-1.jpg', img2:'product-bracelet-multicolor-2.jpg', ready:true },
+  { cat:'bracelet', name:'月暈手串',   spec:'天然月光石·渾圓珠',        price:360, img:'product-bracelet-moonstone-1.jpg',  img2:'product-bracelet-moonstone-2.jpg',  ready:true },
+];
+
+const CATS = {
+  all:      { han:'全部', en:'All' },
+  crystal:  { han:'水晶原石', en:'Crystals' },
+  bracelet: { han:'手串', en:'Bracelets' },
+};
+
+/* WhatsApp 號碼 */
+const WHATSAPP_NUMBER = '85297278273';
+const PAYMENT_WHATSAPP_NUMBER = '85297929752';
+
+/* 常見問題——加新問題就係喺呢個array加多個{q,a}，記得CONVERT_MAP都要加返新字 */
+const FAQS = [
+  { q:'金屬部分會敏感嗎？', a:'足金／包金配件均採用低致敏物料。如對金屬特別敏感，落單時請告知我們，可為你更換配件。' },
+  { q:'沐浴、游水可以戴住嗎？', a:'天然石材忌長期浸水，建議沐浴、游水、運動前請除下，以延長壽命、保持光澤。' },
+  { q:'石頭上有小紋路，是否瑕疵？', a:'天然水晶原石帶有天然紋理、包裹體，屬正常現象，這正是天然石與人工玻璃的分別。如果是編繩斷裂或明顯崩缺，七日內聯絡我們即可跟進。' },
+  { q:'手圍太大或太細怎麼辦？', a:'手串分S（約14–15cm）、M（約15–17cm）、L（約17–19cm）三個手圍，彈性繩本身有伸縮空間，一般唔使太執著。如果你的手圍較特別，落單時請告知我們，可為你調整長度。' },
+  { q:'訂製需要多久？', a:'訂製款式由主理人逐顆編串，需時另議，落單時會與你確認完成日期。' },
+  { q:'收到貨後可以退換嗎？', a:'現貨商品如未拆封、未配戴，七日內可以申請退換（訂製款式除外），退貨運費由買家負責。' },
+  { q:'一定要先過數才可以取貨嗎？可以貨到付款嗎？', a:'現貨商品面交可以直接現金支付；如果是郵寄或順豐到付，需要落單時先確認金額，過數後我們才會安排寄出。' },
+  { q:'可以更換繩色或金具顏色嗎？', a:'大部分手串可以按照你的喜好微調繩色或金具顏色，落單時請告訴我們你的心水，實際以現有物料為準。' },
+  { q:'可以在哪裡自取？', a:'自取地點會在WhatsApp落單時溝通清楚，一般約在市區地鐵站附近，方便交收。' },
+  { q:'落單後還可以修改資料或者增減貨品嗎？', a:'未過數、未開始製作前都可以WhatsApp我們修改；已經開始製作的訂製款式，改動可能會影響完成日期。' },
+  { q:'有實體店可以看真貨嗎？', a:'暫時未有實體店，主要透過網站相片與IG專頁介紹作品；如想了解更多細節，歡迎WhatsApp查詢。' },
+  { q:'買來送禮，有包裝嗎？', a:'每件作品都會用心包裝後寄出或面交，如需心意卡或加強包裝，落單時請告訴我們。' },
+  { q:'怎樣知道訂單進度？', a:'現貨商品確認後會即日安排寄出或交收；訂製商品會在落單時同你確認大約完成日期，有更新我們會主動WhatsApp通知你。' },
+  { q:'戴了一段時間鬆脫，或者繩子用舊，可以維修嗎？', a:'一般正常耗損（例如彈性繩用舊）可以聯絡我們，酌情提供有償維修或更換繩子。' },
+  { q:'香港、內地以外的地區可以寄嗎？', a:'暫時主要服務香港與內地買家，其他地區如有需要歡迎WhatsApp查詢，會盡量安排。' },
+  { q:'如何保證每件都是人手製作，不是機器量產？', a:'每串都由主理人親手逐顆揀石、逐顆編成，沒有兩串完全一樣，你落單時揀的是哪一串，我們都會如實交給你。' },
+];
+
+const gem = `<svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9Z"/><path d="M2 9h20M8 3 6 9l6 12M16 3l2 6-6 12"/></svg>`;
+
+let active = 'all';
+let cart = JSON.parse(localStorage.getItem('lunea-cart') || '[]');
+function saveCart(){ localStorage.setItem('lunea-cart', JSON.stringify(cart)); }
+
+function renderFilters(){
+  document.getElementById('filters').innerHTML = Object.entries(CATS).map(([k,v]) =>
+    `<button type="button" data-cat="${k}" aria-pressed="${k===active}">${v.han}</button>`).join('');
+  document.querySelectorAll('#filters button').forEach(b =>
+    b.addEventListener('click', () => { active = b.dataset.cat; renderFilters(); renderTiles(); }));
+}
+
+function renderTiles(){
+  const list = active === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === active);
+  const emptyEl = document.getElementById('empty');
+  if(emptyEl) emptyEl.hidden = list.length > 0;
+  document.getElementById('tiles').innerHTML = list.map(p => `
+    <article class="tile">
+      <div class="tile-media">
+        ${p.img ? `<img class="tile-img-1" src="${p.img}" alt="${p.name}" loading="lazy">`
+                : `<div class="tile-stage">${gem}</div>`}
+        ${p.img2 ? `<img class="tile-img-2" src="${p.img2}" alt="${p.name}" loading="lazy">` : ''}
+      </div>
+      <div class="tile-body">
+        <span class="tile-cat">${CATS[p.cat].en}</span>
+        <h3 class="tile-name">${p.name}</h3>
+        ${p.spec ? `<p class="tile-spec">${p.spec.replace(/·/g, '<span class="sep">·</span>')}</p>` : ''}
+        <span class="tile-price">${p.price ? 'HK$'+p.price : '—'}</span>
+        <div class="tile-actions">
+          <button type="button" class="add-cart-btn${cart.includes(p.name) ? ' added' : ''}" data-name="${p.name}">${cart.includes(p.name) ? '已加入 ✓' : '加入清單'}</button>
+          <button type="button" class="tile-pay-btn" data-name="${p.name}">去付款</button>
+        </div>
+      </div>
+    </article>`).join('');
+  document.querySelectorAll('.add-cart-btn').forEach(b =>
+    b.addEventListener('click', () => toggleCart(b.dataset.name, b)));
+  document.querySelectorAll('.tile-pay-btn').forEach(b =>
+    b.addEventListener('click', () => {
+      if(!cart.includes(b.dataset.name)){ cart.push(b.dataset.name); saveCart(); renderCartField(); renderCartBadge(); }
+      document.getElementById('payment').scrollIntoView({behavior:'smooth'});
+    }));
+  document.querySelectorAll('.tile-media').forEach((el, i) =>
+    el.addEventListener('click', () => { if(list[i].img) openLightbox(list[i]); }));
+}
+
+/* ============================================================
+   產品大圖 Lightbox — 撳產品相放大睇，img2有嘅話可以左右切換
+   ============================================================ */
+let lbImages = [], lbIndex = 0, lbName = '';
+
+function openLightbox(p){
+  lbImages = [p.img, p.img2].filter(Boolean);
+  lbIndex = 0; lbName = p.name;
+  updateLightbox();
+  document.getElementById('lightbox').hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').hidden = true;
+  document.body.style.overflow = '';
+}
+function lbNav(dir){ lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length; updateLightbox(); }
+function updateLightbox(){
+  const img = document.getElementById('lbImg');
+  img.src = lbImages[lbIndex]; img.alt = lbName;
+  document.getElementById('lbName').textContent = lbName;
+  const multi = lbImages.length > 1;
+  document.getElementById('lbPrev').hidden = !multi;
+  document.getElementById('lbNext').hidden = !multi;
+  document.getElementById('lbDots').innerHTML = multi ? lbImages.map((_, i) =>
+    `<button type="button" class="lb-dot${i === lbIndex ? ' active' : ''}" data-i="${i}" aria-label="第${i + 1}張"></button>`).join('') : '';
+  document.querySelectorAll('.lb-dot').forEach(d =>
+    d.addEventListener('click', () => { lbIndex = +d.dataset.i; updateLightbox(); }));
+}
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbPrev').addEventListener('click', () => lbNav(-1));
+document.getElementById('lbNext').addEventListener('click', () => lbNav(1));
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target.id === 'lightbox') closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if(document.getElementById('lightbox').hidden) return;
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowLeft') lbNav(-1);
+  if(e.key === 'ArrowRight') lbNav(1);
+});
+
+function toggleCart(name, btn){
+  const idx = cart.indexOf(name);
+  if(idx === -1){ cart.push(name); btn.textContent = '已加入 ✓'; btn.classList.add('added'); }
+  else { cart.splice(idx, 1); btn.textContent = '加入清單'; btn.classList.remove('added'); }
+  saveCart(); renderCartField(); renderCartBadge();
+}
+
+function renderCartBadge(){
+  document.getElementById('cartBadge').textContent = cart.length ? `清單 (${cart.length})` : '清單';
+}
+
+function renderCartField(){
+  const chipsField = document.getElementById('cartField');
+  const selectField = document.getElementById('itemSelectField');
+  if(cart.length === 0){
+    chipsField.hidden = true;
+    selectField.hidden = false;
+    return;
+  }
+  selectField.hidden = true;
+  chipsField.hidden = false;
+  document.getElementById('cartChips').innerHTML = cart.map(name =>
+    `<span class="chip">${name}<button type="button" class="chip-x" data-name="${name}" aria-label="移除">×</button></span>`).join('');
+  document.querySelectorAll('.chip-x').forEach(b =>
+    b.addEventListener('click', () => {
+      cart = cart.filter(n => n !== b.dataset.name);
+      saveCart(); renderCartField(); renderCartBadge(); renderTiles();
+    }));
+}
+
+function renderSelect(){
+  document.getElementById('item').innerHTML =
+    PRODUCTS.filter(p => p.price).map(p =>
+      `<option value="${p.name}">${p.name} — HK$${p.price}</option>`).join('')
+    + `<option value="其他">其他 / 未列出</option>`;
+}
+
+/* Hero 分類連結 → 真係篩選，唔係得個跳字 */
+document.querySelectorAll('[data-jump]').forEach(a =>
+  a.addEventListener('click', () => {
+    active = a.dataset.jump; renderFilters(); renderTiles();
+  }));
+
+function renderFAQ(){
+  document.getElementById('faqList').innerHTML = FAQS.map((f, i) => `
+    <div class="faq-item">
+      <button type="button" class="faq-q" aria-expanded="false" data-i="${i}">
+        <span><span class="faq-qmark">Q</span> ${f.q}</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a" hidden>${f.a}</p>
+    </div>`).join('');
+  document.querySelectorAll('.faq-q').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.nextElementSibling.hidden = open;
+    }));
+}
+document.getElementById('faqToggle').addEventListener('click', function(){
+  const open = this.getAttribute('aria-expanded') === 'true';
+  document.getElementById('faqList').hidden = open;
+  this.setAttribute('aria-expanded', String(!open));
+  this.firstChild.textContent = open ? '查看常見問題 ' : '收起常見問題 ';
+});
+
+function render(){ renderFilters(); renderTiles(); renderSelect(); renderCartField(); renderCartBadge(); renderFAQ(); }
+
+/* ============================================================
+   繁簡切換 — OpenCC字典太大，呢度用手動對照表涵蓋頁面實際用字。
+   加新內容／新產品名有簡體字未涵蓋，落嚟 CONVERT_MAP 加多對就得。
+   ============================================================ */
+const CONVERT_MAP = {
+  /* ============================================================
+     呢句要擺全MAP最頂：佢跨埋幾個短詞（過數後／俾／我哋），
+     若擺喺短key後面，啲短key會搶先part-match，累個句子執漏字。
+     ============================================================ */
+  '過數後，WhatsApp埋張截圖俾我哋確認：':'转账后，麻烦把截图通过WhatsApp发给我们确认：',
+
+  /* ============================================================
+     品牌／商品／通用詞——繁簡用字一致，淨係轉字體，讀法冇分別
+     ============================================================ */
+  '月華':'月华','關於':'关于','購買須知':'购买须知',
+  '賞作品':'赏作品','選料':'选料','配石':'配石','心意':'心意',
+  '手串':'手串','水晶原石':'水晶原石',
+  '現貨即發':'现货即发','現貨':'现货',
+  '稱呼':'称呼','備註':'备注','透過':'通过',
+  '尺寸':'尺寸','送貨方式':'送货方式','付款':'付款','更換':'更换','保養':'保养',
+  '發貨時間':'发货时间','標示':'标示','確認後':'确认后','即日寄出':'即日寄出',
+  '由主理人':'由主理人','逐顆編串':'逐颗编串','需時另議':'需时另议',
+  '會與你確認':'会与你确认','完成日期':'完成日期',
+  '如需特別長度':'如需特别长度',
+  '面交':'面交','順豐到付':'顺丰到付','郵局平郵':'邮局平邮',
+  '運費按實收':'运费按实收','支付寶':'支付宝','面交現金':'面交现金',
+  '確認':'确认','內地買家':'内地买家','結算':'结算',
+  '作品為人手編串':'作品为人手编串','若收貨時發現斷裂':'若收货时发现断裂',
+  '或與描述不符':'或与描述不符','七日內聯絡即可更換':'七日内联络即可更换',
+  '天然石材忌撞擊':'天然石材忌撞击','忌久浸':'忌久浸',
+  '沐浴':'沐浴','運動前請除下':'运动前请除下','以軟布拭淨存放':'以软布拭净存放',
+  '不設複製':'不设复制','配石為手串之魂':'配石为手串之魂','逐串斟酌':'逐串斟酌',
+  '故每串各異':'故每串各异','月暈之光':'月晕之光','逐顆過眼':'逐颗过眼','逐串編成':'逐串编成',
+  '所戴非飾':'所戴非饰','是被留住的光':'是被留住的光',
+  '月華，是月暈之光':'月华，是月晕之光','不張揚':'不张扬','卻始終在':'却始终在',
+  '首飾並非裝飾':'首饰并非装饰','而是情感的載體':'而是情感的载体',
+  '記一個時刻':'记一个时刻','記一份心意':'记一份心意',
+  '海藍玉髓':'海蓝玉髓',
+  '每一顆親手過眼':'每一颗亲手过眼','色不對':'色不对','質不合':'质不合','寧可不用':'宁可不用',
+  '哪一顆作主':'哪一颗作主','哪一顆為襯':'哪一颗为衬','全由主理人逐串斟酌':'全由主理人逐串斟酌',
+  '珠有其性':'珠有其性','玉有其溫':'玉有其温','自古佩珠以安神':'自古佩珠以安神',
+  '贈玉以致意':'赠玉以致意','我們不誇功效':'我们不夸功效',
+  '只求每一件都配得起':'只求每一件都配得起','送出去的那份心意':'送出去的那份心意',
+  '此分類暫時未有現貨':'此分类暂时未有现货',
+  '張截圖':'张截图','現金':'现金',
+
+  /* ============================================================
+     廣東話詞彙／文法 → 普通話講法（唔淨係轉字體，係轉用詞）
+     排序要留意：長／specific嘅詞組要排先，短嘅generic key先排後面，
+     否則短key會搶先part-match，累長key配唔到。
+     ============================================================ */
+  '度身訂造':'量身定制','訂造':'定制','訂製':'定制',
+  '心水產品':'心仪产品','聯絡方法':'联系方式','查詢':'咨询',
+  '自取點':'自提点','安排交收':'安排取件',
+  '落單時註明即可':'下单时注明即可','落單後':'下单后','落單時':'下单时',
+  '入金額':'输入金额','金額':'金额',
+  '過數後':'转账后','過數':'转账',
+  '會開啟':'会打开','開啟':'打开',
+  '按掣':'点击后','訊息':'信息','已幫你打好':'已经帮你写好',
+  '直接send就得':'直接发送就可以了','就得':'就可以了',
+  '私訊我哋':'私信我们','我哋':'我们','或者喺':'或者在',
+  '嘅':'的','入面':'里','撳':'点','畀':'给','俾':'给',
+  '一樣':'一样','嗰陣':'的时候','唔使':'不用',
+  '睇大圖':'看大图','落去睇':'详见下方','影低QR code':'扫描二维码',
+  '掃一掃':'扫一扫','內地':'内地',
+
+  /* ============================================================
+     退換／尺寸／送貨／FAQ新增內容用嘅詞——specific嘅擺呢度，
+     再底下先係generic嘅單字key（要行最後，唔好搶咗長key）
+     ============================================================ */
+  '由買家負責':'由买家负责','退換':'退换','退貨':'退货','申請':'申请','運費':'运费',
+  '彈性繩':'弹性绳','手圍':'手围','編繩':'编绳','七日內':'七日内',
+  '金屬':'金属','採用':'采用','特別':'特别','怎麼辦':'怎么办','調整':'调整',
+  '石頭':'石头','紋路':'纹路','紋理':'纹理','壽命':'寿命','光澤':'光泽',
+  '現象':'现象','分別':'分别','嗎':'吗','斷裂':'断裂','明顯':'明显','跟進':'跟进',
+  '設計':'设计','請':'请','建議':'建议','這':'这','常見問題':'常见问题',
+  '已選商品':'已选商品','清單':'清单',
+
+  /* ============================================================
+     FAQ新增10條用嘅詞
+     ============================================================ */
+  '郵寄':'邮寄','顏色':'颜色','微調':'微调','實際':'实际','現有':'现有',
+  '溝通':'沟通','市區':'市区','地鐵':'地铁','資料':'资料','增減':'增减',
+  '開始':'开始','已經':'已经','製作':'制作','影響':'影响','暫時':'暂时',
+  '實體店':'实体店','網站':'网站','專頁':'专页','介紹':'介绍','細節':'细节',
+  '歡迎':'欢迎','買來':'买来','送禮':'送礼','包裝':'包装','加強':'加强',
+  '告訴':'告诉','怎樣':'怎样','訂單':'订单','進度':'进度','時間':'时间',
+  '鬆脫':'松脱','用舊':'用旧','維修':'维修','耗損':'耗损','有償':'有偿',
+  '地區':'地区','服務':'服务','盡量':'尽量','保證':'保证','機器':'机器',
+  '量產':'量产','親手':'亲手','沒有':'没有','兩串':'两串','如實':'如实',
+
+  '個':'个','對':'对','會':'会','為':'为','與':'与','屬':'属','帶':'带',
+  '體':'体','貨':'货','長':'长','較':'较','聯絡':'联系','我們':'我们',
+  '約':'约','細':'细','圍':'围','後':'后',
+  '還':'还','裡':'里','準':'准','繩':'绳','顆':'颗','揀':'拣','給':'给',
+  '動':'动','點':'点','編':'编',
+  '藍':'蓝','紋':'纹','礦':'矿',
+  '漸':'渐','黃':'黄',
+  '剛':'刚','轉賬':'转账','截圖':'截图',
+  '霧':'雾','陽':'阳','極':'极','暈':'晕','擺':'摆','渾':'浑','圓':'圆',
+  '蘚':'藓','瑪':'玛','隨':'随','髮':'发','層':'层','螢':'萤','啞':'哑',
+  '伸縮':'伸缩','空間':'空间','執':'执',
+};
+
+let isSimplified = false;
+function walkAndConvert(node, map){
+  if(node.nodeType === 3){
+    let t = node.textContent;
+    for(const [zh,cn] of Object.entries(map)) t = t.split(zh).join(cn);
+    if(t !== node.textContent) node.textContent = t;
+    return;
+  }
+  if(node.nodeType === 1 && !['SCRIPT','STYLE'].includes(node.tagName)){
+    node.childNodes.forEach(c => walkAndConvert(c, map));
+  }
+}
+const REVERSE_MAP = Object.fromEntries(Object.entries(CONVERT_MAP).map(([k,v]) => [v,k]));
+
+function toggleLang(){
+  isSimplified = !isSimplified;
+  walkAndConvert(document.body, isSimplified ? CONVERT_MAP : REVERSE_MAP);
+  document.documentElement.lang = isSimplified ? 'zh-Hans' : 'zh-Hant';
+  document.getElementById('langToggle').setAttribute('aria-pressed', isSimplified);
+  document.getElementById('langToggle').textContent = isSimplified ? '简' : '繁';
+  localStorage.setItem('lunea-lang', isSimplified ? 'cn' : 'hk');
+}
+document.getElementById('langToggle').addEventListener('click', toggleLang);
+
+/* 產品用JS動態產生，會喺render()之後先出現喺DOM，
+   所以每次render完，如果而家係簡體模式，要重新轉換一次 */
+const _origRenderTiles = renderTiles;
+renderTiles = function(){
+  _origRenderTiles();
+  if(isSimplified) walkAndConvert(document.getElementById('tiles'), CONVERT_MAP);
+};
+const _origRenderSelect = renderSelect;
+renderSelect = function(){
+  _origRenderSelect();
+  if(isSimplified) walkAndConvert(document.getElementById('item'), CONVERT_MAP);
+};
+const _origRenderFilters = renderFilters;
+renderFilters = function(){
+  _origRenderFilters();
+  if(isSimplified) walkAndConvert(document.getElementById('filters'), CONVERT_MAP);
+};
+const _origRenderFAQ = renderFAQ;
+renderFAQ = function(){
+  _origRenderFAQ();
+  if(isSimplified) walkAndConvert(document.getElementById('faqList'), CONVERT_MAP);
+};
+
+if(localStorage.getItem('lunea-lang') === 'cn'){ render(); toggleLang(); }
+
+if(localStorage.getItem('lunea-lang') !== 'cn'){ render(); }
+/* About區相片輪播：逐張show晒所有產品相，每10秒換一張，crossfade過渡 */
+const ABOUT_IMAGES = PRODUCTS.flatMap(p => [p.img, p.img2].filter(Boolean));
+let aboutIdx = 0, aboutShowingA = true;
+document.getElementById('aboutImgA').src = ABOUT_IMAGES[0];
+if(ABOUT_IMAGES.length > 1){
+  setInterval(() => {
+    aboutIdx = (aboutIdx + 1) % ABOUT_IMAGES.length;
+    const showEl = document.getElementById(aboutShowingA ? 'aboutImgB' : 'aboutImgA');
+    const hideEl = document.getElementById(aboutShowingA ? 'aboutImgA' : 'aboutImgB');
+    showEl.src = ABOUT_IMAGES[aboutIdx];
+    showEl.classList.add('show');
+    hideEl.classList.remove('show');
+    aboutShowingA = !aboutShowingA;
+  }, 10000);
+}
+
+document.getElementById('orderForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const itemText = cart.length ? cart.join('、') : document.getElementById('item').value;
+  const msg = `你好！我叫 ${v('name')}，想查詢「${itemText}」。`
+    + `%0a聯絡方法：${v('contact')}` + (v('note') ? `%0a備註：${v('note')}` : '');
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+});
+
+/* 過數確認掣：帶埋購物清單去WhatsApp，賣家一睇就知客人買緊乜 */
+document.getElementById('payConfirmBtn').addEventListener('click', function(){
+  const msg = cart.length
+    ? `你好！我剛完成轉賬，想確認「${cart.join('、')}」，附上截圖給你看。`
+    : `你好！我剛完成轉賬，附上截圖給你看。`;
+  window.open(`https://wa.me/${PAYMENT_WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+});
+</script>
+</body>
+</html>
