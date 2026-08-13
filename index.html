@@ -466,7 +466,8 @@ footer, footer .wrap{ background:var(--banner); }
   display:flex; align-items:center; justify-content:center; text-align:center;
   font-size:13px; color:var(--grey); letter-spacing:.06em; padding:12px;
 }
-.wechat-todo{ border-bottom:1px dashed var(--line); }
+.wechat-note-qr-wrap{ display:inline-block; margin-top:10px; }
+.wechat-note-qr{ width:88px; height:88px; border:1px solid var(--line); border-radius:6px; background:var(--white); padding:6px; }
 .pay-method p{ font-size:16px; color:var(--grey); line-height:1.8; }
 .pay-step{
   font-family:var(--han); font-weight:600; font-size:18px; letter-spacing:.1em;
@@ -849,8 +850,11 @@ footer{ background:var(--banner); padding:60px 0 28px; }
         </div>
         <div class="pay-method">
           <p class="pay-step">④ 微信支付 WeChat Pay</p>
-          <p>收款碼準備中，暫時可以WhatsApp查詢，我們會盡快補上。</p>
-          <div class="pay-qr-todo">QR code待補</div>
+          <p>微信App入面撳『掃一掃』，影低QR code就得。</p>
+          <a href="wechat-pay-qr.png" target="_blank" rel="noopener" class="pay-qr-wrap">
+            <img class="pay-qr" src="wechat-pay-qr.png" alt="微信收款碼" loading="lazy">
+            <span class="pay-qr-hint">撳一下睇大圖</span>
+          </a>
         </div>
       </div>
       <div class="rule" style="margin:32px 0 24px;"></div>
@@ -884,7 +888,10 @@ footer{ background:var(--banner); padding:60px 0 28px; }
     <div class="field"><label for="note">備註</label><textarea id="note" placeholder="尺寸、顏色、其他要求…"></textarea></div>
     <button type="submit" class="submit-btn">透過 WhatsApp 查詢</button>
     <p class="note">按掣會開啟 WhatsApp，訊息已幫你打好，直接send就得。</p>
-    <p class="note">或者喺 <a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener" class="ig-link">Instagram</a>、<a href="#" class="ig-link">小紅書</a> 私訊我哋，或者微信搜尋：<span class="wechat-todo">待補WeChat ID</span>。</p>
+    <p class="note">或者喺 <a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener" class="ig-link">Instagram</a>、<a href="#" class="ig-link">小紅書</a> 私訊我哋，或者微信掃碼加我哋：</p>
+    <a href="wechat-contact-qr.png" target="_blank" rel="noopener" class="wechat-note-qr-wrap">
+      <img class="wechat-note-qr" src="wechat-contact-qr.png" alt="微信加好友碼" loading="lazy">
+    </a>
   </form>
 </section>
 
@@ -1222,7 +1229,7 @@ const CONVERT_MAP = {
   '霧':'雾','陽':'阳','極':'极','暈':'晕','擺':'摆','渾':'浑','圓':'圆',
   '蘚':'藓','瑪':'玛','隨':'随','髮':'发','層':'层','螢':'萤','啞':'哑',
   '伸縮':'伸缩','空間':'空间','執':'执',
-  '碼':'码','備':'备','盡':'尽','補':'补','紅':'红','書':'书','尋':'寻',
+  '碼':'码','備':'备','盡':'尽','補':'补','紅':'红','書':'书',
 };
 
 let isSimplified = false;
