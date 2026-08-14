@@ -458,14 +458,11 @@ footer, footer .wrap{ background:var(--banner); }
   font-family:var(--display); font-weight:700; text-transform:uppercase;
   font-size:clamp(24px,3.6vw,34px); letter-spacing:.05em; color:var(--ink); margin:8px 0 38px;
 }
-.pay-card-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:38px 40px; text-align:center; }
-@media (min-width:1000px){ .pay-card-grid{ grid-template-columns:repeat(4,1fr); } }
-@media (max-width:560px){ .pay-card-grid{ grid-template-columns:1fr; gap:36px; } }
-.pay-qr-todo{
-  width:170px; height:170px; margin:16px auto 0; border:1px dashed var(--line); border-radius:6px;
-  display:flex; align-items:center; justify-content:center; text-align:center;
-  font-size:13px; color:var(--grey); letter-spacing:.06em; padding:12px;
+.pay-card-grid{
+  display:flex; flex-direction:column; align-items:center; gap:46px;
+  max-width:420px; margin:0 auto; text-align:center;
 }
+.pay-method{ width:100%; }
 .wechat-note-qr-wrap{ display:inline-block; margin-top:10px; }
 .wechat-note-qr{ width:88px; height:88px; border:1px solid var(--line); border-radius:6px; background:var(--white); padding:6px; }
 .pay-method p{ font-size:16px; color:var(--grey); line-height:1.8; }
@@ -475,10 +472,7 @@ footer, footer .wrap{ background:var(--banner); }
 }
 .pay-qr-wrap{ display:inline-block; margin-top:16px; }
 .pay-qr{ width:170px; height:170px; border:1px solid var(--line); border-radius:6px; background:var(--white); padding:8px; margin:0 auto; }
-.pay-qr-hint{
-  display:block; margin-top:10px; font-size:12.5px; letter-spacing:.14em;
-  color:var(--caramel-d); text-transform:uppercase;
-}
+.pay-qr-btn{ margin-top:14px; }
 .pay-confirm{ font-size:16px; color:var(--grey); line-height:1.9; }
 .pay-confirm .pill{ margin-top:18px; }
 #faqToggle{ margin-top:8px; }
@@ -836,8 +830,8 @@ footer{ background:var(--banner); padding:60px 0 28px; }
           <p>支付寶App入面撳『掃一掃』，影低QR code就得，內地買家一樣用支付寶結算。</p>
           <a href="alipay-qr.png" target="_blank" rel="noopener" class="pay-qr-wrap">
             <img class="pay-qr" src="alipay-qr.png" alt="支付寶收款碼" loading="lazy">
-            <span class="pay-qr-hint">撳一下睇大圖</span>
           </a>
+          <a href="alipay-qr.png" target="_blank" rel="noopener" class="pill pay-qr-btn">查看收款碼大圖</a>
         </div>
         <div class="pay-method">
           <p class="pay-step">② PayMe</p>
@@ -853,8 +847,8 @@ footer{ background:var(--banner); padding:60px 0 28px; }
           <p>微信App入面撳『掃一掃』，影低QR code就得。</p>
           <a href="wechat-pay-qr.png" target="_blank" rel="noopener" class="pay-qr-wrap">
             <img class="pay-qr" src="wechat-pay-qr.png" alt="微信收款碼" loading="lazy">
-            <span class="pay-qr-hint">撳一下睇大圖</span>
           </a>
+          <a href="wechat-pay-qr.png" target="_blank" rel="noopener" class="pill pay-qr-btn">查看收款碼大圖</a>
         </div>
       </div>
       <div class="rule" style="margin:32px 0 24px;"></div>
@@ -888,10 +882,11 @@ footer{ background:var(--banner); padding:60px 0 28px; }
     <div class="field"><label for="note">備註</label><textarea id="note" placeholder="尺寸、顏色、其他要求…"></textarea></div>
     <button type="submit" class="submit-btn">透過 WhatsApp 查詢</button>
     <p class="note">按掣會開啟 WhatsApp，訊息已幫你打好，直接send就得。</p>
-    <p class="note">或者喺 <a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener" class="ig-link">Instagram</a>、<a href="#" class="ig-link">小紅書</a> 私訊我哋，或者微信掃碼加我哋：</p>
+    <p class="note">或者喺 <a href="https://www.instagram.com/luneajewelry.hk/" target="_blank" rel="noopener" class="ig-link">Instagram</a>、<a href="#" class="ig-link">小紅書</a> 私訊我哋，或者微信加好友：</p>
     <a href="wechat-contact-qr.png" target="_blank" rel="noopener" class="wechat-note-qr-wrap">
       <img class="wechat-note-qr" src="wechat-contact-qr.png" alt="微信加好友碼" loading="lazy">
     </a>
+    <a href="wechat-contact-qr.png" target="_blank" rel="noopener" class="pill pay-qr-btn">查看微信好友碼</a>
   </form>
 </section>
 
@@ -1190,7 +1185,7 @@ const CONVERT_MAP = {
   '私訊我哋':'私信我们','我哋':'我们','或者喺':'或者在',
   '嘅':'的','入面':'里','撳':'点','畀':'给','俾':'给',
   '一樣':'一样','嗰陣':'的时候','唔使':'不用',
-  '睇大圖':'看大图','落去睇':'详见下方','影低QR code':'扫描二维码',
+  '落去睇':'详见下方','影低QR code':'扫描二维码',
   '掃一掃':'扫一扫','內地':'内地',
 
   /* ============================================================
@@ -1229,7 +1224,7 @@ const CONVERT_MAP = {
   '霧':'雾','陽':'阳','極':'极','暈':'晕','擺':'摆','渾':'浑','圓':'圆',
   '蘚':'藓','瑪':'玛','隨':'随','髮':'发','層':'层','螢':'萤','啞':'哑',
   '伸縮':'伸缩','空間':'空间','執':'执',
-  '碼':'码','備':'备','盡':'尽','補':'补','紅':'红','書':'书',
+  '碼':'码','備':'备','盡':'尽','補':'补','紅':'红','書':'书','圖':'图',
 };
 
 let isSimplified = false;
