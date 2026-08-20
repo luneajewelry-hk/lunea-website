@@ -12,3 +12,10 @@ post-1-launch.jpg
 post-2-bracelet-a.jpg
 post-3-bracelet-b.jpg
 post-4-philosophy.jpg
+
+# 安全:防止Google service account key/其他credential檔案手滑commit咗上GitHub
+*service-account*.json
+*-key.json
+*credentials*.json
+.env
+.env.*
