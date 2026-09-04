@@ -878,7 +878,7 @@ footer{ background:var(--banner); padding:60px 0 28px; }
     <div class="field"><label for="name">稱呼</label><input id="name" required placeholder="點稱呼你？"></div>
     <div class="field" id="cartField" hidden><label>已選商品</label><div class="chips" id="cartChips"></div></div>
     <div class="field" id="itemSelectField"><label for="item">心水產品</label><select id="item"></select></div>
-    <div class="field"><label for="contact">聯絡方法 WhatsApp / IG</label><input id="contact" required placeholder="電話號碼 或 IG username"></div>
+    <div class="field"><label for="contactField">聯絡方法 WhatsApp / IG</label><input id="contactField" required placeholder="電話號碼 或 IG username"></div>
     <div class="field"><label for="note">備註</label><textarea id="note" placeholder="尺寸、顏色、其他要求…"></textarea></div>
     <button type="submit" class="submit-btn">透過 WhatsApp 查詢</button>
     <p class="note">按掣會開啟 WhatsApp，訊息已幫你打好，直接send就得。</p>
@@ -1298,7 +1298,7 @@ document.getElementById('orderForm').addEventListener('submit', function(e){
   const v = id => document.getElementById(id).value.trim();
   const itemText = cart.length ? cart.join('、') : document.getElementById('item').value;
   const msg = `你好！我叫 ${v('name')}，想查詢「${itemText}」。`
-    + `%0a聯絡方法：${v('contact')}` + (v('note') ? `%0a備註：${v('note')}` : '');
+    + `%0a聯絡方法：${v('contactField')}` + (v('note') ? `%0a備註：${v('note')}` : '');
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
 });
 
